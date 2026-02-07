@@ -67,7 +67,7 @@
     "Tomcat Server.Unnamed.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ayoub/Desktop/smart-task/frontend/src/main/resources/styles",
+    "last_opened_file_path": "C:/Users/ayoub/Desktop/smart-task/src/main/java/model",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,13 +79,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\model" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\resources\styles" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\resources\views" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\java\com\example\smarttask_frontend" />
-      <recent name="C:\Users\ayoub\IdeaProjects\smartTask" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\java\com\example\smarttask_frontend" />
       <recent name="C:\Users\ayoub\IdeaProjects\project_smartTask\smarttask-backend-jdbc\src\main\webapp\WEB-INF" />
     </key>
   </component>
@@ -230,7 +231,7 @@
       <workItem from="1770417155087" duration="1043000" />
       <workItem from="1770477541371" duration="3000" />
       <workItem from="1770477625738" duration="611000" />
-      <workItem from="1770478347908" duration="2301000" />
+      <workItem from="1770478347908" duration="4350000" />
     </task>
     <task id="LOCAL-00001" summary="javafx-jdbc">
       <option name="closed" value="true" />
