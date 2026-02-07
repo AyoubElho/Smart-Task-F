@@ -1,0 +1,817 @@
+30-Jan-2026 11:58:56.643 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.18
+30-Jan-2026 11:58:56.654 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2026 10:22:57 UTC
+30-Jan-2026 11:58:56.655 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.18.0
+30-Jan-2026 11:58:56.655 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Jan-2026 11:58:56.655 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.17.9-arch1-1
+30-Jan-2026 11:58:56.655 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Jan-2026 11:58:56.656 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk
+30-Jan-2026 11:58:56.656 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.9+10
+30-Jan-2026 11:58:56.657 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Arch Linux
+30-Jan-2026 11:58:56.657 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 11:58:56.658 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 11:58:56.688 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/conf/logging.properties
+30-Jan-2026 11:58:56.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Jan-2026 11:58:56.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Jan-2026 11:58:56.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Jan-2026 11:58:56.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Jan-2026 11:58:56.690 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+30-Jan-2026 11:58:56.690 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Jan-2026 11:58:56.691 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Jan-2026 11:58:56.691 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Jan-2026 11:58:56.691 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Jan-2026 11:58:56.691 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+30-Jan-2026 11:58:56.693 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 11:58:56.693 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 11:58:56.694 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/temp
+30-Jan-2026 11:58:56.696 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-Jan-2026 11:58:57.229 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 11:58:57.284 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [971] milliseconds
+30-Jan-2026 11:58:57.412 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Jan-2026 11:58:57.412 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.18]
+30-Jan-2026 11:58:57.454 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT.war]
+30-Jan-2026 11:58:59.561 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 11:58:59.635 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT.war] has finished in [2,181] ms
+30-Jan-2026 11:58:59.636 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT]
+30-Jan-2026 11:59:00.420 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 11:59:00.425 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT] has finished in [788] ms
+30-Jan-2026 11:59:00.425 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs]
+30-Jan-2026 11:59:00.455 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs] has finished in [29] ms
+30-Jan-2026 11:59:00.455 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples]
+30-Jan-2026 11:59:00.738 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples] has finished in [283] ms
+30-Jan-2026 11:59:00.739 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager]
+30-Jan-2026 11:59:00.771 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager] has finished in [32] ms
+30-Jan-2026 11:59:00.772 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager]
+30-Jan-2026 11:59:00.808 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager] has finished in [37] ms
+30-Jan-2026 11:59:00.808 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask]
+30-Jan-2026 11:59:00.830 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask] has finished in [22] ms
+30-Jan-2026 11:59:00.831 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war]
+30-Jan-2026 11:59:01.332 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 11:59:01.335 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war] has finished in [504] ms
+30-Jan-2026 11:59:01.340 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 11:59:01.351 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [4065] milliseconds
+30-Jan-2026 12:00:15.357 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.18
+30-Jan-2026 12:00:15.368 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2026 10:22:57 UTC
+30-Jan-2026 12:00:15.368 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.18.0
+30-Jan-2026 12:00:15.369 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Jan-2026 12:00:15.369 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.17.9-arch1-1
+30-Jan-2026 12:00:15.370 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Jan-2026 12:00:15.370 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk
+30-Jan-2026 12:00:15.371 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.9+10
+30-Jan-2026 12:00:15.371 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Arch Linux
+30-Jan-2026 12:00:15.371 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 12:00:15.372 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 12:00:15.387 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/conf/logging.properties
+30-Jan-2026 12:00:15.388 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Jan-2026 12:00:15.389 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Jan-2026 12:00:15.389 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Jan-2026 12:00:15.389 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Jan-2026 12:00:15.389 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+30-Jan-2026 12:00:15.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Jan-2026 12:00:15.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Jan-2026 12:00:15.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Jan-2026 12:00:15.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Jan-2026 12:00:15.390 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+30-Jan-2026 12:00:15.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 12:00:15.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 12:00:15.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/temp
+30-Jan-2026 12:00:15.393 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-Jan-2026 12:00:15.852 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:00:15.868 SEVERE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Failed to initialize component [Connector["http-nio-8080"]]
+	org.apache.catalina.LifecycleException: Protocol handler initialization failed
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1088)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:122)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:520)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:122)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:951)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:122)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:707)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:730)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:296)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:469)
+	Caused by: java.net.BindException: Address already in use
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:565)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:344)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:301)
+		at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:265)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:220)
+		at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1633)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1646)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:633)
+		at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:83)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1086)
+		... 11 more
+30-Jan-2026 12:00:15.870 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [759] milliseconds
+30-Jan-2026 12:00:15.924 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Jan-2026 12:00:15.924 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.18]
+30-Jan-2026 12:00:15.952 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT.war]
+30-Jan-2026 12:00:17.965 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 12:00:18.031 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT.war] has finished in [2,078] ms
+30-Jan-2026 12:00:18.032 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT]
+30-Jan-2026 12:00:19.257 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 12:00:19.262 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT] has finished in [1,231] ms
+30-Jan-2026 12:00:19.263 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs]
+30-Jan-2026 12:00:19.305 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs] has finished in [42] ms
+30-Jan-2026 12:00:19.306 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples]
+30-Jan-2026 12:00:19.659 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples] has finished in [352] ms
+30-Jan-2026 12:00:19.659 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager]
+30-Jan-2026 12:00:19.691 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager] has finished in [32] ms
+30-Jan-2026 12:00:19.692 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager]
+30-Jan-2026 12:00:19.727 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager] has finished in [35] ms
+30-Jan-2026 12:00:19.728 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask]
+30-Jan-2026 12:00:19.748 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask] has finished in [20] ms
+30-Jan-2026 12:00:19.749 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war]
+30-Jan-2026 12:00:20.095 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 12:00:20.100 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war] has finished in [351] ms
+30-Jan-2026 12:00:20.107 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [4235] milliseconds
+30-Jan-2026 12:00:20.112 SEVERE [main] org.apache.catalina.core.StandardServer.await Failed to create server shutdown socket on address [localhost] and port [8005] (base port [8005] and offset [0])
+	java.net.BindException: Address already in use
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:565)
+		at java.base/sun.nio.ch.Net.bind(Net.java:554)
+		at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+		at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+		at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+		at org.apache.catalina.core.StandardServer.await(StandardServer.java:530)
+		at org.apache.catalina.startup.Catalina.await(Catalina.java:846)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:794)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:339)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:470)
+30-Jan-2026 12:00:20.113 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:00:20.113 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+30-Jan-2026 12:00:20.174 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:00:20.176 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:05:34.036 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+30-Jan-2026 12:05:34.038 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:05:34.041 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+30-Jan-2026 12:05:34.102 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:05:34.116 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:07:24.691 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.18
+30-Jan-2026 12:07:24.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2026 10:22:57 UTC
+30-Jan-2026 12:07:24.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.18.0
+30-Jan-2026 12:07:24.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Jan-2026 12:07:24.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.17.9-arch1-1
+30-Jan-2026 12:07:24.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Jan-2026 12:07:24.706 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk
+30-Jan-2026 12:07:24.706 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.9+10
+30-Jan-2026 12:07:24.706 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Arch Linux
+30-Jan-2026 12:07:24.706 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 12:07:24.706 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 12:07:24.727 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/conf/logging.properties
+30-Jan-2026 12:07:24.727 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Jan-2026 12:07:24.727 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Jan-2026 12:07:24.727 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Jan-2026 12:07:24.728 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Jan-2026 12:07:24.728 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+30-Jan-2026 12:07:24.728 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Jan-2026 12:07:24.728 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Jan-2026 12:07:24.728 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Jan-2026 12:07:24.728 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Jan-2026 12:07:24.728 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+30-Jan-2026 12:07:24.729 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 12:07:24.729 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 12:07:24.729 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/temp
+30-Jan-2026 12:07:24.731 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-Jan-2026 12:07:25.234 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:07:25.270 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [846] milliseconds
+30-Jan-2026 12:07:25.343 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Jan-2026 12:07:25.344 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.18]
+30-Jan-2026 12:07:25.358 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT]
+30-Jan-2026 12:07:27.321 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 12:07:27.376 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT] has finished in [2,017] ms
+30-Jan-2026 12:07:27.377 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs]
+30-Jan-2026 12:07:27.419 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs] has finished in [42] ms
+30-Jan-2026 12:07:27.420 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples]
+30-Jan-2026 12:07:27.854 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples] has finished in [434] ms
+30-Jan-2026 12:07:27.855 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager]
+30-Jan-2026 12:07:27.907 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager] has finished in [52] ms
+30-Jan-2026 12:07:27.907 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager]
+30-Jan-2026 12:07:27.944 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager] has finished in [37] ms
+30-Jan-2026 12:07:27.945 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask]
+30-Jan-2026 12:07:27.969 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask] has finished in [23] ms
+30-Jan-2026 12:07:27.969 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war]
+30-Jan-2026 12:07:28.326 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 12:07:28.331 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war] has finished in [362] ms
+30-Jan-2026 12:07:28.332 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT]
+30-Jan-2026 12:07:29.169 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 12:07:29.173 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT] has finished in [841] ms
+30-Jan-2026 12:07:29.182 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:07:29.198 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3926] milliseconds
+30-Jan-2026 12:09:23.722 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+30-Jan-2026 12:09:23.724 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:09:23.728 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+30-Jan-2026 12:09:23.783 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:09:23.795 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:13:15.863 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.18
+30-Jan-2026 12:13:15.875 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2026 10:22:57 UTC
+30-Jan-2026 12:13:15.876 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.18.0
+30-Jan-2026 12:13:15.876 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Jan-2026 12:13:15.876 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.17.9-arch1-1
+30-Jan-2026 12:13:15.877 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Jan-2026 12:13:15.877 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk
+30-Jan-2026 12:13:15.877 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.9+10
+30-Jan-2026 12:13:15.877 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Arch Linux
+30-Jan-2026 12:13:15.877 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 12:13:15.878 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 12:13:15.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/conf/logging.properties
+30-Jan-2026 12:13:15.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Jan-2026 12:13:15.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Jan-2026 12:13:15.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Jan-2026 12:13:15.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Jan-2026 12:13:15.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+30-Jan-2026 12:13:15.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Jan-2026 12:13:15.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Jan-2026 12:13:15.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Jan-2026 12:13:15.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Jan-2026 12:13:15.899 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+30-Jan-2026 12:13:15.899 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 12:13:15.899 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 12:13:15.899 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/temp
+30-Jan-2026 12:13:15.902 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-Jan-2026 12:13:16.649 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:13:16.700 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1088] milliseconds
+30-Jan-2026 12:13:16.854 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Jan-2026 12:13:16.855 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.18]
+30-Jan-2026 12:13:16.882 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT]
+30-Jan-2026 12:13:19.200 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 12:13:19.267 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT] has finished in [2,385] ms
+30-Jan-2026 12:13:19.268 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs]
+30-Jan-2026 12:13:19.313 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs] has finished in [44] ms
+30-Jan-2026 12:13:19.314 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples]
+30-Jan-2026 12:13:19.656 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples] has finished in [343] ms
+30-Jan-2026 12:13:19.656 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager]
+30-Jan-2026 12:13:19.691 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager] has finished in [35] ms
+30-Jan-2026 12:13:19.691 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager]
+30-Jan-2026 12:13:19.729 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager] has finished in [38] ms
+30-Jan-2026 12:13:19.729 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask]
+30-Jan-2026 12:13:19.754 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask] has finished in [24] ms
+30-Jan-2026 12:13:19.755 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war]
+30-Jan-2026 12:13:20.138 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 12:13:20.142 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war] has finished in [387] ms
+30-Jan-2026 12:13:20.142 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT]
+30-Jan-2026 12:13:21.383 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 12:13:21.389 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT] has finished in [1,247] ms
+30-Jan-2026 12:13:21.403 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 12:13:21.435 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [4729] milliseconds
+30-Jan-2026 15:17:02.216 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+30-Jan-2026 15:17:02.217 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 15:17:02.221 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+30-Jan-2026 15:17:02.242 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1886)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:93)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+30-Jan-2026 15:17:02.283 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [smarttask-backend-jdbc-1.0-SNAPSHOT] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+30-Jan-2026 15:17:02.284 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [smarttask-backend-jdbc-1.0-SNAPSHOT] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1886)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:93)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+30-Jan-2026 15:17:02.304 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 15:17:02.325 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 15:17:11.615 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.18
+30-Jan-2026 15:17:11.626 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2026 10:22:57 UTC
+30-Jan-2026 15:17:11.627 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.18.0
+30-Jan-2026 15:17:11.627 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Jan-2026 15:17:11.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.17.9-arch1-1
+30-Jan-2026 15:17:11.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Jan-2026 15:17:11.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk
+30-Jan-2026 15:17:11.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.9+10
+30-Jan-2026 15:17:11.628 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Arch Linux
+30-Jan-2026 15:17:11.630 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 15:17:11.630 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 15:17:11.646 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/conf/logging.properties
+30-Jan-2026 15:17:11.648 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Jan-2026 15:17:11.648 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Jan-2026 15:17:11.648 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Jan-2026 15:17:11.648 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Jan-2026 15:17:11.648 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+30-Jan-2026 15:17:11.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Jan-2026 15:17:11.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Jan-2026 15:17:11.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Jan-2026 15:17:11.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Jan-2026 15:17:11.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+30-Jan-2026 15:17:11.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 15:17:11.652 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 15:17:11.652 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/temp
+30-Jan-2026 15:17:11.654 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-Jan-2026 15:17:12.212 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 15:17:12.255 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [899] milliseconds
+30-Jan-2026 15:17:12.333 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Jan-2026 15:17:12.333 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.18]
+30-Jan-2026 15:17:12.351 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT]
+30-Jan-2026 15:17:14.795 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 15:17:14.907 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT] has finished in [2,556] ms
+30-Jan-2026 15:17:14.908 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs]
+30-Jan-2026 15:17:14.951 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs] has finished in [43] ms
+30-Jan-2026 15:17:14.952 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples]
+30-Jan-2026 15:17:15.257 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples] has finished in [304] ms
+30-Jan-2026 15:17:15.257 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager]
+30-Jan-2026 15:17:15.290 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager] has finished in [33] ms
+30-Jan-2026 15:17:15.291 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager]
+30-Jan-2026 15:17:15.325 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager] has finished in [34] ms
+30-Jan-2026 15:17:15.325 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask]
+30-Jan-2026 15:17:15.351 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask] has finished in [25] ms
+30-Jan-2026 15:17:15.351 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war]
+30-Jan-2026 15:17:15.838 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 15:17:15.842 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war] has finished in [491] ms
+30-Jan-2026 15:17:15.843 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT]
+30-Jan-2026 15:17:16.819 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 15:17:16.826 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT] has finished in [983] ms
+30-Jan-2026 15:17:16.834 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 15:17:16.865 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [4606] milliseconds
+30-Jan-2026 15:22:16.256 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+30-Jan-2026 15:22:16.257 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 15:22:16.261 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+30-Jan-2026 15:22:16.312 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 15:22:16.324 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 15:22:29.985 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.18
+30-Jan-2026 15:22:29.999 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2026 10:22:57 UTC
+30-Jan-2026 15:22:30.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.18.0
+30-Jan-2026 15:22:30.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Jan-2026 15:22:30.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.17.9-arch1-1
+30-Jan-2026 15:22:30.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Jan-2026 15:22:30.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk
+30-Jan-2026 15:22:30.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.9+10
+30-Jan-2026 15:22:30.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Arch Linux
+30-Jan-2026 15:22:30.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 15:22:30.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 15:22:30.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/conf/logging.properties
+30-Jan-2026 15:22:30.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Jan-2026 15:22:30.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Jan-2026 15:22:30.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Jan-2026 15:22:30.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Jan-2026 15:22:30.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+30-Jan-2026 15:22:30.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Jan-2026 15:22:30.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Jan-2026 15:22:30.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Jan-2026 15:22:30.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Jan-2026 15:22:30.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+30-Jan-2026 15:22:30.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 15:22:30.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 15:22:30.029 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/temp
+30-Jan-2026 15:22:30.031 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-Jan-2026 15:22:30.525 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 15:22:30.577 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [832] milliseconds
+30-Jan-2026 15:22:30.686 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Jan-2026 15:22:30.686 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.18]
+30-Jan-2026 15:22:30.710 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT]
+30-Jan-2026 15:22:32.987 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 15:22:33.082 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT] has finished in [2,372] ms
+30-Jan-2026 15:22:33.083 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs]
+30-Jan-2026 15:22:33.123 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs] has finished in [39] ms
+30-Jan-2026 15:22:33.123 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples]
+30-Jan-2026 15:22:33.578 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples] has finished in [455] ms
+30-Jan-2026 15:22:33.579 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager]
+30-Jan-2026 15:22:33.633 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager] has finished in [53] ms
+30-Jan-2026 15:22:33.634 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager]
+30-Jan-2026 15:22:33.711 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager] has finished in [76] ms
+30-Jan-2026 15:22:33.711 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask]
+30-Jan-2026 15:22:33.765 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask] has finished in [54] ms
+30-Jan-2026 15:22:33.766 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war]
+30-Jan-2026 15:22:34.402 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 15:22:34.407 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war] has finished in [642] ms
+30-Jan-2026 15:22:34.408 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT]
+30-Jan-2026 15:22:35.510 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 15:22:35.513 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT] has finished in [1,105] ms
+30-Jan-2026 15:22:35.520 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 15:22:35.533 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [4953] milliseconds
+30-Jan-2026 16:04:19.741 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+30-Jan-2026 16:04:19.742 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:04:19.744 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+30-Jan-2026 16:04:19.758 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1886)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:93)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+30-Jan-2026 16:04:19.782 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [smarttask-backend-jdbc-1.0-SNAPSHOT] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+30-Jan-2026 16:04:19.783 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [smarttask-backend-jdbc-1.0-SNAPSHOT] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1886)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:93)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+30-Jan-2026 16:04:19.806 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:04:19.813 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:04:25.572 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.18
+30-Jan-2026 16:04:25.584 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2026 10:22:57 UTC
+30-Jan-2026 16:04:25.585 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.18.0
+30-Jan-2026 16:04:25.585 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Jan-2026 16:04:25.585 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.17.9-arch1-1
+30-Jan-2026 16:04:25.585 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Jan-2026 16:04:25.586 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk
+30-Jan-2026 16:04:25.586 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.9+10
+30-Jan-2026 16:04:25.586 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Arch Linux
+30-Jan-2026 16:04:25.586 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:04:25.586 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:04:25.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/conf/logging.properties
+30-Jan-2026 16:04:25.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Jan-2026 16:04:25.610 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Jan-2026 16:04:25.610 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Jan-2026 16:04:25.610 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Jan-2026 16:04:25.610 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+30-Jan-2026 16:04:25.610 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Jan-2026 16:04:25.611 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Jan-2026 16:04:25.611 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Jan-2026 16:04:25.611 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Jan-2026 16:04:25.611 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+30-Jan-2026 16:04:25.612 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:04:25.612 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:04:25.612 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/temp
+30-Jan-2026 16:04:25.614 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-Jan-2026 16:04:26.159 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:04:26.223 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [905] milliseconds
+30-Jan-2026 16:04:26.350 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Jan-2026 16:04:26.350 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.18]
+30-Jan-2026 16:04:26.378 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT]
+30-Jan-2026 16:04:28.402 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 16:04:28.471 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT] has finished in [2,097] ms
+30-Jan-2026 16:04:28.472 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs]
+30-Jan-2026 16:04:28.512 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs] has finished in [40] ms
+30-Jan-2026 16:04:28.513 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples]
+30-Jan-2026 16:04:28.837 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples] has finished in [324] ms
+30-Jan-2026 16:04:28.838 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager]
+30-Jan-2026 16:04:28.875 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager] has finished in [37] ms
+30-Jan-2026 16:04:28.876 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager]
+30-Jan-2026 16:04:28.912 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager] has finished in [36] ms
+30-Jan-2026 16:04:28.913 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask]
+30-Jan-2026 16:04:28.939 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask] has finished in [26] ms
+30-Jan-2026 16:04:28.940 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war]
+30-Jan-2026 16:04:29.473 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 16:04:29.484 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war] has finished in [540] ms
+30-Jan-2026 16:04:29.484 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT]
+30-Jan-2026 16:04:30.457 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 16:04:30.461 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT] has finished in [977] ms
+30-Jan-2026 16:04:30.466 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:04:30.477 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [4250] milliseconds
+30-Jan-2026 16:45:41.522 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+30-Jan-2026 16:45:41.523 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:45:41.524 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+30-Jan-2026 16:45:41.540 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1886)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:93)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+30-Jan-2026 16:45:41.614 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [smarttask-backend-jdbc-1.0-SNAPSHOT] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+30-Jan-2026 16:45:41.615 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [smarttask-backend-jdbc-1.0-SNAPSHOT] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1886)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:93)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+30-Jan-2026 16:45:41.630 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:45:41.644 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:45:46.471 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.18
+30-Jan-2026 16:45:46.488 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2026 10:22:57 UTC
+30-Jan-2026 16:45:46.488 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.18.0
+30-Jan-2026 16:45:46.488 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Jan-2026 16:45:46.488 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.17.9-arch1-1
+30-Jan-2026 16:45:46.496 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Jan-2026 16:45:46.496 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk
+30-Jan-2026 16:45:46.496 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.9+10
+30-Jan-2026 16:45:46.496 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Arch Linux
+30-Jan-2026 16:45:46.497 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:45:46.497 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:45:46.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/conf/logging.properties
+30-Jan-2026 16:45:46.523 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Jan-2026 16:45:46.523 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Jan-2026 16:45:46.523 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Jan-2026 16:45:46.524 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Jan-2026 16:45:46.525 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+30-Jan-2026 16:45:46.525 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Jan-2026 16:45:46.525 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Jan-2026 16:45:46.526 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Jan-2026 16:45:46.527 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Jan-2026 16:45:46.527 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+30-Jan-2026 16:45:46.527 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:45:46.527 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:45:46.527 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/temp
+30-Jan-2026 16:45:46.533 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-Jan-2026 16:45:47.234 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:45:47.302 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1157] milliseconds
+30-Jan-2026 16:45:47.488 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Jan-2026 16:45:47.489 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.18]
+30-Jan-2026 16:45:47.518 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT]
+30-Jan-2026 16:45:49.329 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 16:45:49.400 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT] has finished in [1,881] ms
+30-Jan-2026 16:45:49.401 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs]
+30-Jan-2026 16:45:49.439 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs] has finished in [38] ms
+30-Jan-2026 16:45:49.439 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples]
+30-Jan-2026 16:45:49.717 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples] has finished in [278] ms
+30-Jan-2026 16:45:49.718 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager]
+30-Jan-2026 16:45:49.753 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager] has finished in [34] ms
+30-Jan-2026 16:45:49.753 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager]
+30-Jan-2026 16:45:49.784 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager] has finished in [31] ms
+30-Jan-2026 16:45:49.786 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask]
+30-Jan-2026 16:45:49.811 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask] has finished in [25] ms
+30-Jan-2026 16:45:49.811 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war]
+30-Jan-2026 16:45:50.122 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 16:45:50.126 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war] has finished in [314] ms
+30-Jan-2026 16:45:50.126 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT]
+30-Jan-2026 16:45:50.918 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 16:45:50.921 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT] has finished in [794] ms
+30-Jan-2026 16:45:50.925 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:45:50.936 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3629] milliseconds
+30-Jan-2026 16:51:03.199 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+30-Jan-2026 16:51:03.202 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:51:03.207 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+30-Jan-2026 16:51:03.298 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:51:03.314 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:51:07.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.18
+30-Jan-2026 16:51:07.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2026 10:22:57 UTC
+30-Jan-2026 16:51:07.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.18.0
+30-Jan-2026 16:51:07.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Jan-2026 16:51:07.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.17.9-arch1-1
+30-Jan-2026 16:51:07.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Jan-2026 16:51:07.899 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk
+30-Jan-2026 16:51:07.899 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.9+10
+30-Jan-2026 16:51:07.900 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Arch Linux
+30-Jan-2026 16:51:07.901 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:51:07.901 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:51:07.917 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/conf/logging.properties
+30-Jan-2026 16:51:07.918 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Jan-2026 16:51:07.918 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Jan-2026 16:51:07.919 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Jan-2026 16:51:07.919 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Jan-2026 16:51:07.919 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+30-Jan-2026 16:51:07.919 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Jan-2026 16:51:07.919 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Jan-2026 16:51:07.920 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Jan-2026 16:51:07.920 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Jan-2026 16:51:07.920 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+30-Jan-2026 16:51:07.920 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:51:07.920 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:51:07.923 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/temp
+30-Jan-2026 16:51:07.925 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-Jan-2026 16:51:08.598 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:51:08.633 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1000] milliseconds
+30-Jan-2026 16:51:08.727 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Jan-2026 16:51:08.729 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.18]
+30-Jan-2026 16:51:08.757 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT]
+30-Jan-2026 16:51:10.726 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 16:51:10.787 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT] has finished in [2,030] ms
+30-Jan-2026 16:51:10.788 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs]
+30-Jan-2026 16:51:10.829 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs] has finished in [41] ms
+30-Jan-2026 16:51:10.829 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples]
+30-Jan-2026 16:51:11.199 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples] has finished in [370] ms
+30-Jan-2026 16:51:11.205 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager]
+30-Jan-2026 16:51:11.281 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager] has finished in [77] ms
+30-Jan-2026 16:51:11.282 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager]
+30-Jan-2026 16:51:11.397 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager] has finished in [115] ms
+30-Jan-2026 16:51:11.398 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask]
+30-Jan-2026 16:51:11.421 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask] has finished in [23] ms
+30-Jan-2026 16:51:11.422 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war]
+30-Jan-2026 16:51:11.845 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 16:51:11.850 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war] has finished in [428] ms
+30-Jan-2026 16:51:11.851 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT]
+30-Jan-2026 16:51:12.808 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 16:51:12.810 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT] has finished in [959] ms
+30-Jan-2026 16:51:12.815 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:51:12.841 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [4205] milliseconds
+30-Jan-2026 16:57:40.341 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+30-Jan-2026 16:57:40.342 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:57:40.344 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+30-Jan-2026 16:57:40.360 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:125)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:92)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+30-Jan-2026 16:57:40.397 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [smarttask-backend-jdbc-1.0-SNAPSHOT] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+30-Jan-2026 16:57:40.398 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [smarttask-backend-jdbc-1.0-SNAPSHOT] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1886)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:93)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+30-Jan-2026 16:57:40.431 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:57:40.445 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:57:48.335 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.18
+30-Jan-2026 16:57:48.351 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2026 10:22:57 UTC
+30-Jan-2026 16:57:48.351 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.18.0
+30-Jan-2026 16:57:48.352 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Jan-2026 16:57:48.352 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.17.9-arch1-1
+30-Jan-2026 16:57:48.354 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Jan-2026 16:57:48.354 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk
+30-Jan-2026 16:57:48.354 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.9+10
+30-Jan-2026 16:57:48.354 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Arch Linux
+30-Jan-2026 16:57:48.357 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:57:48.357 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:57:48.387 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/conf/logging.properties
+30-Jan-2026 16:57:48.392 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Jan-2026 16:57:48.393 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Jan-2026 16:57:48.393 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Jan-2026 16:57:48.393 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Jan-2026 16:57:48.393 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+30-Jan-2026 16:57:48.396 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Jan-2026 16:57:48.396 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Jan-2026 16:57:48.398 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Jan-2026 16:57:48.398 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Jan-2026 16:57:48.398 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+30-Jan-2026 16:57:48.398 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:57:48.398 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 16:57:48.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/temp
+30-Jan-2026 16:57:48.403 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-Jan-2026 16:57:49.322 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:57:49.379 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1331] milliseconds
+30-Jan-2026 16:57:49.475 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Jan-2026 16:57:49.476 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.18]
+30-Jan-2026 16:57:49.504 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT]
+30-Jan-2026 16:57:51.508 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 16:57:51.595 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT] has finished in [2,090] ms
+30-Jan-2026 16:57:51.596 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs]
+30-Jan-2026 16:57:51.635 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs] has finished in [38] ms
+30-Jan-2026 16:57:51.636 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples]
+30-Jan-2026 16:57:51.954 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples] has finished in [319] ms
+30-Jan-2026 16:57:51.956 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager]
+30-Jan-2026 16:57:51.995 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager] has finished in [39] ms
+30-Jan-2026 16:57:51.996 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager]
+30-Jan-2026 16:57:52.029 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager] has finished in [32] ms
+30-Jan-2026 16:57:52.029 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask]
+30-Jan-2026 16:57:52.051 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask] has finished in [22] ms
+30-Jan-2026 16:57:52.051 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war]
+30-Jan-2026 16:57:52.447 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 16:57:52.451 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war] has finished in [400] ms
+30-Jan-2026 16:57:52.452 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT]
+30-Jan-2026 16:57:53.481 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 16:57:53.485 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT] has finished in [1,033] ms
+30-Jan-2026 16:57:53.493 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 16:57:53.513 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [4131] milliseconds
+30-Jan-2026 17:02:10.242 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+30-Jan-2026 17:02:10.243 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 17:02:10.250 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+30-Jan-2026 17:02:10.305 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 17:02:10.332 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 17:02:12.116 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.18
+30-Jan-2026 17:02:12.131 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2026 10:22:57 UTC
+30-Jan-2026 17:02:12.132 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.18.0
+30-Jan-2026 17:02:12.133 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Jan-2026 17:02:12.133 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.17.9-arch1-1
+30-Jan-2026 17:02:12.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Jan-2026 17:02:12.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk
+30-Jan-2026 17:02:12.135 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.9+10
+30-Jan-2026 17:02:12.136 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Arch Linux
+30-Jan-2026 17:02:12.136 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 17:02:12.136 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 17:02:12.151 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/conf/logging.properties
+30-Jan-2026 17:02:12.152 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Jan-2026 17:02:12.152 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Jan-2026 17:02:12.152 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Jan-2026 17:02:12.152 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Jan-2026 17:02:12.152 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+30-Jan-2026 17:02:12.153 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Jan-2026 17:02:12.153 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Jan-2026 17:02:12.153 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Jan-2026 17:02:12.153 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Jan-2026 17:02:12.153 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+30-Jan-2026 17:02:12.153 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 17:02:12.155 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 17:02:12.155 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/temp
+30-Jan-2026 17:02:12.157 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-Jan-2026 17:02:12.680 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 17:02:12.718 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [856] milliseconds
+30-Jan-2026 17:02:12.779 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Jan-2026 17:02:12.779 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.18]
+30-Jan-2026 17:02:12.794 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT]
+30-Jan-2026 17:02:15.131 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 17:02:15.235 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT] has finished in [2,438] ms
+30-Jan-2026 17:02:15.236 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs]
+30-Jan-2026 17:02:15.294 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs] has finished in [57] ms
+30-Jan-2026 17:02:15.295 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples]
+30-Jan-2026 17:02:15.612 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples] has finished in [317] ms
+30-Jan-2026 17:02:15.613 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager]
+30-Jan-2026 17:02:15.650 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager] has finished in [37] ms
+30-Jan-2026 17:02:15.650 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager]
+30-Jan-2026 17:02:15.679 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager] has finished in [29] ms
+30-Jan-2026 17:02:15.680 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask]
+30-Jan-2026 17:02:15.710 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask] has finished in [30] ms
+30-Jan-2026 17:02:15.711 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war]
+30-Jan-2026 17:02:16.091 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 17:02:16.096 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war] has finished in [385] ms
+30-Jan-2026 17:02:16.097 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT]
+30-Jan-2026 17:02:16.981 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 17:02:16.985 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT] has finished in [887] ms
+30-Jan-2026 17:02:16.994 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 17:02:17.025 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [4305] milliseconds
+30-Jan-2026 17:04:38.758 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+30-Jan-2026 17:04:38.759 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 17:04:38.761 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+30-Jan-2026 17:04:38.780 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1886)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:93)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+30-Jan-2026 17:04:38.844 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [smarttask-backend-jdbc-1.0-SNAPSHOT] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+30-Jan-2026 17:04:38.846 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [smarttask-backend-jdbc-1.0-SNAPSHOT] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1886)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:93)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1583)
+30-Jan-2026 17:04:38.862 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 17:04:38.871 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 17:04:40.982 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.18
+30-Jan-2026 17:04:40.998 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 23 2026 10:22:57 UTC
+30-Jan-2026 17:04:40.999 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.18.0
+30-Jan-2026 17:04:40.999 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+30-Jan-2026 17:04:40.999 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.17.9-arch1-1
+30-Jan-2026 17:04:41.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+30-Jan-2026 17:04:41.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk
+30-Jan-2026 17:04:41.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.9+10
+30-Jan-2026 17:04:41.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Arch Linux
+30-Jan-2026 17:04:41.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 17:04:41.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 17:04:41.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/conf/logging.properties
+30-Jan-2026 17:04:41.026 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+30-Jan-2026 17:04:41.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+30-Jan-2026 17:04:41.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+30-Jan-2026 17:04:41.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+30-Jan-2026 17:04:41.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+30-Jan-2026 17:04:41.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+30-Jan-2026 17:04:41.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+30-Jan-2026 17:04:41.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+30-Jan-2026 17:04:41.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+30-Jan-2026 17:04:41.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+30-Jan-2026 17:04:41.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 17:04:41.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18
+30-Jan-2026 17:04:41.029 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/temp
+30-Jan-2026 17:04:41.031 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+30-Jan-2026 17:04:41.573 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 17:04:41.617 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [890] milliseconds
+30-Jan-2026 17:04:41.675 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+30-Jan-2026 17:04:41.676 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.18]
+30-Jan-2026 17:04:41.692 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT]
+30-Jan-2026 17:04:43.249 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 17:04:43.343 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/ROOT] has finished in [1,650] ms
+30-Jan-2026 17:04:43.344 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs]
+30-Jan-2026 17:04:43.387 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/docs] has finished in [43] ms
+30-Jan-2026 17:04:43.389 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples]
+30-Jan-2026 17:04:43.829 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/examples] has finished in [440] ms
+30-Jan-2026 17:04:43.830 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager]
+30-Jan-2026 17:04:43.865 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/host-manager] has finished in [35] ms
+30-Jan-2026 17:04:43.865 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager]
+30-Jan-2026 17:04:43.898 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/manager] has finished in [32] ms
+30-Jan-2026 17:04:43.898 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask]
+30-Jan-2026 17:04:43.926 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smartTask] has finished in [28] ms
+30-Jan-2026 17:04:43.926 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war]
+30-Jan-2026 17:04:44.226 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 17:04:44.228 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask_backend_jdbc_war] has finished in [302] ms
+30-Jan-2026 17:04:44.229 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT]
+30-Jan-2026 17:04:45.099 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+30-Jan-2026 17:04:45.103 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/lain/Smart-Task-v1/apache-tomcat-11.0.18/webapps/smarttask-backend-jdbc-1.0-SNAPSHOT] has finished in [874] ms
+30-Jan-2026 17:04:45.110 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+30-Jan-2026 17:04:45.127 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3508] milliseconds
