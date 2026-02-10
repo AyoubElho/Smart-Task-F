@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.chart.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.smarttask_frontend.dashboard.DashboardController"
+            stylesheets="@../styles/dashboard.css"
+            prefWidth="1100" prefHeight="750">
+
+    <top>
+        <HBox styleClass="top-bar" spacing="20" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="15" right="40" bottom="15" left="40"/>
+            </padding>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <StackPane fx:id="notificationContainer" styleClass="notification-container">
+                <Button fx:id="notificationButton" styleClass="notification-button">
+                    <graphic>
+                        <Region styleClass="bell-icon"/>
+                    </graphic>
+                </Button>
+
+                <Label fx:id="notificationBadge" text="0" styleClass="notification-badge"
+                       visible="false" managed="false"/>
+            </StackPane>
+
+            <Button fx:id="userMenuButton" styleClass="user-menu-button">
+                <graphic>
+                    <ImageView fitWidth="28" fitHeight="28">
+                        <Image url="@../assets/user-icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox styleClass="sidebar" spacing="15" prefWidth="240">
+            <padding>
+                <Insets top="35" right="20" bottom="20" left="25"/>
+            </padding>
+
+            <Label text="SmartTask." styleClass="logo-text">
+                <VBox.margin>
+                    <Insets bottom="30"/>
+                </VBox.margin>
+            </Label>
+
+            <Button text="Dashboard" styleClass="nav-button, active" maxWidth="Infinity"/>
+            <Button text="My Tasks" styleClass="nav-button" maxWidth="Infinity" onAction="#mytasks"/>
+            <Button text="Calendar" styleClass="nav-button" maxWidth="Infinity" onAction="#showCalendar"/>
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button text="Settings" styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="Logout" styleClass="nav-button" maxWidth="Infinity" onAction="#logout"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="mainContentPane">
+
+            <VBox spacing="20">
+                <padding>
+                    <Insets top="30" right="30" bottom="30" left="30"/>
+                </padding>
+
+                <VBox spacing="5">
+                    <Label fx:id="dashboardLabel"
+                           text="Analytics Dashboard"
+                           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="Track productivity, time usage, and task performance."
+                           style="-fx-text-fill: #94a3b8; -fx-font-size: 14px;"/>
+                </VBox>
+
+                <HBox spacing="15">
+                    <VBox styleClass="card, card-blue" HBox.hgrow="ALWAYS">
+                        <Label text="Total Tasks" styleClass="card-title"/>
+                        <Label fx:id="totalTasksLabel" text="0" styleClass="card-value"/>
+                    </VBox>
+
+                    <VBox styleClass="card, card-purple" HBox.hgrow="ALWAYS">
+                        <Label text="In Progress" styleClass="card-title"/>
+                        <Label fx:id="inProgressLabel" text="0" styleClass="card-value"/>
+                    </VBox>
+
+                    <VBox styleClass="card, card-green" HBox.hgrow="ALWAYS">
+                        <Label text="Completed" styleClass="card-title"/>
+                        <Label fx:id="completedLabel" text="0" styleClass="card-value"/>
+                    </VBox>
+
+                    <VBox styleClass="card, card-blue" HBox.hgrow="ALWAYS">
+                        <Label text="Time Spent" styleClass="card-title"/>
+                        <Label fx:id="timeSpentLabel" text="0 min" styleClass="card-value"/>
+                    </VBox>
+
+                    <VBox styleClass="card, card-purple" HBox.hgrow="ALWAYS">
+                        <Label text="Avg / Task" styleClass="card-title"/>
+                        <Label fx:id="avgTimeLabel" text="0 min" styleClass="card-value"/>
+                    </VBox>
+                </HBox>
+
+                <HBox spacing="20" VBox.vgrow="ALWAYS">
+
+                    <VBox styleClass="table-container" HBox.hgrow="ALWAYS" prefWidth="650">
+                        <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                            <tabs>
+                                <Tab text="Recent Tasks">
+                                    <TableView fx:id="taskTable">
+                                        <columns>
+                                            <TableColumn fx:id="titleColumn" text="TASK NAME" prefWidth="300"/>
+
+                                            <TableColumn fx:id="priorityColumn" text="PRIORITY" prefWidth="100"/>
+                                            <TableColumn fx:id="categoryColumn" text="CATEGORY" prefWidth="120"/>
+                                            <TableColumn fx:id="dueDateColumn" text="DUE DATE" prefWidth="120"/>
+                                            <TableColumn fx:id="statusColumn" text="STATUS" prefWidth="120"/>
+                                        </columns>
+                                    </TableView>
+                                </Tab>
+
+                                <Tab text="Shared With Me">
+                                    <TableView fx:id="sharedTasksTable">
+                                        <columns>
+                                            <TableColumn fx:id="sharedTitleColumn" text="TASK NAME" prefWidth="300"/>
+
+                                            <TableColumn fx:id="sharedPriorityColumn" text="PRIORITY" prefWidth="100"/>
+                                            <TableColumn fx:id="sharedCategoryColumn" text="CATEGORY" prefWidth="120"/>
+                                            <TableColumn fx:id="sharedDueDateColumn" text="DUE DATE" prefWidth="120"/>
+                                            <TableColumn fx:id="sharedStatusColumn" text="STATUS" prefWidth="120"/>
+                                        </columns>
+                                    </TableView>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                    </VBox>
+
+                    <VBox styleClass="chart-container" HBox.hgrow="ALWAYS" prefWidth="350">
+                        <Label text="Productivity Trend" styleClass="section-title"
+                               style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white; -fx-padding: 0 0 10 0;"/>
+                        <LineChart fx:id="trendChart" legendVisible="false" verticalGridLinesVisible="false" VBox.vgrow="ALWAYS">
+                            <xAxis>
+                                <CategoryAxis label="Day" side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label="Minutes" side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+                    </VBox>
+                </HBox>
+
+            </VBox>
+
+            <VBox fx:id="notificationPanel"
+                  prefWidth="360"
+                  styleClass="notification-panel"
+                  visible="false"
+                  managed="false"
+                  StackPane.alignment="TOP_RIGHT">
+
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Notifications" styleClass="notification-panel-title"
+                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="Mark all as read" styleClass="notification-action-button"
+                            onAction="#markAllAsRead"/>
+                    <Button text="Clear all" styleClass="notification-action-button"
+                            onAction="#clearAllNotifications"/>
+                </HBox>
+
+                <Separator styleClass="notification-separator"/>
+
+                <ListView fx:id="notificationListView" VBox.vgrow="ALWAYS"
+                          styleClass="notification-list">
+                </ListView>
+                <HBox alignment="CENTER" spacing="10">
+                    <Button text="View All" styleClass="notification-view-all-button"
+                            onAction="#viewAllNotifications"/>
+                </HBox>
+
+            </VBox>
+
+        </StackPane>
+    </center>
+
+</BorderPane>

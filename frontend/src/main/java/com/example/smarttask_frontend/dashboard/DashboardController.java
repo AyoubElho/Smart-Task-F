@@ -17,6 +17,8 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -28,38 +30,66 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
 
-    @FXML private Label dashboardLabel;
-    @FXML private Label totalTasksLabel;
-    @FXML private Label inProgressLabel;
-    @FXML private Label completedLabel;
+    @FXML
+    private Label dashboardLabel;
+    @FXML
+    private Label totalTasksLabel;
+    @FXML
+    private Label inProgressLabel;
+    @FXML
+    private Label completedLabel;
+    private final java.util.Random random = new java.util.Random();
 
     // --- RECENT TASKS TABLE ---
-    @FXML private TableView<Task> taskTable;
-    @FXML private TableColumn<Task, String> titleColumn;
-    @FXML private TableColumn<Task, String> statusColumn;
-    @FXML private TableColumn<Task, String> priorityColumn;
-    @FXML private TableColumn<Task, String> categoryColumn;
-    @FXML private TableColumn<Task, String> dueDateColumn;
+    @FXML
+    private TableView<Task> taskTable;
+    @FXML
+    private TableColumn<Task, String> titleColumn;
+    @FXML
+    private TableColumn<Task, String> statusColumn;
+    @FXML
+    private TableColumn<Task, String> priorityColumn;
+    @FXML
+    private TableColumn<Task, String> categoryColumn;
+    @FXML
+    private TableColumn<Task, String> dueDateColumn;
 
     // --- SHARED TASKS TABLE ---
-    @FXML private TableView<Task> sharedTasksTable;
-    @FXML private TableColumn<Task, String> sharedTitleColumn;
-    @FXML private TableColumn<Task, String> sharedPriorityColumn;
-    @FXML private TableColumn<Task, String> sharedCategoryColumn;
-    @FXML private TableColumn<Task, String> sharedDueDateColumn;
-    @FXML private TableColumn<Task, String> sharedStatusColumn;
+    @FXML
+    private TableView<Task> sharedTasksTable;
+    @FXML
+    private TableColumn<Task, String> sharedTitleColumn;
+    @FXML
+    private TableColumn<Task, String> sharedPriorityColumn;
+    @FXML
+    private TableColumn<Task, String> sharedCategoryColumn;
+    @FXML
+    private TableColumn<Task, String> sharedDueDateColumn;
+    @FXML
+    private TableColumn<Task, String> sharedStatusColumn;
+    // === Analytics labels ===
+    @FXML private Label timeSpentLabel;
+    @FXML private Label avgTimeLabel;
+    @FXML private LineChart<String, Number> trendChart;
 
     // Notification elements
-    @FXML private StackPane notificationContainer;
-    @FXML private Button notificationButton;
-    @FXML private Label notificationBadge;
-    @FXML private VBox notificationPanel;
-    @FXML private StackPane mainContentPane;
-    @FXML private ListView<Notification> notificationListView;
+    @FXML
+    private StackPane notificationContainer;
+    @FXML
+    private Button notificationButton;
+    @FXML
+    private Label notificationBadge;
+    @FXML
+    private VBox notificationPanel;
+    @FXML
+    private StackPane mainContentPane;
+    @FXML
+    private ListView<Notification> notificationListView;
 
     private final TaskService taskService = new TaskService();
     private final NotificationService notificationService = new NotificationService();
@@ -123,9 +153,17 @@ public class DashboardController implements Initializable {
                     Label badge = new Label(status);
                     badge.getStyleClass().add("status-badge");
                     switch (status.toUpperCase()) {
-                        case "COMPLETED": case "DONE": badge.getStyleClass().add("status-done"); break;
-                        case "IN_PROGRESS": case "DOING": badge.getStyleClass().add("status-progress"); break;
-                        default: badge.getStyleClass().add("status-todo"); break;
+                        case "COMPLETED":
+                        case "DONE":
+                            badge.getStyleClass().add("status-done");
+                            break;
+                        case "IN_PROGRESS":
+                        case "DOING":
+                            badge.getStyleClass().add("status-progress");
+                            break;
+                        default:
+                            badge.getStyleClass().add("status-todo");
+                            break;
                     }
                     HBox box = new HBox(badge);
                     box.setAlignment(Pos.CENTER_LEFT);
@@ -256,7 +294,9 @@ public class DashboardController implements Initializable {
                 notificationListView.setItems(notifications);
                 updateNotificationBadge();
             }
-        } catch (Exception e) { e.printStackTrace(); }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void markNotificationAsRead(Notification notification) {
@@ -272,7 +312,8 @@ public class DashboardController implements Initializable {
         }
     }
 
-    @FXML private void markAllAsRead() {
+    @FXML
+    private void markAllAsRead() {
         User user = UserSession.getUser();
         if (user != null && notifications != null) {
             notifications.forEach(notification -> {
@@ -286,14 +327,16 @@ public class DashboardController implements Initializable {
         }
     }
 
-    @FXML private void clearAllNotifications() {
+    @FXML
+    private void clearAllNotifications() {
         if (notifications != null) {
             notifications.clear();
             updateNotificationBadge();
         }
     }
 
-    @FXML private void viewAllNotifications() {
+    @FXML
+    private void viewAllNotifications() {
         closeNotificationPanel();
         System.out.println("View all notifications clicked");
     }
@@ -318,26 +361,80 @@ public class DashboardController implements Initializable {
     private void loadDashboardData() {
         try {
             User user = UserSession.getUser();
-            if (user == null) { dashboardLabel.setText("Session Expired"); return; }
+            if (user == null) {
+                dashboardLabel.setText("Session Expired");
+                return;
+            }
             dashboardLabel.setText("Overview");
             List<Task> tasks = taskService.getTasksByUser(user.getId());
             taskTable.setItems(FXCollections.observableArrayList(tasks));
             List<Task> sharedTasks = taskService.getSharedTasks(user.getId());
             sharedTasksTable.setItems(FXCollections.observableArrayList(sharedTasks));
             updateStatistics(tasks);
-        } catch (Exception e) { e.printStackTrace(); }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
+    /*
+========================================
+US-16 / US-17 / US-18 Analytics Engine
+Random simulated productivity data
+========================================
+*/
     private void updateStatistics(List<Task> tasks) {
+
         int total = tasks.size();
-        long inProgress = tasks.stream().filter(t -> "IN_PROGRESS".equalsIgnoreCase(t.getStatus()) || "DOING".equalsIgnoreCase(t.getStatus())).count();
-        long completed = tasks.stream().filter(t -> "COMPLETED".equalsIgnoreCase(t.getStatus()) || "DONE".equalsIgnoreCase(t.getStatus())).count();
+
+        long inProgress = tasks.stream()
+                .filter(t -> "IN_PROGRESS".equalsIgnoreCase(t.getStatus())
+                        || "DOING".equalsIgnoreCase(t.getStatus()))
+                .count();
+
+        long completed = tasks.stream()
+                .filter(t -> "COMPLETED".equalsIgnoreCase(t.getStatus())
+                        || "DONE".equalsIgnoreCase(t.getStatus()))
+                .count();
+
+        // === US-16: Simulated time tracking ===
+        int totalMinutes = tasks.stream()
+                .mapToInt(t -> 10 + random.nextInt(120)) // 10–130 min per task
+                .sum();
+
+        // === US-17: Productivity metrics ===
+        int avgMinutes = total == 0 ? 0 : totalMinutes / total;
+
+        // === Update UI ===
         totalTasksLabel.setText(String.valueOf(total));
         inProgressLabel.setText(String.valueOf(inProgress));
         completedLabel.setText(String.valueOf(completed));
+
+        timeSpentLabel.setText(totalMinutes + " min");
+        avgTimeLabel.setText(avgMinutes + " min");
+
+        // === US-18: Trend simulation ===
+        simulateTrend(tasks);
     }
 
-    @FXML private void logout() {
+    private void simulateTrend(List<Task> tasks) {
+
+        trendChart.getData().clear();
+
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        series.setName("Productivity");
+
+        Random random = new Random();
+
+        for (int day = 1; day <= 7; day++) {
+            int minutes = 40 + random.nextInt(120);
+            series.getData().add(new XYChart.Data<>("Day " + day, minutes));
+        }
+
+        trendChart.getData().add(series);
+    }
+
+    @FXML
+    private void logout() {
         try {
             UserSession.clear();
             for (Window window : List.copyOf(Window.getWindows())) window.hide();
@@ -347,10 +444,13 @@ public class DashboardController implements Initializable {
             loginStage.setTitle("Login");
             loginStage.setScene(new Scene(root));
             loginStage.show();
-        } catch (Exception e) { e.printStackTrace(); }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    @FXML private void showCalendar() {
+    @FXML
+    private void showCalendar() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/CalendarView.fxml"));
             Parent root = loader.load();
@@ -360,7 +460,9 @@ public class DashboardController implements Initializable {
             calendarStage.initOwner(dashboardLabel.getScene().getWindow());
             calendarStage.setResizable(true);
             calendarStage.show();
-        } catch (IOException e) { e.printStackTrace(); }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void mytasks() {
@@ -371,8 +473,13 @@ public class DashboardController implements Initializable {
             stage.setTitle("My Tasks");
             stage.setScene(new Scene(root));
             stage.show();
-        } catch (Exception e) { e.printStackTrace(); }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    @FXML private void handlePanelClick(MouseEvent event) { event.consume(); }
+    @FXML
+    private void handlePanelClick(MouseEvent event) {
+        event.consume();
+    }
 }

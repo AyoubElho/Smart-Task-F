@@ -54,6 +54,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="38tlnTy9j88RZyhUsTOgPhJd3l2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -83,14 +86,17 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\model" />
+      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\controller" />
+      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\dao" />
+      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\service" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\resources\styles" />
-      <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\resources\views" />
-      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java" />
-      <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\java\com\example\smarttask_frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\dao" />
+      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\service" />
+      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\controller" />
+      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\model" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\java\com\example\smarttask_frontend" />
-      <recent name="C:\Users\ayoub\IdeaProjects\project_smartTask\smarttask-backend-jdbc\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -242,6 +248,8 @@
       <workItem from="1770503684522" duration="28000" />
       <workItem from="1770546317896" duration="65000" />
       <workItem from="1770546405059" duration="181000" />
+      <workItem from="1770546589903" duration="1260000" />
+      <workItem from="1770547892912" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="javafx-jdbc">
       <option name="closed" value="true" />
