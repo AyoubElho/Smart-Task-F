@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c49f448e-0a55-4190-8ed6-03a748cddc74" name="Changes" comment="starte of the project" />
+    <list default="true" id="c49f448e-0a55-4190-8ed6-03a748cddc74" name="Changes" comment="starte of the project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +73,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ayoub/Desktop/smart-task/frontend/src/main/java/com/example/smarttask_frontend/tasks",
+    "last_opened_file_path": "C:/Users/ayoub/Desktop/smart-task/frontend/src/main/java/com/example/smarttask_frontend/entity",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -83,17 +85,17 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\java\com\example\smarttask_frontend\entity" />
+      <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\java\com\example\smarttask_frontend" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\java\com\example\smarttask_frontend\tasks" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\model" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\controller" />
-      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\dao" />
-      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\dao" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\service" />
-      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\controller" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\model" />
+      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\dao" />
+      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\controller" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\java\com\example\smarttask_frontend" />
     </key>
   </component>
@@ -248,7 +250,7 @@
       <workItem from="1770546405059" duration="181000" />
       <workItem from="1770546589903" duration="1260000" />
       <workItem from="1770547892912" duration="5000" />
-      <workItem from="1770738914502" duration="570000" />
+      <workItem from="1770738914502" duration="1818000" />
     </task>
     <task id="LOCAL-00001" summary="javafx-jdbc">
       <option name="closed" value="true" />

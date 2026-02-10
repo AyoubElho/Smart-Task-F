@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.smarttask_frontend.subtasks.controller.SubtaskController"
+      stylesheets="@../styles/subtasks.css"
+      prefWidth="500" prefHeight="450">
+
+    <Label text="Subtasks" styleClass="header-title"/>
+
+    <TableView fx:id="subtaskTable" VBox.vgrow="ALWAYS" styleClass="custom-table">
+        <columns>
+            <TableColumn fx:id="statusCol" text="Done" prefWidth="50" resizable="false" sortable="false"/>
+
+            <TableColumn fx:id="titleCol" text="Task Title" prefWidth="300"/>
+
+            <TableColumn fx:id="actionCol" text="" prefWidth="60" resizable="false" sortable="false"/>
+        </columns>
+
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+
+    <HBox spacing="10" styleClass="add-box">
+        <TextField fx:id="subtaskField" promptText="Enter new subtask..." HBox.hgrow="ALWAYS"/>
+        <Button text="Add" fx:id="addButton" styleClass="primary-btn"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT" styleClass="actions-box">
+        <Button text="Close" fx:id="closeButton"/>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.smarttask_frontend.tasks.controller.CreateTaskController"
+      spacing="20"
+      prefWidth="450"
+      styleClass="form-container"
+      stylesheets="@../styles/createTask.css"> <padding>
+    <Insets top="30" right="30" bottom="30" left="30"/>
+</padding>
+
+    <Label text="Create New Task" styleClass="form-title"/>
+
+    <VBox spacing="5">
+        <Label text="Task Title" styleClass="field-label"/>
+        <TextField fx:id="titleField" promptText="e.g., Update Client Report" styleClass="input-field"/>
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="Description" styleClass="field-label"/>
+        <TextArea fx:id="descriptionField" promptText="Add details..." prefRowCount="4" styleClass="input-field"/>
+    </VBox>
+
+    <HBox spacing="20">
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Due Date" styleClass="field-label"/>
+            <DatePicker fx:id="dueDatePicker" maxWidth="Infinity" styleClass="input-field"/>
+        </VBox>
+
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Priority" styleClass="field-label"/>
+            <ComboBox fx:id="priorityBox" maxWidth="Infinity" styleClass="input-field">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Low"/>
+                        <String fx:value="Medium"/>
+                        <String fx:value="High"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </VBox>
+    </HBox>
+
+    <Region VBox.vgrow="ALWAYS"/> <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Cancel"  styleClass="secondary-button"/>
+        <Button text="Save Task" onAction="#save" styleClass="primary-button"/>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,96 @@
+/* === Create Task Form Styling === */
+
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
+}
+
+/* Main Container */
+.form-container {
+    -fx-background-color: white;
+    -fx-border-color: #e5e7eb; /* Light border */
+    -fx-border-width: 1;
+}
+
+/* Title Styling */
+.form-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827; /* Dark almost black */
+    -fx-padding: 0 0 10 0; /* Space below title */
+}
+
+/* Small Labels above inputs */
+.field-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6b7280; /* Cool Grey */
+}
+
+/* Unified Input Styling (Text, Date, Combo) */
+.input-field,
+.date-picker .text-field,
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 10;
+    -fx-font-size: 14px;
+    -fx-text-fill: #374151;
+}
+
+/* Fix specific alignment for Text Area & Field */
+.text-area, .text-field {
+    -fx-padding: 8;
+}
+
+/* Input Focus State - The Blue Glow */
+.input-field:focused,
+.text-area:focused,
+.date-picker:focused .text-field,
+.combo-box:focused {
+    -fx-border-color: #2563eb; /* Primary Blue */
+    -fx-effect: dropshadow(three-pass-box, rgba(37, 99, 235, 0.2), 5, 0, 0, 0);
+}
+
+/* === Buttons === */
+
+/* Cancel Button */
+.secondary-button {
+    -fx-background-color: white;
+    -fx-text-fill: #374151;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 16;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #f3f4f6;
+    -fx-border-color: #9ca3af;
+}
+
+/* Save Button */
+.primary-button {
+    -fx-background-color: #2563eb; /* Corporate Blue */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(37, 99, 235, 0.3), 8, 0, 0, 3);
+}
+
+.primary-button:hover {
+    -fx-background-color: #1d4ed8; /* Darker Blue on Hover */
+}
+
+/* === Fix DatePicker Icon === */
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+}
+.date-picker .arrow-button .arrow {
+    -fx-background-color: #6b7280;
+}
