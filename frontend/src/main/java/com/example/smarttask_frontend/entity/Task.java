@@ -2,6 +2,7 @@ package com.example.smarttask_frontend.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -13,9 +14,7 @@ public class Task {
     private Priority priority;
     private String status;
     private List<SubTask> subTasks;
-    // who shared this task with me
-
-
+    
     private LocalDateTime createdAt;
     private LocalDateTime dueDate;
 
@@ -24,6 +23,9 @@ public class Task {
 
     // 🔥 FOR UI DISPLAY
     private String categoryName;
+
+    // ✅ NEW: List of IDs this task depends on
+    private List<Long> dependencyIds = new ArrayList<>();
 
     public Task() {}
 
@@ -107,5 +109,12 @@ public class Task {
         this.categoryName = categoryName;
     }
 
+    // ✅ NEW GETTERS & SETTERS
+    public List<Long> getDependencyIds() {
+        return dependencyIds;
+    }
 
+    public void setDependencyIds(List<Long> dependencyIds) {
+        this.dependencyIds = dependencyIds;
+    }
 }

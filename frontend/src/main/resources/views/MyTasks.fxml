@@ -12,9 +12,7 @@
     <top>
         <HBox spacing="15" alignment="CENTER_LEFT" styleClass="header-bar">
             <Label text="My Tasks" styleClass="header-title"/>
-
             <Region HBox.hgrow="ALWAYS"/>
-
             <Button text="✨ AI Generate" styleClass="button, ai-button" onAction="#aiGenerate"/>
             <Button text="+ Add Task" styleClass="button, add-button" onAction="#createTask"/>
         </HBox>
@@ -23,7 +21,6 @@
     <center>
         <SplitPane dividerPositions="0.70">
 
-            <!-- LEFT SIDE: TABPANE -->
             <TabPane tabClosingPolicy="UNAVAILABLE">
 
                 <Tab text="My Tasks">
@@ -42,6 +39,9 @@
                                 <TableColumn fx:id="categoryColumn" text="Category"/>
                                 <TableColumn fx:id="dueDateColumn" text="Due Date"/>
                                 <TableColumn fx:id="statusColumn" text="Status"/>
+                                
+                                <TableColumn fx:id="dependenciesColumn" text="Depends On" minWidth="120"/>
+                                
                                 <TableColumn fx:id="subTasksColumn" text="" maxWidth="80"/>
                                 <TableColumn fx:id="shareColumn" text="" maxWidth="80"/>
                             </columns>
@@ -65,6 +65,9 @@
                                 <TableColumn fx:id="sharedCategoryColumn" text="Category"/>
                                 <TableColumn fx:id="sharedDueDateColumn" text="Due Date"/>
                                 <TableColumn fx:id="sharedStatusColumn" text="Status"/>
+                                
+                                <TableColumn fx:id="sharedDependenciesColumn" text="Depends On" minWidth="120"/>
+                                
                                 <TableColumn fx:id="sharedSubTasksColumn" text=""/>
                             </columns>
                         </TableView>
@@ -73,26 +76,16 @@
 
             </TabPane>
 
-            <!-- RIGHT SIDE: ONE GLOBAL COMMENT SIDEBAR -->
             <VBox spacing="15" styleClass="comment-panel">
                 <padding>
                     <Insets top="20" right="20" bottom="20" left="20"/>
                 </padding>
-
                 <Label text="Comments" styleClass="section-title"/>
-
                 <ListView fx:id="commentList" VBox.vgrow="ALWAYS"/>
-
                 <HBox spacing="10" alignment="CENTER">
                     <Button text="📎" onAction="#attachFile" styleClass="button attach-button"/>
-
-                    <TextField fx:id="commentField"
-                               HBox.hgrow="ALWAYS"
-                               promptText="Write a comment..."/>
-
-                    <Button text="Send"
-                            onAction="#sendComment"
-                            styleClass="button"/>
+                    <TextField fx:id="commentField" HBox.hgrow="ALWAYS" promptText="Write a comment..."/>
+                    <Button text="Send" onAction="#sendComment" styleClass="button"/>
                 </HBox>
             </VBox>
 

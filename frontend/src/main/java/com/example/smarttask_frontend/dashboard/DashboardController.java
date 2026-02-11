@@ -1,5 +1,4 @@
 package com.example.smarttask_frontend.dashboard;
-
 import com.example.smarttask_frontend.aiClient.AIClient;
 import com.example.smarttask_frontend.entity.Task;
 import com.example.smarttask_frontend.entity.User;
@@ -80,6 +79,9 @@ public class DashboardController implements Initializable {
     private LineChart<String, Number> trendChart;
     @FXML
     private Label aiInsightLabel;
+    
+
+
     @FXML
     private Button aiButton;
     @FXML
@@ -130,9 +132,13 @@ public class DashboardController implements Initializable {
                 loadNotifications();
             });
         });
+        
 
         notificationService.connectWebSocket();
     }
+    
+
+    
 
     private void setupTableColumns() {
         // --- RECENT TASKS ---

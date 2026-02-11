@@ -9,7 +9,7 @@
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.smarttask_frontend.dashboard.DashboardController"
-            stylesheets="@../../../../../../github/front/styles/dashboard.css"
+            stylesheets="@../styles/dashboard.css"
             prefWidth="1100" prefHeight="750">
 
     <top>

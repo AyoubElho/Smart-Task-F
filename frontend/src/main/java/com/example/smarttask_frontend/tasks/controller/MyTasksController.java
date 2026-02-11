@@ -33,6 +33,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+
 
 public class MyTasksController implements Initializable {
 
@@ -45,6 +47,11 @@ public class MyTasksController implements Initializable {
     @FXML private TableColumn<Task, String> sharedStatusColumn;
     @FXML private TableColumn<Task, Void>   sharedSubTasksColumn; // NEW
     @FXML private TableColumn<Task, String> sharedByColumn;
+    @FXML
+    private TableColumn<Task, String> dependenciesColumn;
+    
+    @FXML
+    private TableColumn<Task, String> sharedDependenciesColumn;
 
     // --- Main Table Injectables ---
     @FXML private TableView<Task> taskTable;
@@ -83,6 +90,11 @@ public class MyTasksController implements Initializable {
 
         loadTasks();
         loadSharedTasks();
+        setupDependencyColumn(dependenciesColumn, taskTable);
+        
+        // Note: For shared tasks, we might only know the ID, 
+        // if the dependent task isn't in the list, we show the ID.
+        setupDependencyColumn(sharedDependenciesColumn, sharedTasksTable);
 
         // Load Users for Comments
         List<User> users = userService.getUsers();
@@ -112,6 +124,35 @@ public class MyTasksController implements Initializable {
         sharedDueDateColumn.setPrefWidth(120);
         sharedStatusColumn.setPrefWidth(140);
         sharedSubTasksColumn.setPrefWidth(80);
+    }
+    
+    private void setupDependencyColumn(TableColumn<Task, String> column, TableView<Task> sourceTable) {
+        column.setCellValueFactory(cellData -> {
+            Task task = cellData.getValue();
+            List<Long> depIds = task.getDependencyIds();
+
+            if (depIds == null || depIds.isEmpty()) {
+                return new SimpleStringProperty("None"); // or ""
+            }
+
+            // Convert List<Long> IDs to String Titles
+            String names = depIds.stream()
+                .map(id -> getTaskTitleById(id, sourceTable))
+                .collect(Collectors.joining(", "));
+
+            return new SimpleStringProperty(names);
+        });
+    }
+
+    private String getTaskTitleById(Long id, TableView<Task> table) {
+        if (table.getItems() == null) return "ID: " + id;
+
+        // Search in the current table items
+        return table.getItems().stream()
+                .filter(t -> t.getId().equals(id))
+                .map(Task::getTitle)
+                .findFirst()
+                .orElse("ID: " + id); // Fallback if task isn't loaded
     }
 
     // ========================= MAIN TABLE SETUP =========================
@@ -303,7 +344,6 @@ public class MyTasksController implements Initializable {
         ws.connect();
     }
 
-    // ... loadComments, sendComment, openSubtasksWindow, openShareTaskDialog, aiGenerate, etc. remain the same ...
 
     private void loadComments(Long taskId) {
         System.out.println("Loading comments for task: " + taskId);

@@ -7,6 +7,9 @@ import com.example.smarttask_frontend.tasks.service.TaskService;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+
+import java.util.List;
 
 public class CreateTaskController {
 
@@ -22,13 +25,63 @@ public class CreateTaskController {
     @FXML
     private ComboBox<Priority> priorityBox;
 
-    private final TaskService taskService = new TaskService();
+    // ✅ NEW: ListView to select multiple dependent tasks
+    @FXML
+    private ListView<Task> dependencyListView;
 
-    // ✅ Called automatically by JavaFX
+    private final TaskService taskService = new TaskService();
+    private boolean created = false;
+
     @FXML
     public void initialize() {
+        // 1. Setup Priority Box
         priorityBox.getItems().setAll(Priority.values());
-        priorityBox.setValue(Priority.LOW); // default
+        priorityBox.setValue(Priority.LOW);
+
+        // 2. Setup Dependency List
+        setupDependencyList();
+    }
+
+    private void setupDependencyList() {
+        // Enable multiple selection (Ctrl+Click or Command+Click)
+        dependencyListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+        // Custom Cell Factory to display Task Titles instead of object hash codes
+        dependencyListView.setCellFactory(new Callback<>() {
+            @Override
+            public ListCell<Task> call(ListView<Task> param) {
+                return new ListCell<>() {
+                    @Override
+                    protected void updateItem(Task item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty || item == null) {
+                            setText(null);
+                        } else {
+                            // Display format: "Title (Status)"
+                            setText(item.getTitle() + " (" + item.getStatus() + ")");
+                        }
+                    }
+                };
+            }
+        });
+
+        // Load existing tasks from the server to populate the list
+        loadExistingTasks();
+    }
+
+    private void loadExistingTasks() {
+        try {
+            Long userId = UserSession.getUserId();
+            List<Task> existingTasks = taskService.getTasksByUser(userId);
+            dependencyListView.getItems().setAll(existingTasks);
+        } catch (Exception e) {
+            e.printStackTrace();
+            showError("Failed to load existing tasks for dependencies.");
+        }
+    }
+
+    public boolean isCreated() {
+        return created;
     }
 
     @FXML
@@ -43,18 +96,41 @@ public class CreateTaskController {
             return;
         }
 
+        // 1. Create the Task Object
         Task task = new Task();
         task.setTitle(titleField.getText());
         task.setDescription(descriptionField.getText());
         task.setDueDate(dueDatePicker.getValue().atStartOfDay());
-        task.setPriority(priorityBox.getValue()); // ✅ enum safe
+        task.setPriority(priorityBox.getValue()); // Ensure this matches your Enum type
 
-        Task created = taskService.createTask(task, UserSession.getUserId());
+        // 2. Send Create Request to Backend
+        Task createdTask = taskService.createTask(task, UserSession.getUserId());
 
-        if (created != null) {
+        if (createdTask != null) {
+            // 3. ✅ NEW: Save Dependencies
+            saveDependencies(createdTask.getId());
+            
+            created = true;
             close();
         } else {
             showError("Task could not be created");
+        }
+    }
+
+    private void saveDependencies(Long newTaskId) {
+        // Get all selected tasks from the ListView
+        List<Task> selectedDependencies = dependencyListView.getSelectionModel().getSelectedItems();
+        System.out.println(selectedDependencies);
+        if (selectedDependencies.isEmpty()) return;
+
+        System.out.println("Saving " + selectedDependencies.size() + " dependencies...");
+
+        for (Task dep : selectedDependencies) {
+            // Call the service method we added earlier to link them
+            boolean success = taskService.addDependency(newTaskId, dep.getId());
+            if (!success) {
+                System.err.println("Failed to link dependency: " + dep.getId());
+            }
         }
     }
 
@@ -64,8 +140,11 @@ public class CreateTaskController {
     }
 
     private void close() {
-        Stage stage = (Stage) titleField.getScene().getWindow();
-        stage.close();
+        // Get stage from any control
+        if (titleField.getScene() != null) {
+            Stage stage = (Stage) titleField.getScene().getWindow();
+            stage.close();
+        }
     }
 
     private void showError(String message) {

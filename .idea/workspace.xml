@@ -11,7 +11,21 @@
   <component name="ChangeListManager">
     <list default="true" id="c49f448e-0a55-4190-8ed6-03a748cddc74" name="Changes" comment="starte of the project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/styles/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/styles/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/dashboard/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/dashboard/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/dto/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/session/UserSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/session/UserSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/subtasks/controller/SubtaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/subtasks/controller/SubtaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/subtasks/service/SubTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/subtasks/service/SubTaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/CreateTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/CreateTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/MyTasksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/MyTasksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/ShareTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/ShareTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/CalendarView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/CalendarView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/CreateTaskView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/CreateTaskView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/DashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/DashboardView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/LoginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/LoginView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/MyTasks.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/MyTasks.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/ShareTaskView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/ShareTaskView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/Subtasks.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/Subtasks.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,28 +76,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.TestDB.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Tomcat Server.Tomcat 11.0.18.executor": "Run",
-    "Tomcat Server.Unnamed.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ayoub/Desktop/smart-task/frontend/src/main/java/com/example/smarttask_frontend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.TestDB.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 11.0.18.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ayoub/Desktop/smart-task/frontend/src/main/java/com/example/smarttask_frontend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\java\com\example\smarttask_frontend" />
@@ -117,13 +131,7 @@
     <configuration name="Tomcat 11.0.18" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.18" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="smarttask-backend-jdbc:war">
-          <settings>
-            <option name="CONTEXT_PATH" value="" />
-          </settings>
-        </artifact>
-      </deployment>
+      <deployment />
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="54318eca-243c-4c7a-9c05-9e08d8a25b72" />
       </server-settings>
@@ -252,6 +260,10 @@
       <workItem from="1770546589903" duration="1260000" />
       <workItem from="1770547892912" duration="5000" />
       <workItem from="1770738914502" duration="1818000" />
+      <workItem from="1770841189411" duration="13000" />
+      <workItem from="1770842980081" duration="7000" />
+      <workItem from="1770843079663" duration="392000" />
+      <workItem from="1770843552389" duration="652000" />
     </task>
     <task id="LOCAL-00001" summary="javafx-jdbc">
       <option name="closed" value="true" />
