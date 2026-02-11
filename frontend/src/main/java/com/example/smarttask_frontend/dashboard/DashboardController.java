@@ -1,5 +1,6 @@
 package com.example.smarttask_frontend.dashboard;
 
+import com.example.smarttask_frontend.aiClient.AIClient;
 import com.example.smarttask_frontend.entity.Task;
 import com.example.smarttask_frontend.entity.User;
 import com.example.smarttask_frontend.tasks.service.TaskService;
@@ -29,9 +30,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
-import java.util.Random;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class DashboardController implements Initializable {
 
@@ -73,10 +72,20 @@ public class DashboardController implements Initializable {
     @FXML
     private TableColumn<Task, String> sharedStatusColumn;
     // === Analytics labels ===
-    @FXML private Label timeSpentLabel;
-    @FXML private Label avgTimeLabel;
-    @FXML private LineChart<String, Number> trendChart;
-
+    @FXML
+    private Label timeSpentLabel;
+    @FXML
+    private Label avgTimeLabel;
+    @FXML
+    private LineChart<String, Number> trendChart;
+    @FXML
+    private Label aiInsightLabel;
+    @FXML
+    private Button aiButton;
+    @FXML
+    private Label navUserNameLabel;
+    @FXML
+    private Label navUserAvatarLabel;
     // Notification elements
     @FXML
     private StackPane notificationContainer;
@@ -94,7 +103,14 @@ public class DashboardController implements Initializable {
     private final TaskService taskService = new TaskService();
     private final NotificationService notificationService = new NotificationService();
     private ObservableList<Notification> notifications = FXCollections.observableArrayList();
-
+    private String fullAdvice = "";
+    private List<String> adviceList = new ArrayList<>();
+    private int adviceIndex = 0;
+    private static final String[] AVATAR_COLORS = {
+            "#e57373", "#f06292", "#ba68c8", "#9575cd", "#7986cb",
+            "#64b5f6", "#4dd0e1", "#4db6ac", "#81c784", "#aed581",
+            "#ffb74d", "#ff8a65", "#a1887f", "#90a4ae"
+    };
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         setupTableColumns();
@@ -106,7 +122,7 @@ public class DashboardController implements Initializable {
 
         // Initial load
         loadNotifications();
-
+        loadUserProfile();
         notificationService.setNotificationListener(notification -> {
             // FIX 2: WRAP IN PLATFORM.RUNLATER (Critical for WebSockets)
             Platform.runLater(() -> {
@@ -124,23 +140,41 @@ public class DashboardController implements Initializable {
         priorityColumn.setCellValueFactory(new PropertyValueFactory<>("priority"));
         dueDateColumn.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        categoryColumn.setCellValueFactory(cell -> new SimpleStringProperty(
-                cell.getValue().getCategoryName() != null ? cell.getValue().getCategoryName() : "General"
-        ));
+        categoryColumn.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getCategoryName() != null ? cell.getValue().getCategoryName() : "General"));
 
         // --- SHARED TASKS ---
         sharedTitleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         sharedPriorityColumn.setCellValueFactory(new PropertyValueFactory<>("priority"));
         sharedDueDateColumn.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
         sharedStatusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        sharedCategoryColumn.setCellValueFactory(cell -> new SimpleStringProperty(
-                cell.getValue().getCategoryName() != null ? cell.getValue().getCategoryName() : "General"
-        ));
+        sharedCategoryColumn.setCellValueFactory(cell -> new SimpleStringProperty(cell.getValue().getCategoryName() != null ? cell.getValue().getCategoryName() : "General"));
 
         setupStatusCellFactory(statusColumn);
         setupStatusCellFactory(sharedStatusColumn);
     }
+    private String getColorForUser(String username) {
+        if (username == null || username.isEmpty()) return "#4285f4";
+        int index = Math.abs(username.hashCode()) % AVATAR_COLORS.length;
+        return AVATAR_COLORS[index];
+    }
+    private void loadUserProfile() {
+        User user = UserSession.getUser();
+        if (user != null) {
+            // Set Username
+            navUserNameLabel.setText(user.getUsername());
 
+            // Set Avatar Initial
+            String initial = "";
+            if (user.getUsername() != null && !user.getUsername().isEmpty()) {
+                initial = user.getUsername().substring(0, 1).toUpperCase();
+            }
+            navUserAvatarLabel.setText(initial);
+
+            // Set Avatar Color
+            String color = getColorForUser(user.getUsername());
+            navUserAvatarLabel.setStyle("-fx-background-color: " + color + ";");
+        }
+    }
     private void setupStatusCellFactory(TableColumn<Task, String> column) {
         column.setCellFactory(col -> new TableCell<>() {
             @Override
@@ -386,19 +420,12 @@ Random simulated productivity data
 
         int total = tasks.size();
 
-        long inProgress = tasks.stream()
-                .filter(t -> "IN_PROGRESS".equalsIgnoreCase(t.getStatus())
-                        || "DOING".equalsIgnoreCase(t.getStatus()))
-                .count();
+        long inProgress = tasks.stream().filter(t -> "IN_PROGRESS".equalsIgnoreCase(t.getStatus()) || "DOING".equalsIgnoreCase(t.getStatus())).count();
 
-        long completed = tasks.stream()
-                .filter(t -> "COMPLETED".equalsIgnoreCase(t.getStatus())
-                        || "DONE".equalsIgnoreCase(t.getStatus()))
-                .count();
+        long completed = tasks.stream().filter(t -> "COMPLETED".equalsIgnoreCase(t.getStatus()) || "DONE".equalsIgnoreCase(t.getStatus())).count();
 
         // === US-16: Simulated time tracking ===
-        int totalMinutes = tasks.stream()
-                .mapToInt(t -> 10 + random.nextInt(120)) // 10–130 min per task
+        int totalMinutes = tasks.stream().mapToInt(t -> 10 + random.nextInt(120)) // 10–130 min per task
                 .sum();
 
         // === US-17: Productivity metrics ===
@@ -482,4 +509,63 @@ Random simulated productivity data
     private void handlePanelClick(MouseEvent event) {
         event.consume();
     }
+
+    @FXML
+    private void getAIInsights() {
+
+        // If we already have tips → show next one
+        if (!adviceList.isEmpty()) {
+            showNextAdvice();
+            return;
+        }
+
+        aiInsightLabel.setText("Generating AI advice...");
+
+        new Thread(() -> {
+            try {
+                User user = UserSession.getUser();
+                String fullAdvice = AIClient.getInsights(user);
+
+                // split into sentences or numbered tips
+                adviceList = Arrays.stream(fullAdvice.split("\\n|\\."))
+                        .map(String::trim)
+                        .filter(s -> !s.isEmpty())
+                        .toList();
+
+                adviceIndex = 0;
+
+                Platform.runLater(this::showNextAdvice);
+
+            } catch (Exception e) {
+                Platform.runLater(() ->
+                        aiInsightLabel.setText("Failed to load AI advice.")
+                );
+                e.printStackTrace();
+            }
+        }).start();
+    }
+
+    private void showFullAdvice() {
+        if (fullAdvice == null || fullAdvice.isEmpty()) return;
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("AI Productivity Insight");
+        alert.setHeaderText("Full Advice");
+        alert.setContentText(fullAdvice);
+        alert.showAndWait();
+    }
+
+    @FXML
+    private void showNextAdvice() {
+        if (adviceList.isEmpty()) return;
+
+        aiInsightLabel.setText(adviceList.get(adviceIndex));
+
+        adviceIndex++;
+        if (adviceIndex >= adviceList.size()) {
+            adviceIndex = 0; // loop back
+        }
+    }
+
+
 }

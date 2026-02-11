@@ -9,14 +9,24 @@
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.smarttask_frontend.dashboard.DashboardController"
-            stylesheets="@../styles/dashboard.css"
+            stylesheets="@../../../../../../github/front/styles/dashboard.css"
             prefWidth="1100" prefHeight="750">
 
     <top>
-        <HBox styleClass="top-bar" spacing="20" alignment="CENTER_RIGHT">
+        <HBox styleClass="top-bar" spacing="20" alignment="CENTER_LEFT">
             <padding>
                 <Insets top="15" right="40" bottom="15" left="40"/>
             </padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label fx:id="navUserAvatarLabel"
+                       text="U"
+                       styleClass="nav-avatar-circle"/>
+
+                <Label fx:id="navUserNameLabel"
+                       text="Username"
+                       style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+            </HBox>
 
             <Region HBox.hgrow="ALWAYS"/>
 
@@ -70,6 +80,25 @@
                 <padding>
                     <Insets top="30" right="30" bottom="30" left="30"/>
                 </padding>
+                <VBox styleClass="card" spacing="10">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label text="🤖 AI Productivity Insight"
+                               style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+
+                        <Button fx:id="aiButton"
+                                text="Generate"
+                                onAction="#getAIInsights"
+                                style="-fx-background-color: #6366f1; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                    </HBox>
+
+
+                    <Label fx:id="aiInsightLabel"
+                           text="Click the button to generate AI advice."
+                           wrapText="true"
+                           lineSpacing="5"
+                           style="-fx-text-fill: #cbd5f5; -fx-font-size: 14px;"/>
+                </VBox>
 
                 <VBox spacing="5">
                     <Label fx:id="dashboardLabel"
