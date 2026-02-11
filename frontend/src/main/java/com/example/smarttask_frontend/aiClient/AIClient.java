@@ -16,9 +16,19 @@ import java.net.http.HttpResponse;
 
 public class AIClient {
 
+    private static final String INSIGHTS_URL = "http://localhost:9090/ai/insights";
     private static final String PARSE_URL = "http://localhost:9090/ai/parse";
+    private static final String CATEGORY_URL = "http://localhost:9090/ai/category";
+
+    private static final ObjectMapper mapper = new ObjectMapper()
+            .registerModule(new JavaTimeModule())
+            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+
+    private static final HttpClient client = HttpClient.newHttpClient();
 
 
+
+    // ================= PARSE TEXT → TASK =================
     public static Task parseTask(String text) throws Exception {
 
         HttpRequest request = HttpRequest.newBuilder()
@@ -35,4 +45,20 @@ public class AIClient {
         return mapper.readValue(response.body(), Task.class);
     }
 
+    // ================= CATEGORY SUGGESTION =================
+    public static CategoryDTO suggestCategory(Task task) throws Exception {
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(CATEGORY_URL))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(
+                        mapper.writeValueAsString(task)
+                ))
+                .build();
+
+        HttpResponse<String> response =
+                client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        return mapper.readValue(response.body(), CategoryDTO.class);
+    }
 }

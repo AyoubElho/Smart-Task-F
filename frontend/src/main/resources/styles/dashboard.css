@@ -438,3 +438,59 @@
     -fx-border-width: 0;
     -fx-border-color: transparent;
 }
+.nav-avatar-circle {
+    -fx-text-fill: white;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-weight: 800; /* Extra Bold for the letter */
+    -fx-font-size: 16px;
+
+    /* Shape & Size - Slightly larger for better visibility */
+    -fx-background-radius: 50%;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+
+    /* Center the letter perfectly */
+    -fx-alignment: center;
+    -fx-padding: 0;
+
+    /* A subtle semi-transparent white border to define the edge */
+    -fx-border-color: rgba(255, 255, 255, 0.15);
+    -fx-border-radius: 50%;
+    -fx-border-width: 2px;
+
+    /* A richer shadow for depth */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 8, 0, 0, 3);
+}
+
+/* Optional: Add a hover effect to make it feel interactive */
+.nav-avatar-circle:hover {
+    -fx-effect: dropshadow(gaussian, rgba(99, 102, 241, 0.6), 12, 0, 0, 0); /* Glow with your primary color */
+    -fx-border-color: white;
+    -fx-cursor: hand;
+}
+#navUserNameLabel {
+    -fx-text-fill: #ffffff; /* Pure White */
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;   /* Bold to stand out */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 2, 0, 0, 1); /* Subtle text shadow for readability */
+}
+.nav-avatar-circle {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+
+    /* Circle Shape */
+    -fx-background-radius: 50%;
+    -fx-min-width: 32px;
+    -fx-min-height: 32px;
+    -fx-max-width: 32px;
+    -fx-max-height: 32px;
+
+    /* Alignment */
+    -fx-alignment: center;
+
+    /* Shadow */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 3, 0, 0, 1);
+}
