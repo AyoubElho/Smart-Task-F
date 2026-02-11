@@ -215,14 +215,14 @@ public class TaskService {
         }
     }
 
-    public boolean addDependency(Long taskId, Long dependencyId) {
+    public boolean removeDependency(Long taskId, Long dependencyId) {
         try {
             String url = BASE_URL + taskId + "/dependency/" + dependencyId;
-            System.out.println("Adding Dependency: " + url);
+            System.out.println("Removing Dependency: " + url);
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
-                    .POST(HttpRequest.BodyPublishers.noBody())
+                    .DELETE()
                     .build();
 
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
@@ -234,14 +234,15 @@ public class TaskService {
         }
     }
 
-    public boolean removeDependency(Long taskId, Long dependencyId) {
+
+    public boolean addDependency(Long taskId, Long dependencyId) {
         try {
             String url = BASE_URL + taskId + "/dependency/" + dependencyId;
-            System.out.println("Removing Dependency: " + url);
+            System.out.println("Adding Dependency:" + url);
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
-                    .DELETE()
+                    .POST(HttpRequest.BodyPublishers.noBody())
                     .build();
 
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());

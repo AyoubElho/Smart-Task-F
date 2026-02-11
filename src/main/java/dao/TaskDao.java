@@ -32,7 +32,6 @@ public class TaskDao {
         return query(sql, userId);
     }
 
-    // ===================== SAVE (WITH CATEGORY) =====================
     public void save(Task task) {
 
         String sql = """
@@ -45,14 +44,14 @@ public class TaskDao {
 
         try (
                 Connection c = DBConnection.getConnection();
-                PreparedStatement ps = c.prepareStatement(sql)
+                // 🔥 CRITICAL FIX: Request generated keys
+                PreparedStatement ps = c.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)
         ) {
             ps.setString(1, task.getTitle());
             ps.setString(2, task.getDescription());
             ps.setString(3, task.getPriority().name());
             ps.setString(4, task.getStatus().name());
 
-            // due_date (nullable)
             if (task.getDueDate() != null)
                 ps.setTimestamp(5, Timestamp.valueOf(task.getDueDate()));
             else
@@ -61,19 +60,29 @@ public class TaskDao {
             ps.setTimestamp(6, Timestamp.valueOf(task.getCreatedAt()));
             ps.setLong(7, task.getUserId());
 
-            // 🔥 category_id (nullable)
             if (task.getCategoryId() != null)
                 ps.setLong(8, task.getCategoryId());
             else
                 ps.setNull(8, Types.BIGINT);
 
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+
+            // 🔥 CRITICAL FIX: Retrieve the ID
+            if (affectedRows > 0) {
+                try (ResultSet rs = ps.getGeneratedKeys()) {
+                    if (rs.next()) {
+                        long newId = rs.getLong(1);
+                        task.setId(newId); // <--- Update the object with the real DB ID
+                        System.out.println("Task saved with ID: " + newId);
+                    }
+                }
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
+    
     public void updateStatus(Long taskId, Status status) {
         execute("UPDATE task SET status = ? WHERE id = ?", status.name(), taskId);
     }
@@ -86,9 +95,45 @@ public class TaskDao {
         execute("INSERT INTO task_shared(task_id, user_id) VALUES (?, ?)", taskId, userId);
     }
 
-    // ===================== QUERY HELPER =====================
-    private List<Task> query(String sql, Object... params) {
+    // ===================== ✅ NEW: DEPENDENCY METHODS =====================
 
+    public void addDependency(Long taskId, Long dependencyId) {
+        // Check for self-dependency is done in Service, but good to be safe here too
+        if (taskId.equals(dependencyId)) return; 
+        
+        // Use IGNORE to avoid errors if duplicate exists
+        // Or standard INSERT if your DB throws error (handled by try-catch usually)
+        String sql = "INSERT INTO task_dependencies (task_id, depends_on_id) VALUES (?, ?)";
+        execute(sql, taskId, dependencyId);
+    }
+
+    public void removeDependency(Long taskId, Long dependencyId) {
+        String sql = "DELETE FROM task_dependencies WHERE task_id = ? AND depends_on_id = ?";
+        execute(sql, taskId, dependencyId);
+    }
+
+    private List<Long> getDependencyIds(Long taskId) {
+        List<Long> ids = new ArrayList<>();
+        String sql = "SELECT depends_on_id FROM task_dependencies WHERE task_id = ?";
+
+        try (Connection c = DBConnection.getConnection();
+             PreparedStatement ps = c.prepareStatement(sql)) {
+
+            ps.setLong(1, taskId);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    ids.add(rs.getLong("depends_on_id"));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ids;
+    }
+
+    // ===================== QUERY HELPER =====================
+    
+    private List<Task> query(String sql, Object... params) {
         List<Task> list = new ArrayList<>();
 
         try (
@@ -100,7 +145,6 @@ public class TaskDao {
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-
                 Task t = new Task();
                 t.setId(rs.getLong("id"));
                 t.setTitle(rs.getString("title"));
@@ -114,9 +158,11 @@ public class TaskDao {
                 t.setCreatedAt(rs.getTimestamp("created_at").toLocalDateTime());
                 t.setUserId(rs.getLong("user_id"));
 
-                // 🔥 category_id
                 Long categoryId = rs.getObject("category_id", Long.class);
                 t.setCategoryId(categoryId);
+
+                // ✅ NEW: Load Dependencies
+                t.setDependencyIds(getDependencyIds(t.getId()));
 
                 list.add(t);
             }

@@ -11,8 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c49f448e-0a55-4190-8ed6-03a748cddc74" name="Changes" comment="starte of the project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/aiClient/AIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/aiClient/AIClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/AIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/AIClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/dashboard/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/dashboard/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/entity/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/CreateTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/CreateTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/service/TaskService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +253,7 @@
       <workItem from="1770842980081" duration="7000" />
       <workItem from="1770843079663" duration="392000" />
       <workItem from="1770843552389" duration="1397000" />
-      <workItem from="1770849691543" duration="1206000" />
+      <workItem from="1770849691543" duration="1853000" />
     </task>
     <task id="LOCAL-00001" summary="javafx-jdbc">
       <option name="closed" value="true" />

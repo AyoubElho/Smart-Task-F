@@ -42,32 +42,6 @@ public class CreateTaskController {
         setupDependencyList();
     }
 
-    private void setupDependencyList() {
-        // Enable multiple selection (Ctrl+Click or Command+Click)
-        dependencyListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-
-        // Custom Cell Factory to display Task Titles instead of object hash codes
-        dependencyListView.setCellFactory(new Callback<>() {
-            @Override
-            public ListCell<Task> call(ListView<Task> param) {
-                return new ListCell<>() {
-                    @Override
-                    protected void updateItem(Task item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (empty || item == null) {
-                            setText(null);
-                        } else {
-                            // Display format: "Title (Status)"
-                            setText(item.getTitle() + " (" + item.getStatus() + ")");
-                        }
-                    }
-                };
-            }
-        });
-
-        // Load existing tasks from the server to populate the list
-        loadExistingTasks();
-    }
 
     private void loadExistingTasks() {
         try {
@@ -153,4 +127,32 @@ public class CreateTaskController {
         alert.setContentText(message);
         alert.show();
     }
+
+    private void setupDependencyList() {
+        // Enable multiple selection (Ctrl+Click or Command+Click)
+        dependencyListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+        // Custom Cell Factory to display Task Titles instead of object hash codes
+        dependencyListView.setCellFactory(new Callback<>() {
+            @Override
+            public ListCell<Task> call(ListView<Task> param) {
+                return new ListCell<>() {
+                    @Override
+                    protected void updateItem(Task item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty || item == null) {
+                            setText(null);
+                        } else {
+                            // Display format: "Title (Status)"
+                            setText(item.getTitle() + " (" + item.getStatus() + ")");
+                        }
+                    }
+                };
+            }
+        });
+
+        // Load existing tasks from the server to populate the list
+        loadExistingTasks();
+    }
+
 }

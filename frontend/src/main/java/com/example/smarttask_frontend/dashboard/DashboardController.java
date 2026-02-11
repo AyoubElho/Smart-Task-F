@@ -1,4 +1,5 @@
 package com.example.smarttask_frontend.dashboard;
+package com.example.smarttask_frontend.dashboard;
 import com.example.smarttask_frontend.aiClient.AIClient;
 import com.example.smarttask_frontend.entity.Task;
 import com.example.smarttask_frontend.entity.User;

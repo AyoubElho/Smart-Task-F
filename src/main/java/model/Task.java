@@ -1,6 +1,8 @@
 package model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Task {
 
@@ -14,6 +16,8 @@ public class Task {
 
     // relations by ID (JDBC way)
     private long userId;
+
+    private List<Long> dependencyIds = new ArrayList<>();
 
     // ✅ NEW: category relation (JDBC)
     private Long categoryId;
@@ -90,5 +94,12 @@ public class Task {
 
     public void setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
+    }
+    public List<Long> getDependencyIds() {
+        return dependencyIds;
+    }
+
+    public void setDependencyIds(List<Long> dependencyIds) {
+        this.dependencyIds = dependencyIds;
     }
 }

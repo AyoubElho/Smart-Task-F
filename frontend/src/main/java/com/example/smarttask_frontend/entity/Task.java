@@ -17,6 +17,8 @@ public class Task {
     
     private LocalDateTime createdAt;
     private LocalDateTime dueDate;
+    // ✅ NEW: List of IDs this task depends on
+    private List<Long> dependencyIds = new ArrayList<>();
 
     // 🔥 FROM BACKEND
     private Long categoryId;
@@ -24,8 +26,6 @@ public class Task {
     // 🔥 FOR UI DISPLAY
     private String categoryName;
 
-    // ✅ NEW: List of IDs this task depends on
-    private List<Long> dependencyIds = new ArrayList<>();
 
     public Task() {}
 

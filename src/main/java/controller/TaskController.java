@@ -10,7 +10,6 @@ import model.Task;
 import model.UpdateDueDateRequest;
 import service.TaskService;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
@@ -27,7 +26,6 @@ public class TaskController extends HttpServlet {
     // ========================= GET =========================
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
         String path = req.getPathInfo();
 
         if (path == null || path.equals("/")) {
@@ -52,7 +50,6 @@ public class TaskController extends HttpServlet {
             return;
         }
 
-        // /{id}
         Long id = Long.parseLong(path.substring(1));
         write(resp, taskService.findById(id));
     }
@@ -60,7 +57,6 @@ public class TaskController extends HttpServlet {
     // ========================= POST =========================
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
         String path = req.getPathInfo();
 
         if (path == null) {
@@ -69,39 +65,44 @@ public class TaskController extends HttpServlet {
             return;
         }
 
-        // /create-task/id/{userId}
-        // /create-task/id/{userId}
         if (path.startsWith("/create-task/id/")) {
-
             String userIdStr = path.substring("/create-task/id/".length());
-
             if (userIdStr.isEmpty()) {
                 resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 write(resp, "User ID is missing");
                 return;
             }
-
             Long userId = Long.parseLong(userIdStr);
-
             Task task = readBody(req, Task.class);
-
-            // 🔥 IMPORTANT: use returned task
             Task saved = taskService.createTask(task, userId);
-
             resp.setStatus(HttpServletResponse.SC_CREATED);
             write(resp, saved);
             return;
         }
 
-
-        // /{taskId}/share/{userId}
         if (path.matches("/\\d+/share/\\d+")) {
             String[] parts = path.split("/");
             Long taskId = Long.parseLong(parts[1]);
             Long userId = Long.parseLong(parts[3]);
-
             taskService.shareTask(taskId, userId);
             write(resp, "Task shared successfully!");
+            return;
+        }
+
+        // ✅ NEW: Add Dependency
+        // Format: /tasks/{taskId}/dependency/{dependencyId}
+        if (path.matches("/\\d+/dependency/\\d+")) {
+            String[] parts = path.split("/");
+            Long taskId = Long.parseLong(parts[1]);
+            Long dependencyId = Long.parseLong(parts[3]);
+
+            try {
+                taskService.addDependency(taskId, dependencyId);
+                write(resp, "Dependency added successfully");
+            } catch (Exception e) {
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                write(resp, e.getMessage());
+            }
             return;
         }
 
@@ -112,35 +113,51 @@ public class TaskController extends HttpServlet {
     // ========================= PUT =========================
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
         String path = req.getPathInfo();
-
         if (path == null) {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
 
-        // /{taskId}/status/{status}
         if (path.matches("/\\d+/status/\\w+")) {
             String[] parts = path.split("/");
             Long taskId = Long.parseLong(parts[1]);
             Status status = Status.valueOf(parts[3]);
-
             taskService.updateStatus(taskId, status);
             write(resp, "Status updated");
             return;
         }
 
-        // /{taskId}/due-date
         if (path.matches("/\\d+/due-date")) {
             String[] parts = path.split("/");
             Long taskId = Long.parseLong(parts[1]);
-
-            UpdateDueDateRequest body =
-                    readBody(req, UpdateDueDateRequest.class);
-
+            UpdateDueDateRequest body = readBody(req, UpdateDueDateRequest.class);
             taskService.updateDueDate(taskId, body.getDueDate());
             write(resp, "Due date updated");
+            return;
+        }
+
+        resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        write(resp, "Endpoint not found");
+    }
+
+    // ========================= ✅ NEW: DELETE =========================
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        String path = req.getPathInfo();
+        if (path == null) {
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
+
+        // Format: /tasks/{taskId}/dependency/{dependencyId}
+        if (path.matches("/\\d+/dependency/\\d+")) {
+            String[] parts = path.split("/");
+            Long taskId = Long.parseLong(parts[1]);
+            Long dependencyId = Long.parseLong(parts[3]);
+
+            taskService.removeDependency(taskId, dependencyId);
+            write(resp, "Dependency removed successfully");
             return;
         }
 
@@ -159,4 +176,3 @@ public class TaskController extends HttpServlet {
         resp.getWriter().write(gson.toJson(data));
     }
 }
-
