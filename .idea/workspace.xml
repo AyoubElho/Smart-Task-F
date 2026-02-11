@@ -11,21 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c49f448e-0a55-4190-8ed6-03a748cddc74" name="Changes" comment="starte of the project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/dashboard/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/dashboard/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/dto/Task.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/session/UserSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/session/UserSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/subtasks/controller/SubtaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/subtasks/controller/SubtaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/subtasks/service/SubTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/subtasks/service/SubTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/CreateTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/CreateTaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/MyTasksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/MyTasksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/ShareTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/ShareTaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/CalendarView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/CalendarView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/CreateTaskView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/CreateTaskView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/DashboardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/DashboardView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/LoginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/LoginView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/MyTasks.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/MyTasks.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/ShareTaskView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/ShareTaskView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/Subtasks.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/views/Subtasks.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/aiClient/AIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/aiClient/AIClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/AIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/AIClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,12 +35,12 @@
     &quot;assignee&quot;: &quot;oussamafelouach-etu-lgtm&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/AyoubElho/Smart-Task-F.git&quot;,
-    &quot;accountId&quot;: &quot;eed71254-0dae-4435-91a6-05d2070711db&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AyoubElho/Smart-Task-F",
+    "accountId": "eed71254-0dae-4435-91a6-05d2070711db"
   }
-}</component>
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -107,11 +94,11 @@
       <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\java\com\example\smarttask_frontend\entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\ai" />
+      <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\java\com\example\smarttask_frontend\aiClient" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\service" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\model" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\dao" />
-      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\controller" />
-      <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\resources\styles" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -263,7 +250,8 @@
       <workItem from="1770841189411" duration="13000" />
       <workItem from="1770842980081" duration="7000" />
       <workItem from="1770843079663" duration="392000" />
-      <workItem from="1770843552389" duration="652000" />
+      <workItem from="1770843552389" duration="1397000" />
+      <workItem from="1770849691543" duration="1206000" />
     </task>
     <task id="LOCAL-00001" summary="javafx-jdbc">
       <option name="closed" value="true" />

@@ -26,7 +26,23 @@ public class AIClient {
 
     private static final HttpClient client = HttpClient.newHttpClient();
 
+    // ================= INSIGHTS =================
+    public static String getInsights(User user) throws Exception {
 
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(INSIGHTS_URL))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(
+                        mapper.writeValueAsString(user)
+                ))
+                .build();
+
+        HttpResponse<String> response =
+                client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        JsonNode node = mapper.readTree(response.body());
+        return node.get("insight").asText();
+    }
 
     // ================= PARSE TEXT → TASK =================
     public static Task parseTask(String text) throws Exception {
