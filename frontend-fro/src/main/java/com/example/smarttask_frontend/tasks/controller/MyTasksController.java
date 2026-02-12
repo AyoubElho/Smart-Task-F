@@ -43,10 +43,8 @@ public class MyTasksController implements Initializable {
     @FXML private TableColumn<Task, String> sharedTitleColumn;
     @FXML private TableColumn<Task, String> sharedPriorityColumn;
     @FXML private TableColumn<Task, String> sharedCategoryColumn; // NEW
-    @FXML private TableColumn<Task, String> sharedDueDateColumn;
     @FXML private TableColumn<Task, String> sharedStatusColumn;
     @FXML private TableColumn<Task, Void>   sharedSubTasksColumn; // NEW
-    @FXML private TableColumn<Task, String> sharedByColumn;
     @FXML
     private TableColumn<Task, String> dependenciesColumn;
     
@@ -58,7 +56,6 @@ public class MyTasksController implements Initializable {
     @FXML private TableColumn<Task, String> titleColumn;
     @FXML private TableColumn<Task, String> priorityColumn;
     @FXML private TableColumn<Task, String> categoryColumn;
-    @FXML private TableColumn<Task, String> dueDateColumn;
     @FXML private TableColumn<Task, String> statusColumn;
     @FXML private TableColumn<Task, Void> subTasksColumn;
     @FXML private TableColumn<Task, Void> shareColumn;
@@ -66,6 +63,11 @@ public class MyTasksController implements Initializable {
     // --- Other UI ---
     @FXML private ListView<Comment> commentList;
     @FXML private TextField commentField;
+    @FXML private TableColumn<Task, String> startDateColumn;
+    @FXML private TableColumn<Task, String> endDateColumn;
+
+    @FXML private TableColumn<Task, String> sharedStartDateColumn;
+    @FXML private TableColumn<Task, String> sharedEndDateColumn;
 
     // --- Services & State ---
     private LiveCommentClient ws;
@@ -106,25 +108,28 @@ public class MyTasksController implements Initializable {
         setupSelectionListeners();
         setupWebSocket();
     }
-
     private void setupColumnWidths() {
-        // Main Table Weights
-        titleColumn.setPrefWidth(350);
-        priorityColumn.setPrefWidth(100);
-        categoryColumn.setPrefWidth(120);
-        dueDateColumn.setPrefWidth(120);
-        statusColumn.setPrefWidth(140);
-        subTasksColumn.setPrefWidth(80);
-        shareColumn.setPrefWidth(80);
 
-        // Shared Table Weights (Matches Main Table)
-        sharedTitleColumn.setPrefWidth(350);
-        sharedPriorityColumn.setPrefWidth(100);
-        sharedCategoryColumn.setPrefWidth(120);
-        sharedDueDateColumn.setPrefWidth(120);
-        sharedStatusColumn.setPrefWidth(140);
-        sharedSubTasksColumn.setPrefWidth(80);
+        // ================= MAIN TABLE =================
+        titleColumn.setPrefWidth(220);      // smaller
+        priorityColumn.setPrefWidth(90);
+        categoryColumn.setPrefWidth(110);
+        startDateColumn.setPrefWidth(130);
+        endDateColumn.setPrefWidth(130);
+        statusColumn.setPrefWidth(120);
+        subTasksColumn.setPrefWidth(70);
+        shareColumn.setPrefWidth(70);
+
+        // ================= SHARED TABLE =================
+        sharedTitleColumn.setPrefWidth(220);
+        sharedPriorityColumn.setPrefWidth(90);
+        sharedCategoryColumn.setPrefWidth(110);
+        sharedStartDateColumn.setPrefWidth(130);
+        sharedEndDateColumn.setPrefWidth(130);
+        sharedStatusColumn.setPrefWidth(120);
+        sharedSubTasksColumn.setPrefWidth(70);
     }
+
     
     private void setupDependencyColumn(TableColumn<Task, String> column, TableView<Task> sourceTable) {
         column.setCellValueFactory(cellData -> {
@@ -159,7 +164,8 @@ public class MyTasksController implements Initializable {
     private void setupMainTableColumns() {
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         priorityColumn.setCellValueFactory(new PropertyValueFactory<>("priority"));
-        dueDateColumn.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
+        startDateColumn.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
+        endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
 
         // Category Logic
         categoryColumn.setCellValueFactory(cell -> new SimpleStringProperty(
@@ -180,7 +186,8 @@ public class MyTasksController implements Initializable {
     private void setupSharedTableColumns() {
         sharedTitleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         sharedPriorityColumn.setCellValueFactory(new PropertyValueFactory<>("priority"));
-        sharedDueDateColumn.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
+        sharedStartDateColumn.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
+        sharedEndDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
 
         // 1. Category (Same logic as main)
         sharedCategoryColumn.setCellValueFactory(cell -> new SimpleStringProperty(
@@ -496,6 +503,8 @@ public class MyTasksController implements Initializable {
                     User user = UserSession.getUser();
 
                     Task task = AIClient.parseTask(input);
+
+                    // optional: category suggestion
                     CategoryDTO cat = AIClient.suggestCategory(task);
                     task.setCategoryName(cat.getName());
 
@@ -504,12 +513,14 @@ public class MyTasksController implements Initializable {
                     Platform.runLater(this::refreshTasks);
 
                 } catch (Exception e) {
-                    Platform.runLater(() -> showError("AI generation failed"));
+                    Platform.runLater(() ->
+                            showError("AI generation failed"));
                     e.printStackTrace();
                 }
             }).start();
         });
     }
+
     private void refreshTasks() {
         loadTasks();       // reload main table
         loadSharedTasks(); // reload shared table (optional but good)

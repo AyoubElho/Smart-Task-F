@@ -3,11 +3,8 @@ package com.example.smarttask_frontend.tasks.service;
 import com.example.smarttask_frontend.AppConfig;
 import com.example.smarttask_frontend.category.service.CategoryService;
 import com.example.smarttask_frontend.dto.UpdateDueDateRequest;
-import com.example.smarttask_frontend.tasks.service.NotificationService;
-
 import com.example.smarttask_frontend.entity.CategoryDTO;
 import com.example.smarttask_frontend.entity.Task;
-import com.example.smarttask_frontend.entity.User;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -21,9 +18,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class TaskService {
+
     private final CategoryService categoryService = new CategoryService();
     private final NotificationService notificationService = new NotificationService();
-
 
     private static final String BASE_URL =
             AppConfig.get("backend.base-url").endsWith("/")
@@ -36,12 +33,45 @@ public class TaskService {
             .registerModule(new JavaTimeModule())
             .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 
-    // ================= TASKS =================
+    // ================= GOOGLE =================
+
+    public void updateGoogleEventId(Long taskId, String eventId) {
+
+        try {
+            String url = BASE_URL + taskId + "/google-event/" + eventId;
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .PUT(HttpRequest.BodyPublishers.noBody())
+                    .build();
+
+            httpClient.send(request, HttpResponse.BodyHandlers.discarding());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // ================= LOAD TASKS =================
+    public List<Task> getSharedTasks(Long userId) {
+        try {
+            String url = BASE_URL + "shared/" + userId;
+            HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).GET().build();
+            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+            if (response.statusCode() == 200) {
+                return objectMapper.readValue(response.body(), new TypeReference<List<Task>>() {
+                });
+            }
+            throw new RuntimeException("Failed to load shared tasks");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return List.of();
+        }
+    }
 
     public List<Task> getTasksByUser(Long userId) throws Exception {
 
         String url = BASE_URL + "user/" + userId;
-        System.out.println("Calling: " + url);
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
@@ -51,39 +81,38 @@ public class TaskService {
         HttpResponse<String> response =
                 httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
-        if (response.statusCode() == 200) {
-
-            List<Task> tasks = objectMapper.readValue(
-                    response.body(),
-                    new TypeReference<List<Task>>() {}
-            );
-
-            // 🔥 RESOLVE CATEGORY NAME
-            for (Task task : tasks) {
-
-                if (task.getCategoryId() != null) {
-                    CategoryDTO category =
-                            categoryService.getCategoryById(task.getCategoryId());
-
-                    if (category != null) {
-                        task.setCategoryName(category.getName());
-                    } else {
-                        task.setCategoryName("General");
-                    }
-                } else {
-                    task.setCategoryName("General");
-                }
-            }
-
-            return tasks;
+        if (response.statusCode() != 200) {
+            throw new RuntimeException("Failed to load tasks");
         }
 
-        throw new RuntimeException(
-                "Failed to load tasks, status: " + response.statusCode());
+        List<Task> tasks = objectMapper.readValue(
+                response.body(),
+                new TypeReference<List<Task>>() {
+                }
+        );
+
+        // resolve category names
+        for (Task task : tasks) {
+
+            if (task.getCategoryId() != null) {
+                CategoryDTO category =
+                        categoryService.getCategoryById(task.getCategoryId());
+
+                task.setCategoryName(
+                        category != null ? category.getName() : "General"
+                );
+            } else {
+                task.setCategoryName("General");
+            }
+        }
+
+        return tasks;
     }
 
+    // ================= CREATE =================
 
     public Task createTask(Task task, Long userId) {
+
         try {
             String url = BASE_URL + "create-task/id/" + userId;
 
@@ -98,9 +127,6 @@ public class TaskService {
             HttpResponse<String> response =
                     httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
-            System.out.println("STATUS: " + response.statusCode());
-            System.out.println("BODY: " + response.body());
-
             if (response.statusCode() == 200 || response.statusCode() == 201) {
                 return objectMapper.readValue(response.body(), Task.class);
             }
@@ -109,16 +135,19 @@ public class TaskService {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            throw new RuntimeException("Create task failed");
         }
     }
 
-    public void updateDueDate(Long taskId, LocalDateTime newDueDate) {
+    // ================= UPDATE START =================
+
+    public void updateDueDate(Long taskId, LocalDateTime newStart) {
+
         try {
             String url = BASE_URL + taskId + "/due-date";
 
             UpdateDueDateRequest body =
-                    new UpdateDueDateRequest(newDueDate);
+                    new UpdateDueDateRequest(newStart);
 
             String json = objectMapper.writeValueAsString(body);
 
@@ -135,11 +164,41 @@ public class TaskService {
         }
     }
 
-    public void updateTaskStatus(Long taskId, String status) {
-        try {
-            status = status.toUpperCase(); // ✅ REQUIRED
+    // ================= UPDATE INTERVAL =================
 
-            String url = BASE_URL + taskId + "/status/" + status;
+    public void updateInterval(Long taskId,
+                               LocalDateTime start,
+                               LocalDateTime end) {
+
+        try {
+            String url = BASE_URL + taskId + "/interval";
+
+            UpdateIntervalRequest body =
+                    new UpdateIntervalRequest(start, end);
+
+
+            String json = objectMapper.writeValueAsString(body);
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .header("Content-Type", "application/json")
+                    .PUT(HttpRequest.BodyPublishers.ofString(json))
+                    .build();
+
+            httpClient.send(request, HttpResponse.BodyHandlers.discarding());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    // ================= STATUS =================
+
+    public void updateTaskStatus(Long taskId, String status) {
+
+        try {
+            String url = BASE_URL + taskId + "/status/" + status.toUpperCase();
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
@@ -153,79 +212,53 @@ public class TaskService {
         }
     }
 
+    // ================= SHARE =================
+
     public boolean shareTaskWithUser(Long taskId, Long userId, String taskTitle) {
+
         try {
             String url = BASE_URL + taskId + "/share/" + userId;
-            System.out.println("[TaskService] Sharing task: " + url);
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
                     .POST(HttpRequest.BodyPublishers.noBody())
                     .build();
 
-            HttpResponse<Void> response = httpClient.send(request, HttpResponse.BodyHandlers.discarding());
+            HttpResponse<Void> response =
+                    httpClient.send(request, HttpResponse.BodyHandlers.discarding());
 
             if (response.statusCode() == 200 || response.statusCode() == 204) {
-                // Create notification for the user being shared with
-                String message = String.format("Task '%s' has been shared with you", taskTitle);
-                boolean notificationCreated = notificationService.createNotification(userId, message);
-                
-                if (notificationCreated) {
-                    System.out.println("[TaskService] Notification created for user " + userId);
-                } else {
-                    System.out.println("[TaskService] Failed to create notification for user " + userId);
-                }
-                
+
+                notificationService.createNotification(
+                        userId,
+                        "Task '" + taskTitle + "' shared with you"
+                );
+
                 return true;
             }
 
-            return false;
-
         } catch (Exception e) {
-            System.err.println("[TaskService] Error sharing task: " + e.getMessage());
             e.printStackTrace();
-            return false;
         }
+
+        return false;
     }
 
-    public List<Task> getSharedTasks(Long userId) {
+    // ================= DEPENDENCIES =================
+
+    public boolean addDependency(Long taskId, Long dependencyId) {
+
         try {
-            String url = BASE_URL + "shared/" + userId;
+            String url = BASE_URL + taskId + "/dependency/" + dependencyId;
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
-                    .GET()
+                    .POST(HttpRequest.BodyPublishers.noBody())
                     .build();
 
             HttpResponse<String> response =
                     httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
-            if (response.statusCode() == 200) {
-                return objectMapper.readValue(
-                        response.body(),
-                        new TypeReference<List<Task>>() {}
-                );
-            }
-
-            throw new RuntimeException("Failed to load shared tasks");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            return List.of();
-        }
-    }
-
-    public boolean removeDependency(Long taskId, Long dependencyId) {
-        try {
-            String url = BASE_URL + taskId + "/dependency/" + dependencyId;
-            System.out.println("Removing Dependency: " + url);
-
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(url))
-                    .DELETE()
-                    .build();
-
-            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
             return response.statusCode() == 200;
 
         } catch (Exception e) {
@@ -234,18 +267,19 @@ public class TaskService {
         }
     }
 
+    public boolean removeDependency(Long taskId, Long dependencyId) {
 
-    public boolean addDependency(Long taskId, Long dependencyId) {
         try {
             String url = BASE_URL + taskId + "/dependency/" + dependencyId;
-            System.out.println("Adding Dependency:" + url);
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
-                    .POST(HttpRequest.BodyPublishers.noBody())
+                    .DELETE()
                     .build();
 
-            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+            HttpResponse<String> response =
+                    httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
             return response.statusCode() == 200;
 
         } catch (Exception e) {

@@ -29,16 +29,39 @@
     </VBox>
 
     <HBox spacing="20">
+
         <VBox spacing="5" HBox.hgrow="ALWAYS">
-            <Label text="Due Date" styleClass="field-label"/>
-            <DatePicker fx:id="dueDatePicker" maxWidth="Infinity" styleClass="input-field"/>
+            <Label text="Start Date" styleClass="field-label"/>
+            <DatePicker fx:id="dueDatePicker"
+                        maxWidth="Infinity"
+                        styleClass="input-field"/>
+        </VBox>
+
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="End Date" styleClass="field-label"/>
+            <DatePicker fx:id="endDatePicker"
+                        maxWidth="Infinity"
+                        styleClass="input-field"/>
         </VBox>
 
         <VBox spacing="5" HBox.hgrow="ALWAYS">
             <Label text="Priority" styleClass="field-label"/>
-            <ComboBox fx:id="priorityBox" maxWidth="Infinity" styleClass="input-field"/>
+            <ComboBox fx:id="priorityBox"
+                      maxWidth="Infinity"
+                      styleClass="input-field"/>
         </VBox>
+
+        <!-- 🔁 NEW -->
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Recurrence" styleClass="field-label"/>
+            <ComboBox fx:id="recurrenceBox"
+                      maxWidth="Infinity"
+                      styleClass="input-field"/>
+        </VBox>
+
     </HBox>
+
+
 
     <VBox spacing="5" VBox.vgrow="ALWAYS">
         <Label text="Depends On (Optional)" styleClass="field-label"/>

@@ -1,0 +1,116 @@
+/* Background of the whole window */
+.root-pane {
+    -fx-background-color: #f0f2f5;
+}
+
+/* The White Card Container */
+.card-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+    -fx-padding: 30;
+}
+
+/* Avatar Styling */
+.avatar-circle {
+    -fx-fill: linear-gradient(to bottom right, #6a11cb, #2575fc); /* Modern Gradient */
+    -fx-stroke: white;
+    -fx-stroke-width: 3;
+}
+
+.avatar-letter {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-family: "Arial";
+}
+
+/* Typography */
+.user-name-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.input-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #666;
+}
+
+/* Inputs */
+.text-input {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+
+.text-input:focused {
+    -fx-background-color: white;
+    -fx-border-color: #2575fc; /* Matches gradient */
+}
+
+/* Separator */
+.custom-separator .line {
+    -fx-border-color: #eee;
+    -fx-border-width: 1;
+}
+
+/* Button */
+.save-button {
+    -fx-background-color: #2575fc;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 12 30;
+    -fx-background-radius: 20; /* Pill shape */
+    -fx-cursor: hand;
+    -fx-min-width: 150px;
+}
+
+.save-button:hover {
+    -fx-background-color: #1a5bca;
+}
+
+.save-button:pressed {
+    -fx-background-color: #1548a1;
+}/* ... Previous CSS remains the same ... */
+
+/* Root and Card styles from previous answer... */
+.root-pane { -fx-background-color: #f0f2f5; }
+.card-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+    -fx-padding: 30;
+}
+
+/* ... Avatar and Button styles from previous answer ... */
+
+/* Inputs */
+.text-input {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+
+.text-input:focused {
+    -fx-background-color: white;
+    -fx-border-color: #2575fc;
+}
+
+/* ERROR STATE (New) */
+.text-input.error {
+    -fx-border-color: #e74c3c; /* Red border */
+    -fx-background-color: #fdf2f2; /* Light red background */
+}
+
+.status-msg {
+    -fx-font-size: 12px;
+}

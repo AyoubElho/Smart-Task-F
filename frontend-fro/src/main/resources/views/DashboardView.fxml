@@ -41,36 +41,29 @@
                        visible="false" managed="false"/>
             </StackPane>
 
-            <Button fx:id="userMenuButton" styleClass="user-menu-button">
-                <graphic>
-                    <ImageView fitWidth="28" fitHeight="28">
-                        <Image url="@../assets/user-icon.png"/>
-                    </ImageView>
-                </graphic>
-            </Button>
         </HBox>
     </top>
 
     <left>
-        <VBox styleClass="sidebar" spacing="15" prefWidth="240">
-            <padding>
-                <Insets top="35" right="20" bottom="20" left="25"/>
-            </padding>
+            <VBox styleClass="sidebar" spacing="15" prefWidth="240">
+                <padding>
+                    <Insets top="35" right="20" bottom="20" left="25"/>
+                </padding>
 
-            <Label text="SmartTask." styleClass="logo-text">
-                <VBox.margin>
-                    <Insets bottom="30"/>
-                </VBox.margin>
-            </Label>
+                <Label text="SmartTask." styleClass="logo-text">
+                    <VBox.margin>
+                        <Insets bottom="30"/>
+                    </VBox.margin>
+                </Label>
 
-            <Button text="Dashboard" styleClass="nav-button, active" maxWidth="Infinity"/>
-            <Button text="My Tasks" styleClass="nav-button" maxWidth="Infinity" onAction="#mytasks"/>
-            <Button text="Calendar" styleClass="nav-button" maxWidth="Infinity" onAction="#showCalendar"/>
-            <Region VBox.vgrow="ALWAYS"/>
+                <Button text="Dashboard" styleClass="nav-button, active" maxWidth="Infinity"/>
+                <Button text="My Tasks" styleClass="nav-button" maxWidth="Infinity" onAction="#mytasks"/>
+                <Button text="Calendar" styleClass="nav-button" maxWidth="Infinity" onAction="#showCalendar"/>
+                <Region VBox.vgrow="ALWAYS"/>
 
-            <Button text="Settings" styleClass="nav-button" maxWidth="Infinity"/>
-            <Button text="Logout" styleClass="nav-button" maxWidth="Infinity" onAction="#logout"/>
-        </VBox>
+                <Button text="Settings" styleClass="nav-button" maxWidth="Infinity" onAction="#settings"/>
+                <Button text="Logout" styleClass="nav-button" maxWidth="Infinity" onAction="#logout"/>
+            </VBox>
     </left>
 
     <center>
@@ -186,7 +179,7 @@
             </VBox>
 
             <VBox fx:id="notificationPanel"
-                  prefWidth="360"
+                  prefWidth="420"
                   styleClass="notification-panel"
                   visible="false"
                   managed="false"

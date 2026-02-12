@@ -25,8 +25,10 @@ public class TaskController extends HttpServlet {
             .create();
 
     // ========================= GET =========================
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
         String path = req.getPathInfo();
 
         if (path == null || path.equals("/")) {
@@ -51,13 +53,21 @@ public class TaskController extends HttpServlet {
             return;
         }
 
-        Long id = Long.parseLong(path.substring(1));
-        write(resp, taskService.findById(id));
+        if (path.matches("/\\d+")) {
+            Long id = Long.parseLong(path.substring(1));
+            write(resp, taskService.findById(id));
+            return;
+        }
+
+        resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        write(resp, "Endpoint not found");
     }
 
     // ========================= POST =========================
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
         String path = req.getPathInfo();
 
         if (path == null) {
@@ -66,33 +76,48 @@ public class TaskController extends HttpServlet {
             return;
         }
 
+        // CREATE TASK
         if (path.startsWith("/create-task/id/")) {
+
             String userIdStr = path.substring("/create-task/id/".length());
+
             if (userIdStr.isEmpty()) {
                 resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 write(resp, "User ID is missing");
                 return;
             }
-            Long userId = Long.parseLong(userIdStr);
-            Task task = readBody(req, Task.class);
-            Task saved = taskService.createTask(task, userId);
-            resp.setStatus(HttpServletResponse.SC_CREATED);
-            write(resp, saved);
+
+            try {
+                Long userId = Long.parseLong(userIdStr);
+                Task task = readBody(req, Task.class);
+
+                Task saved = taskService.createTask(task, userId);
+
+                resp.setStatus(HttpServletResponse.SC_CREATED);
+                write(resp, saved);
+
+            } catch (IllegalArgumentException e) {
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                write(resp, e.getMessage());
+            }
+
             return;
         }
 
+        // SHARE TASK
         if (path.matches("/\\d+/share/\\d+")) {
             String[] parts = path.split("/");
             Long taskId = Long.parseLong(parts[1]);
             Long userId = Long.parseLong(parts[3]);
+
             taskService.shareTask(taskId, userId);
             write(resp, "Task shared successfully!");
             return;
         }
 
-        // ✅ NEW: Add Dependency
-        // Format: /tasks/{taskId}/dependency/{dependencyId}
+        // ADD DEPENDENCY
         if (path.matches("/\\d+/dependency/\\d+")) {
+
             String[] parts = path.split("/");
             Long taskId = Long.parseLong(parts[1]);
             Long dependencyId = Long.parseLong(parts[3]);
@@ -100,10 +125,12 @@ public class TaskController extends HttpServlet {
             try {
                 taskService.addDependency(taskId, dependencyId);
                 write(resp, "Dependency added successfully");
+
             } catch (Exception e) {
                 resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 write(resp, e.getMessage());
             }
+
             return;
         }
 
@@ -112,29 +139,87 @@ public class TaskController extends HttpServlet {
     }
 
     // ========================= PUT =========================
+
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String path = req.getPathInfo();
+
+        String path = req.getRequestURI()
+                .replace(req.getContextPath(), "")
+                .replace("/tasks", "");
+
+        System.out.println("REAL PATH = " + path);
+
         if (path == null) {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
 
+        // UPDATE STATUS
         if (path.matches("/\\d+/status/\\w+")) {
             String[] parts = path.split("/");
             Long taskId = Long.parseLong(parts[1]);
             Status status = Status.valueOf(parts[3]);
+
             taskService.updateStatus(taskId, status);
             write(resp, "Status updated");
             return;
         }
 
+        // UPDATE START (due_date column)
         if (path.matches("/\\d+/due-date")) {
             String[] parts = path.split("/");
             Long taskId = Long.parseLong(parts[1]);
-            UpdateDueDateRequest body = readBody(req, UpdateDueDateRequest.class);
-            taskService.updateDueDate(taskId, body.getDueDate());
-            write(resp, "Due date updated");
+
+            UpdateDueDateRequest body =
+                    readBody(req, UpdateDueDateRequest.class);
+
+            taskService.updateStartDate(taskId, body.getDueDate());
+            write(resp, "Start date updated");
+            return;
+        }
+
+        // UPDATE END DATE
+        if (path.matches("/\\d+/end-date")) {
+            String[] parts = path.split("/");
+            Long taskId = Long.parseLong(parts[1]);
+
+            UpdateDueDateRequest body =
+                    readBody(req, UpdateDueDateRequest.class);
+
+            taskService.updateEndDate(taskId, body.getDueDate());
+            write(resp, "End date updated");
+            return;
+        }
+
+        // UPDATE INTERVAL (drag/resize)
+        if (path.matches("/\\d+/interval")) {
+            String[] parts = path.split("/");
+            Long taskId = Long.parseLong(parts[1]);
+
+            Task body = readBody(req, Task.class);
+
+            taskService.updateInterval(
+                    taskId,
+                    body.getDueDate(), // start
+                    body.getEndDate()  // end
+            );
+
+            write(resp, "Interval updated");
+            return;
+        }
+
+        // GOOGLE EVENT LINK
+        if (path.contains("/google-event/")) {
+
+            int taskIdEnd = path.indexOf("/google-event/");
+            String idPart = path.substring(1, taskIdEnd);
+            String eventId =
+                    path.substring(taskIdEnd + "/google-event/".length());
+
+            Long taskId = Long.parseLong(idPart);
+
+            taskService.updateGoogleEventId(taskId, eventId);
+            write(resp, "Google event linked");
             return;
         }
 
@@ -142,17 +227,20 @@ public class TaskController extends HttpServlet {
         write(resp, "Endpoint not found");
     }
 
-    // ========================= ✅ NEW: DELETE =========================
+    // ========================= DELETE =========================
+
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
         String path = req.getPathInfo();
+
         if (path == null) {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
 
-        // Format: /tasks/{taskId}/dependency/{dependencyId}
         if (path.matches("/\\d+/dependency/\\d+")) {
+
             String[] parts = path.split("/");
             Long taskId = Long.parseLong(parts[1]);
             Long dependencyId = Long.parseLong(parts[3]);
@@ -167,6 +255,7 @@ public class TaskController extends HttpServlet {
     }
 
     // ========================= HELPERS =========================
+
     private <T> T readBody(HttpServletRequest req, Class<T> clazz) throws IOException {
         return gson.fromJson(req.getReader(), clazz);
     }

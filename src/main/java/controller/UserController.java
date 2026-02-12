@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
+import mail.VerifyRequest;
 import model.User;
 import model.LocalDateTimeAdapter;
 import model.LoginRequest;
@@ -48,15 +49,53 @@ public class UserController extends HttpServlet {
             write(resp, userService.register(user));
             return;
         }
+        if (path.equals("/verify")) {
 
-        if (path.equals("/login")) {
-            LoginRequest request = read(req, LoginRequest.class);
-            write(resp, userService.login(
+            VerifyRequest request = read(req, VerifyRequest.class);
+
+            userService.verifyEmail(
                     request.getEmail(),
-                    request.getPassword()
-            ));
+                    request.getCode()
+            );
+
+            write(resp, "Email verified successfully");
             return;
         }
+// Inside doPost method in UserController.java
+        if (path.equals("/update")) {
+            try {
+                // Read user data (must include ID)
+                User userToUpdate = read(req, User.class);
+
+                // Call service
+                User updatedUser = userService.updateUser(userToUpdate);
+
+                write(resp, updatedUser);
+
+            } catch (RuntimeException e) {
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                write(resp, e.getMessage());
+            }
+            return;
+        }
+        if (path.equals("/login")) {
+            try {
+                LoginRequest request = read(req, LoginRequest.class);
+
+                write(resp, userService.login(
+                        request.getEmail(),
+                        request.getPassword()
+                ));
+
+            } catch (RuntimeException e) {
+
+                resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 🔥 401
+                write(resp, e.getMessage());
+            }
+
+            return;
+        }
+
 
         resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
         write(resp, "Endpoint not found");

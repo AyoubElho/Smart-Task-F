@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import java.net.URL?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.smarttask_frontend.settings.SettingsController"
+            prefHeight="550.0" prefWidth="450.0"
+            stylesheets="@../styles/settings.css" styleClass="root-pane">
+
+
+    <VBox spacing="25" alignment="TOP_CENTER"
+          AnchorPane.topAnchor="30" AnchorPane.bottomAnchor="30"
+          AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30"
+          styleClass="card-pane">
+
+        <VBox alignment="CENTER" spacing="10">
+            <StackPane>
+                <Circle fx:id="avatarCircle" radius="45" styleClass="avatar-circle"/>
+                <Label fx:id="avatarLabel" text="J" styleClass="avatar-letter"/>
+            </StackPane>
+
+            <Label fx:id="displayNameLabel" text="John Doe" styleClass="user-name-title"/>
+        </VBox>
+
+        <Separator styleClass="custom-separator"/>
+
+        <VBox spacing="15" maxWidth="320">
+            <VBox spacing="5">
+                <Label text="Full Name" styleClass="input-label"/>
+                <TextField fx:id="nameField" promptText="e.g. John Doe" styleClass="text-input"/>
+            </VBox>
+
+            <VBox spacing="5">
+                <Label text="Email Address" styleClass="input-label"/>
+                <TextField fx:id="emailField" promptText="e.g. john@example.com" styleClass="text-input"/>
+            </VBox>
+
+            <VBox spacing="5">
+                <Label text="New Password" styleClass="input-label"/>
+                <PasswordField fx:id="passwordField" promptText="••••••••" styleClass="text-input"/>
+            </VBox>
+
+            <VBox spacing="5">
+                <Label text="Confirm Password" styleClass="input-label"/>
+                <PasswordField fx:id="confirmPasswordField" promptText="••••••••" styleClass="text-input"/>
+            </VBox>
+        </VBox>
+
+        <Region VBox.vgrow="ALWAYS" />
+
+        <VBox spacing="10" alignment="CENTER">
+            <Button text="Save Changes" onAction="#saveSettings" styleClass="save-button"/>
+            <Label fx:id="statusLabel" styleClass="status-msg"/>
+        </VBox>
+
+    </VBox>
+</AnchorPane>

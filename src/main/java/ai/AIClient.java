@@ -1,6 +1,7 @@
 package ai;
 
 import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import model.CategoryDTO;
 import model.Task;
@@ -40,11 +41,15 @@ public class AIClient {
 
     public Task parseTask(String text) {
         try {
+            // Wrap text into JSON object { "text": "..."}
+            ObjectNode body = mapper.createObjectNode();
+            body.put("text", text);
+
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(PARSE_URL))
                     .header("Content-Type", "application/json")
                     .POST(HttpRequest.BodyPublishers.ofString(
-                            mapper.writeValueAsString(text)
+                            mapper.writeValueAsString(body)
                     ))
                     .build();
 
@@ -52,11 +57,15 @@ public class AIClient {
                     HttpClient.newHttpClient()
                             .send(request, HttpResponse.BodyHandlers.ofString());
 
+            // Debug log
+            System.out.println("AI RAW RESPONSE: " + response.body());
+
             return mapper.readValue(response.body(), Task.class);
 
         } catch (Exception e) {
             throw new RuntimeException("AI parse failed", e);
         }
     }
+
 
 }

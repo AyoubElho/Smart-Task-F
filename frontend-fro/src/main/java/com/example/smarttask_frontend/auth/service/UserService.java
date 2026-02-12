@@ -15,43 +15,94 @@ import java.util.List;
 public class UserService {
 
     private static final String LOGIN_URL = AppConfig.get("backend.base-url") + "user/login";
+    private static final String UPDATE_URL = AppConfig.get("backend.base-url") + "user/update"; // 🔥 NEW ENDPOINT
     private static final String REGISTER_URL = AppConfig.get("backend.base-url") + "user/register";
+    private static final String VERIFY_URL =
+            AppConfig.get("backend.base-url") + "user/verify";
 
     private final HttpClient httpClient = HttpClient.newHttpClient();
     private final ObjectMapper objectMapper = new ObjectMapper();
-
-    public User login(String email, String password) {
+    public boolean verifyEmail(String email, String code) {
 
         try {
-            LoginRequest loginRequest = new LoginRequest(email, password);
-
-            String json = objectMapper.writeValueAsString(loginRequest);
+            String json = """
+            {
+              "email": "%s",
+              "code": "%s"
+            }
+        """.formatted(email, code);
 
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(LOGIN_URL))
+                    .uri(URI.create(VERIFY_URL))
                     .header("Content-Type", "application/json")
-                    .header("Accept", "application/json")
                     .POST(HttpRequest.BodyPublishers.ofString(json))
                     .build();
 
             HttpResponse<String> response =
                     httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
-            System.out.println("STATUS: " + response.statusCode());
-            System.out.println("BODY: " + response.body());
-
-            if (response.statusCode() == 200) {
-                System.out.println(objectMapper.readValue(response.body(), User.class).getEmail());
-                return objectMapper.readValue(response.body(), User.class);
-            }
-
-            return null;
+            return response.statusCode() == 200;
 
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            return false;
         }
     }
+    public User updateUser(User user) {
+        try {
+            String json = objectMapper.writeValueAsString(user);
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(UPDATE_URL))
+                    .header("Content-Type", "application/json")
+                    .header("Accept", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(json))
+                    .build();
+
+            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+            if (response.statusCode() == 200) {
+                // Return the updated user from backend
+                return objectMapper.readValue(response.body(), User.class);
+            } else {
+                // If backend sends an error message (like "User not found")
+                throw new RuntimeException("Update failed: " + response.body());
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+    public User login(String email, String password) {
+
+        try {
+            LoginRequest loginRequest = new LoginRequest(email, password);
+            String json = objectMapper.writeValueAsString(loginRequest);
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(LOGIN_URL))
+                    .header("Content-Type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(json))
+                    .build();
+
+            HttpResponse<String> response =
+                    httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+            if (response.statusCode() == 200) {
+                return objectMapper.readValue(response.body(), User.class);
+            }
+
+            if (response.statusCode() == 401) {
+                throw new RuntimeException(response.body());
+            }
+
+            throw new RuntimeException("Login failed");
+
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
     public boolean register(String username, String email, String password) {
         try {
 

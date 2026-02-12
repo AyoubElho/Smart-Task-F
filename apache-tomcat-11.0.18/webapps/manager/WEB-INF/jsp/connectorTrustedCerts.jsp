@@ -71,7 +71,7 @@
 
 <form method="GET" action="<%=request.getContextPath()%>/html">
   <p style="text-align: center;">
-    <input type="submit" value="Return to main page" />
+    <input type="submit" value="Return to mail page" />
   </p>
 </form>
 

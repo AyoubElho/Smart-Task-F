@@ -206,8 +206,8 @@
     -fx-border-color: #334155;
     -fx-border-width: 0 0 0 1;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
-    -fx-pref-width: 350;
-    -fx-max-width: 350;
+    -fx-pref-width: 430;
+    -fx-max-width: 430;
     -fx-min-height: 600;
 }
 

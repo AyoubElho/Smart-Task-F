@@ -27,6 +27,46 @@ public class UserDao {
         }
         return users;
     }
+    public void updateVerification(User user) {
+
+        String sql = """
+        UPDATE users
+        SET verified = ?, verification_code = ?
+        WHERE email = ?
+    """;
+
+        try (
+                Connection c = DBConnection.getConnection();
+                PreparedStatement ps = c.prepareStatement(sql)
+        ) {
+            ps.setBoolean(1, user.isVerified());
+            ps.setString(2, user.getVerificationCode());
+            ps.setString(3, user.getEmail());
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    // Add this method to UserDao.java
+    public void update(User user) {
+        String sql = "UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?";
+
+        try (
+                Connection c = DBConnection.getConnection();
+                PreparedStatement ps = c.prepareStatement(sql)
+        ) {
+            ps.setString(1, user.getUsername());
+            ps.setString(2, user.getEmail());
+            ps.setString(3, user.getPassword());
+            ps.setLong(4, user.getId());
+
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public Optional<User> findById(Long id) {
         String sql = "SELECT * FROM users WHERE id = ?";
@@ -59,32 +99,44 @@ public class UserDao {
     }
 
     public void save(User user) {
+
         String sql = """
-            INSERT INTO users(username, email, password, created_at)
-            VALUES (?, ?, ?, ?)
-        """;
+        INSERT INTO users(username, email, password, created_at, verification_code, verified)
+        VALUES (?, ?, ?, ?, ?, ?)
+    """;
 
         try (
-            Connection c = DBConnection.getConnection();
-            PreparedStatement ps = c.prepareStatement(sql)
+                Connection c = DBConnection.getConnection();
+                PreparedStatement ps = c.prepareStatement(sql)
         ) {
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getEmail());
             ps.setString(3, user.getPassword());
             ps.setTimestamp(4, Timestamp.valueOf(user.getCreatedAt()));
+            ps.setString(5, user.getVerificationCode());
+            ps.setBoolean(6, user.isVerified());
+
             ps.executeUpdate();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+
     private User map(ResultSet rs) throws SQLException {
         User u = new User();
+
         u.setId(rs.getLong("id"));
         u.setUsername(rs.getString("username"));
         u.setEmail(rs.getString("email"));
         u.setPassword(rs.getString("password"));
         u.setCreatedAt(rs.getTimestamp("created_at").toLocalDateTime());
+
+        u.setVerificationCode(rs.getString("verification_code"));
+        u.setVerified(rs.getBoolean("verified"));
+
         return u;
     }
+
 }

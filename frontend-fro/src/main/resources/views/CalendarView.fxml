@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.smarttask_frontend.calendar.CalendarController"
@@ -8,4 +8,15 @@
             prefWidth="1100"
             prefHeight="750"
             style="-fx-background-color: #0f172a;">
+
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <Button fx:id="syncButton"
+                    text="Sync with Google"
+                    onAction="#handleGoogleSync"
+                    style="-fx-font-size: 14px;"/>
+
+        </HBox>
+    </top>
+
 </BorderPane>

@@ -93,7 +93,7 @@
         used.</p>
       </td></tr><tr id="Attributes_Common Attributes_readOnly"><td><code class="attributeName">readOnly</code></td><td>
         <p>If the value of this flag is <code>true</code>, then writing will
-        be disabled on the main resource set. The default value is
+        be disabled on the mail resource set. The default value is
         <code>false</code>.</p>
       </td></tr><tr id="Attributes_Common Attributes_trackLockedFiles"><td><code class="attributeName">trackLockedFiles</code></td><td>
         <p>Controls whether the track locked files feature is enabled. If
@@ -146,14 +146,14 @@
 
 </div><h3 id="Nested_Components">Nested Components</h3><div class="text">
 
-  <p>A web application's main resources are defined by the
+  <p>A web application's mail resources are defined by the
   <strong>docBase</strong> defined for the <a href="context.html">Context</a>.
   Additional configuration settings and/or resources may be made available to
   the web application by defining one or more nested components.</p>
 
   <h3>PreResources</h3>
 
-  <p>PreResources are searched before the main resources. They will be searched
+  <p>PreResources are searched before the mail resources. They will be searched
   in the order they are defined. To configure PreResources, nest a
   &lt;PreResources&gt; element inside the &lt;Resources&gt; element with the
   following attributes:</p>
@@ -215,7 +215,7 @@
 
   <h3>JAR resources</h3>
 
-  <p>JarResources are searched after the main resources but before the
+  <p>JarResources are searched after the mail resources but before the
   PostResources. They will be searched in the order they are defined. To
   configure JarResources, nest a &lt;JarResources&gt; element inside the
   &lt;Resources&gt; element. The configuration attributes are the same as for

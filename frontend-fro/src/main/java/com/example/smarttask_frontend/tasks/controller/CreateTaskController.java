@@ -9,12 +9,15 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
-import java.util.List;
+import java.util.List;import com.example.smarttask_frontend.entity.Recurrence;
+
 
 public class CreateTaskController {
 
     @FXML
     private TextField titleField;
+    @FXML
+    private ComboBox<Recurrence> recurrenceBox;
 
     @FXML
     private TextArea descriptionField;
@@ -31,16 +34,28 @@ public class CreateTaskController {
 
     private final TaskService taskService = new TaskService();
     private boolean created = false;
+    @FXML
+    private DatePicker endDatePicker;
 
     @FXML
     public void initialize() {
-        // 1. Setup Priority Box
+
         priorityBox.getItems().setAll(Priority.values());
         priorityBox.setValue(Priority.LOW);
 
-        // 2. Setup Dependency List
+        recurrenceBox.getItems().setAll(Recurrence.values());
+        recurrenceBox.setValue(Recurrence.NONE);
+
+        // 🔁 Listener
+        recurrenceBox.valueProperty().addListener((obs, oldV, newV) -> {
+            boolean recurring = newV != Recurrence.NONE;
+            endDatePicker.setDisable(recurring);
+        });
+
         setupDependencyList();
     }
+
+
 
 
     private void loadExistingTasks() {
@@ -60,36 +75,56 @@ public class CreateTaskController {
 
     @FXML
     private void save() {
+
         if (titleField.getText().isBlank()) {
             showError("Title is required");
             return;
         }
 
+        Recurrence recurrence = recurrenceBox.getValue();
+
         if (dueDatePicker.getValue() == null) {
-            showError("Due date is required");
+            showError("Start date is required");
             return;
         }
 
-        // 1. Create the Task Object
+        if (recurrence == Recurrence.NONE && endDatePicker.getValue() == null) {
+            showError("End date is required for non-recurring tasks");
+            return;
+        }
+
+        if (recurrence == Recurrence.NONE &&
+                endDatePicker.getValue().isBefore(dueDatePicker.getValue())) {
+            showError("End date cannot be before start date");
+            return;
+        }
+
         Task task = new Task();
         task.setTitle(titleField.getText());
         task.setDescription(descriptionField.getText());
         task.setDueDate(dueDatePicker.getValue().atStartOfDay());
-        task.setPriority(priorityBox.getValue()); // Ensure this matches your Enum type
 
-        // 2. Send Create Request to Backend
+        if (recurrence == Recurrence.NONE) {
+            task.setEndDate(endDatePicker.getValue().atStartOfDay());
+        } else {
+            task.setEndDate(null);
+        }
+
+        task.setPriority(priorityBox.getValue());
+        task.setRecurrence(recurrence);
+
         Task createdTask = taskService.createTask(task, UserSession.getUserId());
 
         if (createdTask != null) {
-            // 3. ✅ NEW: Save Dependencies
             saveDependencies(createdTask.getId());
-            
             created = true;
             close();
         } else {
             showError("Task could not be created");
         }
     }
+
+
 
     private void saveDependencies(Long newTaskId) {
         // Get all selected tasks from the ListView

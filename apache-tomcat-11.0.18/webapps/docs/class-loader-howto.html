@@ -19,7 +19,7 @@ load a particular class or resource, it delegates the request to a parent
 class loader first, and then looks in its own repositories only if the parent
 class loader(s) cannot find the requested class or resource.  Note, that the
 model for web application class loaders <em>differs</em> slightly from this,
-as discussed below, but the main principles are the same.</p>
+as discussed below, but the mail principles are the same.</p>
 
 <p>When Tomcat is started, it creates a set of class loaders that are
 organized into the following parent-child relationships, where the parent
@@ -59,7 +59,7 @@ loaders as it is initialized:</p>
     </p>
     <ul>
     <li><p><em>$CATALINA_HOME/bin/bootstrap.jar</em> &mdash; Contains the
-        main() method that is used to initialize the Tomcat server, and the
+        mail() method that is used to initialize the Tomcat server, and the
         class loader implementation classes it depends on.</p></li>
     <li><p><em>$CATALINA_BASE/bin/tomcat-juli.jar</em> or
         <em>$CATALINA_HOME/bin/tomcat-juli.jar</em> &mdash; Logging

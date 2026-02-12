@@ -37,14 +37,14 @@
                                 <TableColumn fx:id="titleColumn" text="Task Name"/>
                                 <TableColumn fx:id="priorityColumn" text="Priority"/>
                                 <TableColumn fx:id="categoryColumn" text="Category"/>
-                                <TableColumn fx:id="dueDateColumn" text="Due Date"/>
+                                <TableColumn fx:id="startDateColumn" text="Start"/>
+                                <TableColumn fx:id="endDateColumn" text="End"/>
                                 <TableColumn fx:id="statusColumn" text="Status"/>
-                                
                                 <TableColumn fx:id="dependenciesColumn" text="Depends On" minWidth="120"/>
-                                
                                 <TableColumn fx:id="subTasksColumn" text="" maxWidth="80"/>
                                 <TableColumn fx:id="shareColumn" text="" maxWidth="80"/>
                             </columns>
+
                         </TableView>
                     </VBox>
                 </Tab>
@@ -63,7 +63,8 @@
                                 <TableColumn fx:id="sharedTitleColumn" text="Task Name"/>
                                 <TableColumn fx:id="sharedPriorityColumn" text="Priority"/>
                                 <TableColumn fx:id="sharedCategoryColumn" text="Category"/>
-                                <TableColumn fx:id="sharedDueDateColumn" text="Due Date"/>
+                                <TableColumn fx:id="sharedStartDateColumn" text="Start"/>
+                                <TableColumn fx:id="sharedEndDateColumn" text="End"/>
                                 <TableColumn fx:id="sharedStatusColumn" text="Status"/>
                                 
                                 <TableColumn fx:id="sharedDependenciesColumn" text="Depends On" minWidth="120"/>

@@ -52,7 +52,7 @@
       <param-value>true</param-value>
     </init-param>
     -->
-    <!-- Uncomment this to set a sub-title for the manager web application main
+    <!-- Uncomment this to set a sub-title for the manager web application mail
          page. It must be XML escaped, valid HTML.
     <init-param>
       <param-name>htmlSubTitle</param-name>

@@ -7,10 +7,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -78,27 +75,25 @@ public class LoginController {
 
         new Thread(() -> {
 
-            boolean success =
-                    userService.register(name, mail, pass);
+            boolean success = userService.register(name, mail, pass);
 
             Platform.runLater(() -> {
 
                 if (success) {
 
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Success");
+                    alert.setTitle("Verification required");
                     alert.setHeaderText(null);
-                    alert.setContentText("Account created successfully! Please sign in.");
+                    alert.setContentText(
+                            "Account created!\nCheck your email for the verification code."
+                    );
                     alert.showAndWait();
 
-                    regName.clear();
-                    regEmail.clear();
-                    regPassword.clear();
-
-                    switchToLogin();
+                    // 🔥 IMPORTANT: ask for verification now
+                    askVerification(mail);
 
                 } else {
-                    showError("Registration failed. Email might already be in use.");
+                    showError("Registration failed. Email may already exist.");
                 }
 
             });
@@ -106,34 +101,82 @@ public class LoginController {
         }).start();
     }
 
+    private void askVerification(String email) {
+
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Email Verification");
+        dialog.setHeaderText("Enter the verification code sent to your email");
+        dialog.setContentText("Code:");
+
+        dialog.showAndWait().ifPresent(code -> {
+
+            new Thread(() -> {
+
+                boolean verified =
+                        userService.verifyEmail(email, code);
+
+                Platform.runLater(() -> {
+
+                    if (verified) {
+
+                        Alert ok = new Alert(Alert.AlertType.INFORMATION);
+                        ok.setHeaderText(null);
+                        ok.setContentText("Email verified! You can login now.");
+                        ok.showAndWait();
+
+                        switchToLogin();
+
+                    } else {
+                        showError("Invalid verification code.");
+                    }
+
+                });
+
+            }).start();
+        });
+    }
+
+
     @FXML
     private void login() {
 
-        User user = userService.login(
-                email.getText(),
-                password.getText()
-        );
+        new Thread(() -> {
 
-        if (user == null) {
-            showError("Invalid email or password");
-            return;
-        }
+            try {
 
+                User user = userService.login(
+                        email.getText(),
+                        password.getText()
+                );
+
+                Platform.runLater(() -> openDashboard(user));
+
+            } catch (RuntimeException e) {
+
+                Platform.runLater(() ->
+                        showError(e.getMessage())
+                );
+            }
+
+        }).start();
+    }
+
+    private void openDashboard(User user) {
         try {
             UserSession.setUser(user);
-            FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("/views/DashboardView.fxml")
-            );
+
+            FXMLLoader loader =
+                    new FXMLLoader(getClass()
+                            .getResource("/views/DashboardView.fxml"));
 
             Scene scene = new Scene(loader.load(), 1200, 700);
 
-            // ✅ Get current stage from button
-            Stage stage = (Stage) loginButton.getScene().getWindow();
+            Stage stage =
+                    (Stage) loginButton.getScene().getWindow();
+
             stage.setTitle("Smart Task Manager");
             stage.setScene(scene);
             stage.setMaximized(true);
-
-            stage.centerOnScreen();
             stage.show();
 
         } catch (Exception e) {

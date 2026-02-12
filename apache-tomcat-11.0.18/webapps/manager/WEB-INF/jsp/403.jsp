@@ -45,7 +45,7 @@
     then you may have triggered the cross-site request forgery (CSRF) protection
     that has been enabled for the HTML interface of the Manager application. You
     will need to reset this protection by returning to the
-    <a href="<%=request.getContextPath()%>/html">main Manager page</a>. Once you
+    <a href="<%=request.getContextPath()%>/html">mail Manager page</a>. Once you
     return to this page, you will be able to continue using the Manager
     application's HTML interface normally. If you continue to see this access
     denied message, check that you have the necessary permissions to access this

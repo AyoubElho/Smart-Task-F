@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="smart-task" />
+      <artifact name="smarttask-backend-jdbc:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,81 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c49f448e-0a55-4190-8ed6-03a748cddc74" name="Changes" comment="starte of the project">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-11.0.18/logs/catalina.2026-02-06.log" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-11.0.18/logs/catalina.2026-02-06.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-11.0.18/logs/catalina.out" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-11.0.18/logs/catalina.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-11.0.18/logs/localhost.2026-01-30.log" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-11.0.18/logs/localhost.2026-01-30.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-11.0.18/logs/localhost.2026-02-02.log" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-11.0.18/logs/localhost.2026-02-02.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-11.0.18/logs/localhost.2026-02-06.log" beforeDir="false" afterPath="$PROJECT_DIR$/apache-tomcat-11.0.18/logs/localhost.2026-02-06.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/AppConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/Launcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/SmartTaskApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/aiClient/AIClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/auth/controller/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/auth/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/calendar/CalendarController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/category/service/CategoryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/dashboard/DashboardController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/dto/LoginRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/dto/StatusRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/dto/UpdateDueDateRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/entity/CategoryDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/entity/Notification.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/entity/Priority.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/entity/SubTask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/entity/Task.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/session/UserSession.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/subtasks/controller/SubtaskController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/subtasks/service/SubTaskService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/CreateTaskController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/MyTasksController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/ShareTaskController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/controller/UpdateTaskController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/service/NotificationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/com/example/smarttask_frontend/tasks/service/TaskService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/images/bell.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/styles/createTask.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/styles/dashboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/styles/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/styles/share-task.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/styles/subtasks.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/styles/tasks.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/CalendarView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/CreateTaskView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/DashboardView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/LoginView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/MyTasks.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/ShareTaskView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/views/Subtasks.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/NotificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/NotificationWebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/NotificationWebSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SubTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SubTaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/NotificationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/NotificationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/SubTaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/SubTaskDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TaskDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/NotificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/SubTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/SubTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-fro/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-fro/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,31 +61,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.TestDB.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Tomcat Server.Tomcat 11.0.18.executor": "Run",
-    "Tomcat Server.Unnamed.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ayoub/Desktop/smart-task/src/main/java/ai",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.TestDB.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 11.0.18.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ayoub/Desktop/smart-task/src/main/java/ai&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\ai" />
@@ -169,11 +95,11 @@
       <recent name="C:\Users\ayoub\Desktop\smart-task\frontend\src\main\java\com\example\smarttask_frontend\tasks" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ayoub\Desktop\smart-task\frontend-fro\src\main\resources" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\controller" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\dao" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java" />
       <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\service" />
-      <recent name="C:\Users\ayoub\Desktop\smart-task\src\main\java\model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -332,7 +258,11 @@
       <workItem from="1770843079663" duration="392000" />
       <workItem from="1770843552389" duration="1397000" />
       <workItem from="1770849691543" duration="3884000" />
-      <workItem from="1770853635007" duration="1730000" />
+      <workItem from="1770853635007" duration="2163000" />
+      <workItem from="1770882361653" duration="442000" />
+      <workItem from="1770892052272" duration="1450000" />
+      <workItem from="1770894488957" duration="18479000" />
+      <workItem from="1770922793979" duration="12480000" />
     </task>
     <task id="LOCAL-00001" summary="javafx-jdbc">
       <option name="closed" value="true" />
@@ -363,6 +293,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
