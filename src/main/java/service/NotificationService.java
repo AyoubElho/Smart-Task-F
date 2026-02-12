@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 
 import dao.Notification;
 import dao.NotificationDao;
-import main.java.controller.NotificationWebSocket;
+import controller.NotificationWebSocket;
 
 public class NotificationService {
 

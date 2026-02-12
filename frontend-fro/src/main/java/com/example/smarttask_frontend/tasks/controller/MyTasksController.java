@@ -225,6 +225,34 @@ public class MyTasksController implements Initializable {
      * Creates the Colored Badge Status Dropdown.
      * Reused by both tables.
      */
+
+    private List<String> getUnfinishedDependencies(Task task) {
+        List<Long> depIds = task.getDependencyIds();
+        if (depIds == null || depIds.isEmpty()) {
+            return java.util.Collections.emptyList();
+        }
+
+        // Combine all loaded tasks to search through them
+        java.util.List<Task> allLoadedTasks = new java.util.ArrayList<>();
+        if (taskTable.getItems() != null) allLoadedTasks.addAll(taskTable.getItems());
+        if (sharedTasksTable.getItems() != null) allLoadedTasks.addAll(sharedTasksTable.getItems());
+
+        java.util.List<String> unfinishedNames = new java.util.ArrayList<>();
+
+        for (Long id : depIds) {
+            allLoadedTasks.stream()
+                .filter(t -> t.getId().equals(id))
+                .findFirst()
+                .ifPresent(dep -> {
+                    String s = dep.getStatus();
+                    // Check if NOT done (adjust "COMPLETED" based on your specific Enum/String values)
+                    if (!"DONE".equalsIgnoreCase(s) && !"COMPLETED".equalsIgnoreCase(s)) {
+                        unfinishedNames.add(dep.getTitle());
+                    }
+                });
+        }
+        return unfinishedNames;
+    }
     private Callback<TableColumn<Task, String>, TableCell<Task, String>> createStatusCellFactory() {
         return col -> new TableCell<>() {
             private final ComboBox<String> comboBox = new ComboBox<>(statusOptions);
@@ -236,7 +264,31 @@ public class MyTasksController implements Initializable {
                     if (getTableView() != null && getIndex() < getTableView().getItems().size()) {
                         Task task = getTableView().getItems().get(getIndex());
                         String newStatus = comboBox.getValue();
+                        String oldStatus = task.getStatus(); // Keep track of old status
 
+                        // 🔥 VALIDATION: If marking as DONE, check dependencies
+                        if ("DONE".equals(newStatus) || "COMPLETED".equals(newStatus)) {
+                            List<String> unfinishedDeps = getUnfinishedDependencies(task);
+                            
+                            if (!unfinishedDeps.isEmpty()) {
+                                // 1. Show Alert
+                                Alert alert = new Alert(Alert.AlertType.WARNING);
+                                alert.setTitle("Dependencies Not Met");
+                                alert.setHeaderText("Cannot complete task");
+                                alert.setContentText("The following dependencies are not finished:\n- " 
+                                        + String.join("\n- ", unfinishedDeps));
+                                alert.showAndWait();
+
+                                // 2. Revert UI immediately (runLater to ensure UI update cycle is consistent)
+                                Platform.runLater(() -> {
+                                    comboBox.setValue(oldStatus); 
+                                    updateStyle(oldStatus);
+                                });
+                                return; // 🛑 STOP HERE, do not call backend
+                            }
+                        }
+
+                        // If validation passes, proceed as normal
                         task.setStatus(newStatus);
                         updateStyle(newStatus);
 
@@ -245,7 +297,7 @@ public class MyTasksController implements Initializable {
                             taskService.updateTaskStatus(task.getId(), newStatus);
                         } catch (Exception ex) {
                             showError("Failed to update status.");
-                            comboBox.setValue(getItem());
+                            comboBox.setValue(oldStatus); // Revert on backend error
                         }
                     }
                 });
@@ -268,13 +320,20 @@ public class MyTasksController implements Initializable {
                 if (empty || item == null) {
                     setGraphic(null);
                 } else {
+                    // Temporarily remove listener to prevent triggering logic when scrolling
+                    javafx.event.EventHandler<ActionEvent> handler = comboBox.getOnAction();
+                    comboBox.setOnAction(null);
+                    
                     comboBox.setValue(item);
                     updateStyle(item);
+                    
+                    comboBox.setOnAction(handler); // Restore listener
                     setGraphic(comboBox);
                 }
             }
         };
     }
+    
 
     // ========================= SHARE BUTTON (Main Table Only) =========================
     private void setupShareButtonColumn() {

@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
-import main.java.model.User;
+import model.User;
 import model.LocalDateTimeAdapter;
 import model.LoginRequest;
 import service.UserService;

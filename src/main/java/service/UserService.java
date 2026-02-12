@@ -1,7 +1,7 @@
 package service;
 
 import dao.UserDao;
-import main.java.model.User;
+import model.User;
 
 import java.time.LocalDateTime;
 import java.util.List;
