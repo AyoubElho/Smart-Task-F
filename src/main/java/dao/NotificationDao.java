@@ -1,6 +1,6 @@
 package dao;
 
-import model.Notification;
+
 import util.DBConnection;
 
 import java.sql.*;
@@ -21,8 +21,8 @@ public class NotificationDao {
         """;
 
         try (
-            Connection c = DBConnection.getConnection();
-            PreparedStatement ps = c.prepareStatement(sql)
+                Connection c = DBConnection.getConnection();
+                PreparedStatement ps = c.prepareStatement(sql)
         ) {
             ps.setLong(1, userId);
             ResultSet rs = ps.executeQuery();

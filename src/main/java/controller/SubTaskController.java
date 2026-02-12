@@ -6,9 +6,9 @@ import jakarta.servlet.http.*;
 import model.SubTask;
 import service.SubTaskService;
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet("/subtasks/*")
 public class SubTaskController extends HttpServlet {

@@ -543,10 +543,10 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988)
-	at dao.TaskDao.execute(TaskDao.java:136)
-	at dao.TaskDao.shareTask(TaskDao.java:86)
-	at service.TaskService.shareTask(TaskService.java:91)
-	at controller.TaskController.doPost(TaskController.java:103)
+	at main.java.dao.TaskDao.execute(TaskDao.java:136)
+	at main.java.dao.TaskDao.shareTask(TaskDao.java:86)
+	at main.java.service.TaskService.shareTask(TaskService.java:91)
+	at main.java.controller.TaskController.doPost(TaskController.java:103)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -601,7 +601,7 @@ java.io.EOFException
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-06-Feb-2026 14:18:28.308 SEVERE [http-nio-8080-exec-8] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [socket.CommentSocket] and the following error occurred
+06-Feb-2026 14:18:28.308 SEVERE [http-nio-8080-exec-8] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [main.java.socket.CommentSocket] and the following error occurred
 	java.io.EOFException
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.fillReadBuffer(NioEndpoint.java:1339)
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.read(NioEndpoint.java:1223)
@@ -644,10 +644,10 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988)
-	at dao.TaskDao.execute(TaskDao.java:136)
-	at dao.TaskDao.shareTask(TaskDao.java:86)
-	at service.TaskService.shareTask(TaskService.java:91)
-	at controller.TaskController.doPost(TaskController.java:103)
+	at main.java.dao.TaskDao.execute(TaskDao.java:136)
+	at main.java.dao.TaskDao.shareTask(TaskDao.java:86)
+	at main.java.service.TaskService.shareTask(TaskService.java:91)
+	at main.java.controller.TaskController.doPost(TaskController.java:103)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -691,7 +691,7 @@ java.io.EOFException
 	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.read(NioEndpoint.java:1223)
 	at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:74)
 	at org.apache.tomcat.websocket.server.WsFrameServer.doOnDataAvailable(WsFrameServer.java:184)
-06-Feb-2026 14:27:50.632 SEVERE [http-nio-8080-exec-8] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [socket.CommentSocket] and the following error occurred
+06-Feb-2026 14:27:50.632 SEVERE [http-nio-8080-exec-8] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [main.java.socket.CommentSocket] and the following error occurred
 	java.io.EOFException
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.fillReadBuffer(NioEndpoint.java:1339)
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.read(NioEndpoint.java:1223)
@@ -729,10 +729,10 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988)
-	at dao.TaskDao.execute(TaskDao.java:136)
-	at dao.TaskDao.shareTask(TaskDao.java:86)
-	at service.TaskService.shareTask(TaskService.java:91)
-	at controller.TaskController.doPost(TaskController.java:103)
+	at main.java.dao.TaskDao.execute(TaskDao.java:136)
+	at main.java.dao.TaskDao.shareTask(TaskDao.java:86)
+	at main.java.service.TaskService.shareTask(TaskService.java:91)
+	at main.java.controller.TaskController.doPost(TaskController.java:103)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -767,7 +767,7 @@ java.io.EOFException
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-06-Feb-2026 14:33:10.070 SEVERE [http-nio-8080-exec-6] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [socket.CommentSocket] and the following error occurred
+06-Feb-2026 14:33:10.070 SEVERE [http-nio-8080-exec-6] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [main.java.socket.CommentSocket] and the following error occurred
 	java.io.EOFException
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.fillReadBuffer(NioEndpoint.java:1339)
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.read(NioEndpoint.java:1223)
@@ -814,10 +814,10 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988)
-	at dao.TaskDao.execute(TaskDao.java:136)
-	at dao.TaskDao.shareTask(TaskDao.java:86)
-	at service.TaskService.shareTask(TaskService.java:91)
-	at controller.TaskController.doPost(TaskController.java:103)
+	at main.java.dao.TaskDao.execute(TaskDao.java:136)
+	at main.java.dao.TaskDao.shareTask(TaskDao.java:86)
+	at main.java.service.TaskService.shareTask(TaskService.java:91)
+	at main.java.controller.TaskController.doPost(TaskController.java:103)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -840,7 +840,7 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-06-Feb-2026 14:45:00.191 SEVERE [http-nio-8080-exec-8] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [socket.CommentSocket] and the following error occurred
+06-Feb-2026 14:45:00.191 SEVERE [http-nio-8080-exec-8] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [main.java.socket.CommentSocket] and the following error occurred
 	java.io.EOFException
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.fillReadBuffer(NioEndpoint.java:1339)
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.read(NioEndpoint.java:1223)
@@ -977,10 +977,10 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988)
-	at dao.TaskDao.execute(TaskDao.java:136)
-	at dao.TaskDao.shareTask(TaskDao.java:86)
-	at service.TaskService.shareTask(TaskService.java:91)
-	at controller.TaskController.doPost(TaskController.java:103)
+	at main.java.dao.TaskDao.execute(TaskDao.java:136)
+	at main.java.dao.TaskDao.shareTask(TaskDao.java:86)
+	at main.java.service.TaskService.shareTask(TaskService.java:91)
+	at main.java.controller.TaskController.doPost(TaskController.java:103)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -1016,8 +1016,8 @@ com.google.gson.JsonIOException: Failed making field 'java.time.LocalDateTime#da
 	at com.google.gson.Gson.toJson(Gson.java:795)
 	at com.google.gson.Gson.toJson(Gson.java:742)
 	at com.google.gson.Gson.toJson(Gson.java:719)
-	at service.NotificationService.create(NotificationService.java:51)
-	at controller.NotificationController.doPost(NotificationController.java:113)
+	at main.java.service.NotificationService.create(NotificationService.java:51)
+	at main.java.controller.NotificationController.doPost(NotificationController.java:113)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -1048,7 +1048,7 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 	at java.base/java.lang.reflect.Field.setAccessible(Field.java:177)
 	at com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:35)
 	... 35 more
-06-Feb-2026 14:53:51.429 SEVERE [http-nio-8080-exec-6] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [socket.CommentSocket] and the following error occurred
+06-Feb-2026 14:53:51.429 SEVERE [http-nio-8080-exec-6] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [main.java.socket.CommentSocket] and the following error occurred
 	java.io.EOFException
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.fillReadBuffer(NioEndpoint.java:1339)
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.read(NioEndpoint.java:1223)
@@ -1182,10 +1182,10 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988)
-	at dao.TaskDao.execute(TaskDao.java:136)
-	at dao.TaskDao.shareTask(TaskDao.java:86)
-	at service.TaskService.shareTask(TaskService.java:91)
-	at controller.TaskController.doPost(TaskController.java:103)
+	at main.java.dao.TaskDao.execute(TaskDao.java:136)
+	at main.java.dao.TaskDao.shareTask(TaskDao.java:86)
+	at main.java.service.TaskService.shareTask(TaskService.java:91)
+	at main.java.controller.TaskController.doPost(TaskController.java:103)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -1240,7 +1240,7 @@ java.io.EOFException
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-06-Feb-2026 15:12:07.342 SEVERE [http-nio-8080-exec-6] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [socket.CommentSocket] and the following error occurred
+06-Feb-2026 15:12:07.342 SEVERE [http-nio-8080-exec-6] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [main.java.socket.CommentSocket] and the following error occurred
 	java.io.EOFException
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.fillReadBuffer(NioEndpoint.java:1339)
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.read(NioEndpoint.java:1223)
@@ -1267,10 +1267,10 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988)
-	at dao.TaskDao.execute(TaskDao.java:136)
-	at dao.TaskDao.shareTask(TaskDao.java:86)
-	at service.TaskService.shareTask(TaskService.java:91)
-	at controller.TaskController.doPost(TaskController.java:103)
+	at main.java.dao.TaskDao.execute(TaskDao.java:136)
+	at main.java.dao.TaskDao.shareTask(TaskDao.java:86)
+	at main.java.service.TaskService.shareTask(TaskService.java:91)
+	at main.java.controller.TaskController.doPost(TaskController.java:103)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -1302,10 +1302,10 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988)
-	at dao.TaskDao.execute(TaskDao.java:136)
-	at dao.TaskDao.shareTask(TaskDao.java:86)
-	at service.TaskService.shareTask(TaskService.java:91)
-	at controller.TaskController.doPost(TaskController.java:103)
+	at main.java.dao.TaskDao.execute(TaskDao.java:136)
+	at main.java.dao.TaskDao.shareTask(TaskDao.java:86)
+	at main.java.service.TaskService.shareTask(TaskService.java:91)
+	at main.java.controller.TaskController.doPost(TaskController.java:103)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -1344,7 +1344,7 @@ java.io.EOFException
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-06-Feb-2026 15:14:52.030 SEVERE [http-nio-8080-exec-4] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [socket.CommentSocket] and the following error occurred
+06-Feb-2026 15:14:52.030 SEVERE [http-nio-8080-exec-4] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [main.java.socket.CommentSocket] and the following error occurred
 	java.io.EOFException
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.fillReadBuffer(NioEndpoint.java:1339)
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.read(NioEndpoint.java:1223)
@@ -1362,7 +1362,7 @@ java.io.EOFException
 		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 Client disconnected: 5
-06-Feb-2026 15:14:52.039 SEVERE [http-nio-8080-exec-10] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [socket.CommentSocket] and the following error occurred
+06-Feb-2026 15:14:52.039 SEVERE [http-nio-8080-exec-10] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [main.java.socket.CommentSocket] and the following error occurred
 	java.io.EOFException
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.fillReadBuffer(NioEndpoint.java:1339)
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.read(NioEndpoint.java:1223)
@@ -1421,10 +1421,10 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988)
-	at dao.TaskDao.execute(TaskDao.java:136)
-	at dao.TaskDao.shareTask(TaskDao.java:86)
-	at service.TaskService.shareTask(TaskService.java:91)
-	at controller.TaskController.doPost(TaskController.java:103)
+	at main.java.dao.TaskDao.execute(TaskDao.java:136)
+	at main.java.dao.TaskDao.shareTask(TaskDao.java:86)
+	at main.java.service.TaskService.shareTask(TaskService.java:91)
+	at main.java.controller.TaskController.doPost(TaskController.java:103)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -1455,10 +1455,10 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988)
-	at dao.TaskDao.execute(TaskDao.java:136)
-	at dao.TaskDao.shareTask(TaskDao.java:86)
-	at service.TaskService.shareTask(TaskService.java:91)
-	at controller.TaskController.doPost(TaskController.java:103)
+	at main.java.dao.TaskDao.execute(TaskDao.java:136)
+	at main.java.dao.TaskDao.shareTask(TaskDao.java:86)
+	at main.java.service.TaskService.shareTask(TaskService.java:91)
+	at main.java.controller.TaskController.doPost(TaskController.java:103)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -1481,7 +1481,7 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-06-Feb-2026 15:18:59.546 SEVERE [http-nio-8080-exec-9] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [socket.CommentSocket] and the following error occurred
+06-Feb-2026 15:18:59.546 SEVERE [http-nio-8080-exec-9] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [main.java.socket.CommentSocket] and the following error occurred
 	java.io.EOFException
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.fillReadBuffer(NioEndpoint.java:1339)
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.read(NioEndpoint.java:1223)
@@ -1540,10 +1540,10 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988)
-	at dao.TaskDao.execute(TaskDao.java:136)
-	at dao.TaskDao.shareTask(TaskDao.java:86)
-	at service.TaskService.shareTask(TaskService.java:91)
-	at controller.TaskController.doPost(TaskController.java:103)
+	at main.java.dao.TaskDao.execute(TaskDao.java:136)
+	at main.java.dao.TaskDao.shareTask(TaskDao.java:86)
+	at main.java.service.TaskService.shareTask(TaskService.java:91)
+	at main.java.controller.TaskController.doPost(TaskController.java:103)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -1566,7 +1566,7 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-06-Feb-2026 15:27:38.072 SEVERE [http-nio-8080-exec-9] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [socket.CommentSocket] and the following error occurred
+06-Feb-2026 15:27:38.072 SEVERE [http-nio-8080-exec-9] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [main.java.socket.CommentSocket] and the following error occurred
 	java.io.EOFException
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.fillReadBuffer(NioEndpoint.java:1339)
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.read(NioEndpoint.java:1223)
@@ -1625,10 +1625,10 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5-1' for key
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988)
-	at dao.TaskDao.execute(TaskDao.java:136)
-	at dao.TaskDao.shareTask(TaskDao.java:86)
-	at service.TaskService.shareTask(TaskService.java:91)
-	at controller.TaskController.doPost(TaskController.java:103)
+	at main.java.dao.TaskDao.execute(TaskDao.java:136)
+	at main.java.dao.TaskDao.shareTask(TaskDao.java:86)
+	at main.java.service.TaskService.shareTask(TaskService.java:91)
+	at main.java.controller.TaskController.doPost(TaskController.java:103)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -1668,7 +1668,7 @@ java.io.EOFException
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 java.io.EOFException
-06-Feb-2026 15:29:10.995 SEVERE [http-nio-8080-exec-5] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [socket.CommentSocket] and the following error occurred
+06-Feb-2026 15:29:10.995 SEVERE [http-nio-8080-exec-5] org.apache.tomcat.websocket.pojo.PojoEndpointBase.onError No error handling configured for [main.java.socket.CommentSocket] and the following error occurred
 	java.io.EOFException
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.fillReadBuffer(NioEndpoint.java:1339)
 		at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.read(NioEndpoint.java:1223)

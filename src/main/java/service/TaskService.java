@@ -14,6 +14,7 @@ public class TaskService {
 
     private final TaskDao taskDao = new TaskDao();
     private final AIClient aiClient = new AIClient();
+
     // ===================== READ =====================
     public List<Task> getTasks() {
         return taskDao.findAll();
@@ -33,49 +34,33 @@ public class TaskService {
 
     // ===================== CREATE =====================
     public Task save(Task task) {
-        if (task.getStatus() == null) {
-            task.setStatus(Status.TODO);
-        }
-        if (task.getCreatedAt() == null) {
-            task.setCreatedAt(LocalDateTime.now());
-        }
+        if (task.getStatus() == null) task.setStatus(Status.TODO);
+        if (task.getCreatedAt() == null) task.setCreatedAt(LocalDateTime.now());
         taskDao.save(task);
         return task;
     }
 
     public Task createTask(Task task, Long userId) {
-
         task.setUserId(userId);
         task.setStatus(Status.TODO);
         task.setCreatedAt(LocalDateTime.now());
 
-        // 🔒 SAFETY: NEVER send null text to AI
-        if (task.getTitle() == null) {
-            task.setTitle("");
-        }
-        if (task.getDescription() == null) {
-            task.setDescription("");
-        }
+        if (task.getTitle() == null) task.setTitle("");
+        if (task.getDescription() == null) task.setDescription("");
 
         try {
             CategoryDTO category = aiClient.suggestCategory(task);
-
             System.out.println("AI CATEGORY = " + category.getName());
-            System.out.println("AI CATEGORY ID = " + category.getId());
-
             task.setCategoryId(category.getId());
-
         } catch (Exception e) {
             System.out.println("❌ AI FAILED");
             e.printStackTrace();
-            task.setCategoryId(5L); // 🔥 DEFAULT = General
+            task.setCategoryId(5L); // Default
         }
 
         taskDao.save(task);
         return task;
     }
-
-
 
     // ===================== UPDATE =====================
     public void updateStatus(Long taskId, Status status) {
@@ -83,11 +68,23 @@ public class TaskService {
     }
 
     public void updateDueDate(Long taskId, LocalDateTime date) {
-        taskDao.updateDueDate(taskId, Timestamp.valueOf(date)); // ✅ NO Timestamp here
+        taskDao.updateDueDate(taskId, Timestamp.valueOf(date));
     }
 
     // ===================== SHARE =====================
     public void shareTask(Long taskId, Long userId) {
         taskDao.shareTask(taskId, userId);
+    }
+
+    // ===================== ✅ NEW: DEPENDENCIES =====================
+    public void addDependency(Long taskId, Long dependencyId) {
+        if (taskId.equals(dependencyId)) {
+            throw new IllegalArgumentException("Task cannot depend on itself");
+        }
+        taskDao.addDependency(taskId, dependencyId);
+    }
+
+    public void removeDependency(Long taskId, Long dependencyId) {
+        taskDao.removeDependency(taskId, dependencyId);
     }
 }

@@ -1,7 +1,6 @@
 package service;
 
-import dao.NotificationDao;
-import model.Notification;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -9,7 +8,9 @@ import java.util.Optional;
 
 import com.google.gson.Gson;
 
-import controller.NotificationWebSocket;
+import dao.Notification;
+import dao.NotificationDao;
+import main.java.controller.NotificationWebSocket;
 
 public class NotificationService {
 

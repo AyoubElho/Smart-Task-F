@@ -4,10 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
+
+import main.java.model.User;
 import model.LocalDateTimeAdapter;
 import model.LoginRequest;
-import model.User;
 import service.UserService;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;

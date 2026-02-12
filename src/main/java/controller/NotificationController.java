@@ -2,12 +2,13 @@ package controller;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import dao.Notification;
 import dao.NotificationDao;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import model.LocalDateTimeAdapter;
-import model.Notification;
 import service.NotificationService;
+
 
 import java.io.IOException;
 import java.time.LocalDateTime;

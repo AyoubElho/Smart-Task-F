@@ -1,4 +1,4 @@
-package controller;
+package main.java.controller;
 
 import jakarta.websocket.*;
 import jakarta.websocket.server.ServerEndpoint;

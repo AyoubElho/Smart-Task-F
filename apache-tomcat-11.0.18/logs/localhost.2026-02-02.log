@@ -1,12 +1,12 @@
 02-Feb-2026 14:49:51.037 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
 02-Feb-2026 14:49:51.038 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
 02-Feb-2026 14:49:51.040 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@37d3aa8c')
-02-Feb-2026 15:00:00.067 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke "Servlet.service()" pour la servlet [controller.UserController] a généré une exception
+02-Feb-2026 15:00:00.067 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke "Servlet.service()" pour la servlet [main.java.controller.UserController] a généré une exception
 	java.lang.RuntimeException: Invalid email or password
-		at service.UserService.lambda$1(UserService.java:32)
+		at main.java.service.UserService.lambda$1(UserService.java:32)
 		at java.base/java.util.Optional.orElseThrow(Optional.java:403)
-		at service.UserService.login(UserService.java:32)
-		at controller.UserController.doPost(UserController.java:52)
+		at main.java.service.UserService.login(UserService.java:32)
+		at main.java.controller.UserController.doPost(UserController.java:52)
 		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
@@ -29,12 +29,12 @@
 		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
 		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
 		at java.base/java.lang.Thread.run(Thread.java:1474)
-02-Feb-2026 15:14:41.835 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke "Servlet.service()" pour la servlet [controller.UserController] a généré une exception
+02-Feb-2026 15:14:41.835 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke "Servlet.service()" pour la servlet [main.java.controller.UserController] a généré une exception
 	java.lang.RuntimeException: Invalid email or password
-		at service.UserService.lambda$1(UserService.java:32)
+		at main.java.service.UserService.lambda$1(UserService.java:32)
 		at java.base/java.util.Optional.orElseThrow(Optional.java:403)
-		at service.UserService.login(UserService.java:32)
-		at controller.UserController.doPost(UserController.java:52)
+		at main.java.service.UserService.login(UserService.java:32)
+		at main.java.controller.UserController.doPost(UserController.java:52)
 		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
 		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
 		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)

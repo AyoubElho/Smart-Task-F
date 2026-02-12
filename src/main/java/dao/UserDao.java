@@ -1,6 +1,6 @@
 package dao;
 
-import model.User;
+import main.java.model.User;
 import util.DBConnection;
 
 import java.sql.*;
@@ -15,9 +15,9 @@ public class UserDao {
         String sql = "SELECT * FROM users";
 
         try (
-            Connection c = DBConnection.getConnection();
-            PreparedStatement ps = c.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery()
+                Connection c = DBConnection.getConnection();
+                PreparedStatement ps = c.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery()
         ) {
             while (rs.next()) {
                 users.add(map(rs));
