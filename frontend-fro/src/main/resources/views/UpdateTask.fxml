@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.smarttask_frontend.tasks.controller.UpdateTaskController"
+      spacing="15"
+      prefWidth="450"
+      styleClass="form-container"
+      stylesheets="@../styles/createTask.css">
+
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30"/>
+    </padding>
+
+    <Label text="Update Task" styleClass="form-title"/>
+
+    <VBox spacing="5">
+        <Label text="Task Title" styleClass="field-label"/>
+        <TextField fx:id="titleField"
+                   promptText="Edit title"
+                   styleClass="input-field"/>
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="Description" styleClass="field-label"/>
+        <TextArea fx:id="descriptionField"
+                  promptText="Edit description..."
+                  prefRowCount="3"
+                  styleClass="input-field"/>
+    </VBox>
+
+    <HBox spacing="20">
+
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Start Date" styleClass="field-label"/>
+            <DatePicker fx:id="dueDatePicker"
+                        maxWidth="Infinity"
+                        styleClass="input-field"/>
+        </VBox>
+
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="End Date" styleClass="field-label"/>
+            <DatePicker fx:id="endDatePicker"
+                        maxWidth="Infinity"
+                        styleClass="input-field"/>
+        </VBox>
+
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Priority" styleClass="field-label"/>
+            <ComboBox fx:id="priorityBox"
+                      maxWidth="Infinity"
+                      styleClass="input-field"/>
+        </VBox>
+
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Recurrence" styleClass="field-label"/>
+            <ComboBox fx:id="recurrenceBox"
+                      maxWidth="Infinity"
+                      styleClass="input-field"/>
+        </VBox>
+
+    </HBox>
+
+    <VBox spacing="5" VBox.vgrow="ALWAYS">
+        <Label text="Depends On (Optional)" styleClass="field-label"/>
+        <ListView fx:id="dependencyListView"
+                  prefHeight="100"
+                  styleClass="input-field"/>
+        <Label text="Hold Ctrl/Cmd to select multiple tasks"
+               style="-fx-font-size: 10px; -fx-text-fill: #666666;"/>
+    </VBox>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Cancel"
+                onAction="#cancel"
+                styleClass="secondary-button"/>
+        <Button text="Update Task"
+                onAction="#save"
+                styleClass="primary-button"/>
+    </HBox>
+
+</VBox>

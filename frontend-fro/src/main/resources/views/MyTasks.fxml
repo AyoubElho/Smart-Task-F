@@ -6,24 +6,27 @@
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.smarttask_frontend.tasks.controller.MyTasksController"
-            prefWidth="1100" prefHeight="700"
+            prefWidth="1200" prefHeight="700"
             stylesheets="@../styles/tasks.css">
 
     <top>
-        <HBox spacing="15" alignment="CENTER_LEFT" styleClass="header-bar">
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="header-bar">
             <Label text="My Tasks" styleClass="header-title"/>
+
             <Region HBox.hgrow="ALWAYS"/>
+
             <Button text="✨ AI Generate" styleClass="button, ai-button" onAction="#aiGenerate"/>
             <Button text="+ Add Task" styleClass="button, add-button" onAction="#createTask"/>
+            <Button text="💬 Comments" onAction="#toggleComments" styleClass="button"/>
         </HBox>
     </top>
 
     <center>
-        <SplitPane dividerPositions="0.70">
+        <StackPane>
 
             <TabPane tabClosingPolicy="UNAVAILABLE">
 
-                <Tab text="My Tasks">
+                <Tab fx:id="myTasksTab" text="My Tasks">
                     <VBox spacing="10">
                         <padding>
                             <Insets top="20" right="20" bottom="20" left="20"/>
@@ -34,22 +37,23 @@
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
                             </columnResizePolicy>
                             <columns>
-                                <TableColumn fx:id="titleColumn" text="Task Name"/>
-                                <TableColumn fx:id="priorityColumn" text="Priority"/>
-                                <TableColumn fx:id="categoryColumn" text="Category"/>
-                                <TableColumn fx:id="startDateColumn" text="Start"/>
-                                <TableColumn fx:id="endDateColumn" text="End"/>
-                                <TableColumn fx:id="statusColumn" text="Status"/>
-                                <TableColumn fx:id="dependenciesColumn" text="Depends On" minWidth="120"/>
-                                <TableColumn fx:id="subTasksColumn" text="" maxWidth="80"/>
-                                <TableColumn fx:id="shareColumn" text="" maxWidth="80"/>
+                                <TableColumn fx:id="titleColumn" text="Task Name" minWidth="200" prefWidth="350"/>
+                                <TableColumn fx:id="priorityColumn" text="Priority" minWidth="70" prefWidth="90" maxWidth="100"/>
+                                <TableColumn fx:id="categoryColumn" text="Category" minWidth="90" prefWidth="110" maxWidth="140"/>
+                                <TableColumn fx:id="startDateColumn" text="Start" minWidth="90" prefWidth="100" maxWidth="120"/>
+                                <TableColumn fx:id="endDateColumn" text="End" minWidth="90" prefWidth="100" maxWidth="120"/>
+                                <TableColumn fx:id="statusColumn" text="Status" minWidth="110" prefWidth="130" maxWidth="150"/>
+                                <TableColumn fx:id="recurrenceColumn" text="Recurrence" styleClass="recurrence-column" minWidth="110" prefWidth="130" maxWidth="150"/>
+                                <TableColumn fx:id="dependenciesColumn" text="Depends On" minWidth="100" prefWidth="120"/>
+                                <TableColumn fx:id="subTasksColumn" text="Subs" minWidth="60" prefWidth="70" maxWidth="80"/>
+                                <TableColumn fx:id="shareColumn" text="Share" minWidth="60" prefWidth="70" maxWidth="80"/>
+                                <TableColumn fx:id="actionColumn" text="Actions" minWidth="90" prefWidth="100" maxWidth="110"/>
                             </columns>
-
                         </TableView>
                     </VBox>
                 </Tab>
 
-                <Tab text="Shared With Me">
+                <Tab fx:id="sharedTasksTab" text="Shared With Me">
                     <VBox spacing="10">
                         <padding>
                             <Insets top="20" right="20" bottom="20" left="20"/>
@@ -60,16 +64,21 @@
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
                             </columnResizePolicy>
                             <columns>
-                                <TableColumn fx:id="sharedTitleColumn" text="Task Name"/>
-                                <TableColumn fx:id="sharedPriorityColumn" text="Priority"/>
-                                <TableColumn fx:id="sharedCategoryColumn" text="Category"/>
-                                <TableColumn fx:id="sharedStartDateColumn" text="Start"/>
-                                <TableColumn fx:id="sharedEndDateColumn" text="End"/>
-                                <TableColumn fx:id="sharedStatusColumn" text="Status"/>
-                                
-                                <TableColumn fx:id="sharedDependenciesColumn" text="Depends On" minWidth="120"/>
-                                
-                                <TableColumn fx:id="sharedSubTasksColumn" text=""/>
+                                <TableColumn fx:id="sharedTitleColumn" text="Task Name" minWidth="200" prefWidth="300"/>
+
+                                <TableColumn fx:id="sharedByColumn" text="Shared By" minWidth="130" prefWidth="150"/>
+
+                                <TableColumn fx:id="sharedPriorityColumn" text="Priority" minWidth="70" prefWidth="90" maxWidth="100"/>
+                                <TableColumn fx:id="sharedCategoryColumn" text="Category" minWidth="90" prefWidth="110" maxWidth="140"/>
+
+                                <TableColumn fx:id="sharedStatusColumn" text="Status" minWidth="110" prefWidth="120" maxWidth="140"/>
+                                <TableColumn fx:id="sharedRecurrenceColumn" text="Recurrence" styleClass="recurrence-column" minWidth="110" prefWidth="120" maxWidth="140"/>
+
+                                <TableColumn fx:id="sharedStartDateColumn" text="Start" minWidth="90" prefWidth="100" maxWidth="120"/>
+                                <TableColumn fx:id="sharedEndDateColumn" text="End" minWidth="90" prefWidth="100" maxWidth="120"/>
+
+                                <TableColumn fx:id="sharedDependenciesColumn" text="Depends On" minWidth="100" prefWidth="120"/>
+                                <TableColumn fx:id="sharedSubTasksColumn" text="Subs" minWidth="60" prefWidth="70" maxWidth="80"/>
                             </columns>
                         </TableView>
                     </VBox>
@@ -77,20 +86,40 @@
 
             </TabPane>
 
-            <VBox spacing="15" styleClass="comment-panel">
+            <VBox fx:id="commentPanel"
+                  prefWidth="300"
+                  maxWidth="300"
+                  minWidth="300"
+                  spacing="15"
+                  visible="false"
+                  translateX="300"
+                  styleClass="comment-panel"
+                  StackPane.alignment="CENTER_RIGHT">
+                <StackPane.margin>
+                    <Insets right="0"/>
+                </StackPane.margin>
                 <padding>
                     <Insets top="20" right="20" bottom="20" left="20"/>
                 </padding>
+
                 <Label text="Comments" styleClass="section-title"/>
+                <Label fx:id="taskTitleLabel"
+                       text="No task selected"
+                       styleClass="task-title-label"/>
+
+                <Separator prefWidth="Infinity" styleClass="sidebar-divider"/>
+
                 <ListView fx:id="commentList" VBox.vgrow="ALWAYS"/>
+
                 <HBox spacing="10" alignment="CENTER">
                     <Button text="📎" onAction="#attachFile" styleClass="button attach-button"/>
                     <TextField fx:id="commentField" HBox.hgrow="ALWAYS" promptText="Write a comment..."/>
-                    <Button text="Send" onAction="#sendComment" styleClass="button"/>
+                    <Button text=">" onAction="#sendComment" styleClass="button"/>
                 </HBox>
+
             </VBox>
 
-        </SplitPane>
+        </StackPane>
     </center>
 
 </BorderPane>

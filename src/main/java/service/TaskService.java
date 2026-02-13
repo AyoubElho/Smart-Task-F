@@ -32,7 +32,22 @@ public class TaskService {
     public List<Task> getTasksSharedWithUser(Long userId) {
         return taskDao.findSharedWithUser(userId);
     }
+    public void updateTask(Long id, Task updated) {
 
+        Task existing = taskDao.findById(id);
+
+        if (existing == null)
+            throw new IllegalArgumentException("Task not found");
+
+        existing.setTitle(updated.getTitle());
+        existing.setDescription(updated.getDescription());
+        existing.setPriority(updated.getPriority());
+        existing.setDueDate(updated.getDueDate());
+        existing.setEndDate(updated.getEndDate());
+        existing.setRecurrence(updated.getRecurrence());
+
+        taskDao.updateFull(existing);
+    }
     // ===================== CREATE =====================
 
     public Task save(Task task) {
@@ -45,6 +60,39 @@ public class TaskService {
 
         taskDao.save(task);
         return task;
+    }
+    public void deleteTask(Long taskId) {
+        taskDao.deleteTask(taskId);
+    }
+    public void updateRecurrence(Long taskId, model.Recurrence recurrence) {
+
+        Task task = taskDao.findById(taskId);
+
+        if (task == null)
+            return;
+
+        task.setRecurrence(recurrence);
+
+        LocalDateTime next = task.getDueDate();
+
+        if (recurrence != null && recurrence != model.Recurrence.NONE) {
+
+            switch (recurrence) {
+                case DAILY -> next = next.plusDays(1);
+                case WEEKLY -> next = next.plusWeeks(1);
+                case MONTHLY -> next = next.plusMonths(1);
+            }
+
+            task.setNextRun(next);
+
+            taskDao.updateNextRun(taskId,
+                    java.sql.Timestamp.valueOf(next));
+        } else {
+            task.setNextRun(null);
+            taskDao.updateNextRun(taskId, null);
+        }
+
+        taskDao.updateRecurrence(taskId, recurrence);
     }
 
     public Task createTask(Task task, Long userId) {

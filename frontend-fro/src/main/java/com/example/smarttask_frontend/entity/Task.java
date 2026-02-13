@@ -17,10 +17,19 @@ public class Task {
     private Priority priority;
     private String status;
     private List<SubTask> subTasks;
-
+    private Long userId;
     private LocalDateTime createdAt;
+    @Override
+    public String toString() {
+        return title; // or getTitle()
+    }
+    public Long getUserId() {
+        return userId;
+    }
 
-
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
     @JsonDeserialize(using = FlexibleDateDeserializer.class)
     private LocalDateTime dueDate;
 

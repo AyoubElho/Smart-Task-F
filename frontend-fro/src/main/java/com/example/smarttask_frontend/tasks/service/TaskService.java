@@ -68,7 +68,49 @@ public class TaskService {
             return List.of();
         }
     }
+    public boolean deleteTask(Long taskId) {
 
+        try {
+            String url = BASE_URL + taskId;
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .DELETE()
+                    .build();
+
+            HttpResponse<String> response =
+                    httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+            return response.statusCode() == 200;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public boolean updateTask(Task task) {
+
+        try {
+            String url = BASE_URL + task.getId();
+
+            String json = objectMapper.writeValueAsString(task);
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .header("Content-Type", "application/json")
+                    .PUT(HttpRequest.BodyPublishers.ofString(json))
+                    .build();
+
+            HttpResponse<String> response =
+                    httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+            return response.statusCode() == 200;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
     public List<Task> getTasksByUser(Long userId) throws Exception {
 
         String url = BASE_URL + "user/" + userId;
@@ -286,5 +328,16 @@ public class TaskService {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public void updateTaskRecurrence(Long id, String recurrence) throws Exception {
+        String url = BASE_URL + "/tasks/" + id + "/recurrence/" + recurrence;
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(url))
+                .PUT(HttpRequest.BodyPublishers.noBody())
+                .build();
+
+        HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
     }
 }

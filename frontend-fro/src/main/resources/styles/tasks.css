@@ -187,7 +187,7 @@
     -fx-font-size: 16px;
     -fx-font-weight: 800;
     -fx-text-fill: #1A202C;
-    -fx-padding: 0 0 15 0;
+    -fx-padding: 0 0 5 0;
     -fx-border-width: 0;
 }
 
@@ -284,4 +284,167 @@
 .attach-button {
     -fx-font-size: 16px;
     -fx-background-radius: 8;
+}
+
+/* =============================================================================
+   RECURRENCE DROPDOWN (Matched to Status Style)
+   ============================================================================= */
+
+/* Hide the arrow button for a cleaner "Label" look */
+.recurrence-combo .arrow-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.recurrence-combo .arrow {
+    -fx-background-color: transparent; /* Hides the triangle */
+}
+
+/* --- Color Variants --- */
+
+/* NONE: Soft Gray (Same as TODO) */
+.recurrence-none {
+    -fx-background-color: #EDF2F7;
+    -fx-text-fill: #4A5568;
+}
+/* Fix inner cell text color */
+.recurrence-none .list-cell { -fx-text-fill: #4A5568; }
+
+
+/* DAILY: Soft Blue (Same as IN_PROGRESS) */
+.recurrence-daily {
+    -fx-background-color: #EBF8FF;
+    -fx-text-fill: #3182CE;
+}
+.recurrence-daily .list-cell { -fx-text-fill: #3182CE; }
+
+
+/* WEEKLY: Soft Purple (Distinct color) */
+.recurrence-weekly {
+    -fx-background-color: #FAF5FF;
+    -fx-text-fill: #805AD5;
+}
+.recurrence-weekly .list-cell { -fx-text-fill: #805AD5; }
+
+
+/* MONTHLY: Soft Orange (Distinct color) */
+.recurrence-monthly {
+    -fx-background-color: #FFFAF0;
+    -fx-text-fill: #DD6B20;
+}
+.recurrence-monthly .list-cell { -fx-text-fill: #DD6B20; }
+
+
+/* --- Dropdown Popup Styling --- */
+/* This fixes the transparent background issue */
+.recurrence-combo .list-view {
+    -fx-background-color: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 5);
+}
+
+/* Hover effect for items in the dropdown */
+.recurrence-combo .list-cell:hover {
+    -fx-background-color: #E2E8F0;
+}
+/* Add padding to the Recurrence Cells */
+/* CORRECTED SELECTOR: targets the cell that HAS this class */
+/* This targets the cell itself */
+.recurrence-cell {
+    -fx-padding: 5 10 5 10;  /* Top, Right, Bottom, Left */
+    -fx-alignment: CENTER_LEFT;
+}
+
+.task-title-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #2B6CB0;
+
+}
+.sidebar-divider {
+    -fx-opacity: 0.4;
+    -fx-padding: 5 0 10 0;
+}
+.icon-btn {
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+.comment-panel {
+    -fx-border-color: #c8c8c8;
+    -fx-border-width: 0 0 0 1px;
+}
+/* The circular/pill badge for the count */
+.count-badge {
+    -fx-background-color: #EDF2F7;
+    -fx-text-fill: #4A5568;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 10 2 10;
+    -fx-background-radius: 12; /* Makes it pill-shaped */
+    -fx-alignment: CENTER;
+}/* Transparent button style for icons */
+.icon-btn {
+    -fx-background-color: transparent;
+    -fx-font-size: 16px; /* Slightly larger for visibility */
+    -fx-cursor: hand;
+    -fx-text-fill: #5B6B79;
+}
+
+.icon-btn:hover {
+    -fx-text-fill: #3182CE; /* Blue on hover */
+    -fx-background-color: #EDF2F7; /* Light circle bg on hover */
+    -fx-background-radius: 50%;
+}/* Reusing the badge style for the tabs */
+.count-badge {
+    -fx-background-color: #EDF2F7;
+    -fx-text-fill: #4A5568;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 1 8 1 8;
+    -fx-background-radius: 10;
+    -fx-alignment: CENTER;
+}/* =============================================================================
+   ACTION BUTTONS (Edit & Delete)
+   ============================================================================= */
+
+/* Edit Button - Green style */
+.edit-btn {
+    -fx-text-fill: #38A169; /* Green Text */
+}
+
+.edit-btn:hover {
+    -fx-background-color: #F0FFF4; /* Very light green background */
+    -fx-text-fill: #2F855A;        /* Darker green on hover */
+    -fx-background-radius: 50%;    /* Circle shape */
+}
+
+/* Delete Button - Red style */
+.delete-btn {
+    -fx-text-fill: #E53E3E; /* Red Text */
+}
+
+.delete-btn:hover {
+    -fx-background-color: #FFF5F5; /* Very light red background */
+    -fx-text-fill: #C53030;        /* Darker red on hover */
+    -fx-background-radius: 50%;    /* Circle shape */
+}/* =============================================================================
+   USER AVATAR (Shared By Column)
+   ============================================================================= */
+.user-avatar {
+    -fx-background-color: #CBD5E0; /* Soft Gray/Blue background */
+    -fx-text-fill: #2D3748;        /* Dark text color */
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+
+    /* Circle Shape */
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+
+    /* Fixed Size */
+    -fx-min-width: 24px;
+    -fx-min-height: 24px;
+    -fx-max-width: 24px;
+    -fx-max-height: 24px;
+
+    /* Centering the Letter */
+    -fx-alignment: CENTER;
 }

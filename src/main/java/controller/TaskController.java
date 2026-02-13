@@ -145,7 +145,8 @@ public class TaskController extends HttpServlet {
 
         String path = req.getRequestURI()
                 .replace(req.getContextPath(), "")
-                .replace("/tasks", "");
+                .replace("/tasks", "")
+                .replaceAll("^/+", "/"); // 🔥 remove duplicate slashes
 
         System.out.println("REAL PATH = " + path);
 
@@ -153,7 +154,30 @@ public class TaskController extends HttpServlet {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
+        if (path.matches("/\\d+")) {
 
+            Long taskId = Long.parseLong(path.substring(1));
+
+            Task body = readBody(req, Task.class);
+
+            taskService.updateTask(taskId, body);
+
+            write(resp, "Task updated");
+            return;
+        }
+        // UPDATE RECURRENCE
+        if (path.matches("/\\d+/recurrence/\\w+")) {
+            String[] parts = path.split("/");
+            Long taskId = Long.parseLong(parts[1]);
+
+            model.Recurrence recurrence =
+                    model.Recurrence.valueOf(parts[3]);
+
+            taskService.updateRecurrence(taskId, recurrence);
+
+            write(resp, "Recurrence updated");
+            return;
+        }
         // UPDATE STATUS
         if (path.matches("/\\d+/status/\\w+")) {
             String[] parts = path.split("/");
@@ -238,7 +262,15 @@ public class TaskController extends HttpServlet {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
+        if (path.matches("/\\d+")) {
 
+            Long taskId = Long.parseLong(path.substring(1));
+
+            taskService.deleteTask(taskId);
+
+            write(resp, "Task deleted");
+            return;
+        }
         if (path.matches("/\\d+/dependency/\\d+")) {
 
             String[] parts = path.split("/");

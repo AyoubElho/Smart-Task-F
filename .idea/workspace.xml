@@ -10,7 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c49f448e-0a55-4190-8ed6-03a748cddc74" name="Changes" comment="starte of the project">
-      <change beforePath="$PROJECT_DIR$/frontend-fro/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-fro/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-fro/src/main/java/com/example/smarttask_frontend/dashboard/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-fro/src/main/java/com/example/smarttask_frontend/dashboard/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-fro/src/main/java/com/example/smarttask_frontend/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-fro/src/main/java/com/example/smarttask_frontend/entity/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-fro/src/main/java/com/example/smarttask_frontend/tasks/controller/MyTasksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-fro/src/main/java/com/example/smarttask_frontend/tasks/controller/MyTasksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-fro/src/main/java/com/example/smarttask_frontend/tasks/controller/UpdateTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-fro/src/main/java/com/example/smarttask_frontend/tasks/controller/UpdateTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-fro/src/main/java/com/example/smarttask_frontend/tasks/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-fro/src/main/java/com/example/smarttask_frontend/tasks/service/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-fro/src/main/resources/styles/tasks.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-fro/src/main/resources/styles/tasks.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-fro/src/main/resources/views/MyTasks.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-fro/src/main/resources/views/MyTasks.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TaskDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/TaskService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +73,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;Application.TestDB.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -262,7 +273,8 @@
       <workItem from="1770882361653" duration="442000" />
       <workItem from="1770892052272" duration="1450000" />
       <workItem from="1770894488957" duration="18479000" />
-      <workItem from="1770922793979" duration="12480000" />
+      <workItem from="1770922793979" duration="12670000" />
+      <workItem from="1770978396306" duration="12637000" />
     </task>
     <task id="LOCAL-00001" summary="javafx-jdbc">
       <option name="closed" value="true" />

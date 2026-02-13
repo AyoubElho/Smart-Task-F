@@ -118,8 +118,30 @@ public class TaskDao {
             e.printStackTrace();
         }
     }
+    public void updateRecurrence(Long taskId, Recurrence recurrence) {
+        execute(
+                "UPDATE task SET recurrence = ? WHERE id = ?",
+                recurrence != null ? recurrence.name() : null,
+                taskId
+        );
+    }
+    public void deleteTask(Long taskId) {
 
+        try (Connection c = DBConnection.getConnection()) {
 
+            // remove dependencies first (foreign key safety)
+            execute("DELETE FROM task_dependencies WHERE task_id = ? OR depends_on_id = ?", taskId, taskId);
+
+            // remove shared links
+            execute("DELETE FROM task_shared WHERE task_id = ?", taskId);
+
+            // finally delete task
+            execute("DELETE FROM task WHERE id = ?", taskId);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public void updateEndDate(Long taskId, Timestamp endDate) {
         execute("UPDATE task SET end_date = ? WHERE id = ?", endDate, taskId);
     }
@@ -133,7 +155,29 @@ public class TaskDao {
 
         return query(sql);
     }
+    public void updateFull(Task t) {
 
+        String sql = """
+        UPDATE task SET
+            title = ?,
+            description = ?,
+            priority = ?,
+            due_date = ?,
+            end_date = ?,
+            recurrence = ?
+        WHERE id = ?
+    """;
+
+        execute(sql,
+                t.getTitle(),
+                t.getDescription(),
+                t.getPriority().name(),
+                t.getDueDate() != null ? Timestamp.valueOf(t.getDueDate()) : null,
+                t.getEndDate() != null ? Timestamp.valueOf(t.getEndDate()) : null,
+                t.getRecurrence() != null ? t.getRecurrence().name() : null,
+                t.getId()
+        );
+    }
 
     // ===================== UPDATE =====================
 

@@ -409,6 +409,7 @@ public class DashboardController implements Initializable {
             }
             dashboardLabel.setText("Overview");
             List<Task> tasks = taskService.getTasksByUser(user.getId());
+            System.out.println(tasks.get(0).getRecurrence() );
             taskTable.setItems(FXCollections.observableArrayList(tasks));
             List<Task> sharedTasks = taskService.getSharedTasks(user.getId());
             sharedTasksTable.setItems(FXCollections.observableArrayList(sharedTasks));
