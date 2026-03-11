@@ -1,4 +1,4 @@
-﻿# SmartTask-F
+# SmartTask-F
 
 SmartTask-F is a desktop task management app with a Java Servlet backend and a JavaFX frontend.
 It focuses on planning, collaboration, and scheduling with optional AI and Google Calendar integrations.
@@ -55,32 +55,17 @@ cd frontend-fro
 
 ## Screenshots
 
-### Login
-![Login page](docs/screenshots/login-page.png)
+| Login | Dashboard | My Tasks |
+|---|---|---|
+| ![Login page](docs/screenshots/login-page.png) | ![Dashboard page](docs/screenshots/dashboard-page.png) | ![MyTasks page](docs/screenshots/mytasks-page.png) |
 
-### Dashboard
-![Dashboard page](docs/screenshots/dashboard-page.png)
+| Create Task | Update Task | Calendar |
+|---|---|---|
+| ![Create task page](docs/screenshots/create-task-page.png) | ![Update task page](docs/screenshots/update-task-page.png) | ![Calendar page](docs/screenshots/calendar-page.png) |
 
-### My Tasks
-![MyTasks page](docs/screenshots/mytasks-page.png)
-
-### Create Task
-![Create task page](docs/screenshots/create-task-page.png)
-
-### Update Task
-![Update task page](docs/screenshots/update-task-page.png)
-
-### Calendar
-![Calendar page](docs/screenshots/calendar-page.png)
-
-### Settings
-![Settings page](docs/screenshots/settings-page.png)
-
-### Share Task
-![Share task page](docs/screenshots/share-task-page.png)
-
-### Subtasks
-![Subtasks page](docs/screenshots/subtasks-page.png)
+| Settings | Share Task | Subtasks |
+|---|---|---|
+| ![Settings page](docs/screenshots/settings-page.png) | ![Share task page](docs/screenshots/share-task-page.png) | ![Subtasks page](docs/screenshots/subtasks-page.png) |
 
 ## Project Structure
 
@@ -94,4 +79,3 @@ Smart-Task-F/
 ## Note
 
 This project is good for learning/demo use. For production use, add stronger security practices (for example password hashing and stricter API auth).
-# Smart-Task
