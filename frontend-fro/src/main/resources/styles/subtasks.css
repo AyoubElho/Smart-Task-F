@@ -1,0 +1,81 @@
+/* ROOT */
+.root {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 20;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+.header-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #343a40;
+}
+
+/* TABLE VIEW STYLING */
+.custom-table {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 5, 0, 0, 1);
+}
+
+/* Hide the empty column header filler */
+.custom-table .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.custom-table .column-header {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #dee2e6 transparent;
+    -fx-size: 35px; /* Header height */
+}
+
+.custom-table .column-header .label {
+    -fx-text-fill: #868e96;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+/* TABLE ROWS */
+.custom-table .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #f1f3f5 transparent;
+    -fx-padding: 5 0;
+}
+
+.custom-table .table-row-cell:selected {
+    -fx-background-color: #e7f5ff; /* Light blue selection */
+}
+
+/* TABLE CELLS */
+.custom-table .table-cell {
+    -fx-alignment: CENTER_LEFT;
+    -fx-text-fill: #495057;
+    -fx-font-size: 14px;
+}
+
+/* BUTTONS & INPUTS */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 4;
+    -fx-padding: 8;
+}
+
+.primary-btn {
+    -fx-background-color: #228be6;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+.primary-btn:hover { -fx-background-color: #1c7ed6; }
+
+.danger-btn { /* For inline delete */
+    -fx-background-color: transparent;
+    -fx-text-fill: #fa5252;
+    -fx-border-color: #fa5252;
+    -fx-border-radius: 4;
+    -fx-padding: 3 8;
+    -fx-cursor: hand;
+    -fx-font-size: 10px;
+}
+.danger-btn:hover { -fx-background-color: #fa5252; -fx-text-fill: white; }

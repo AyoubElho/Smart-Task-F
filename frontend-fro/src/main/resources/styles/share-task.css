@@ -1,0 +1,155 @@
+/* General Background */
+.root {
+    -fx-background-color: #f4f6f8;
+    -fx-font-family: "Segoe UI", "Roboto", Helvetica, Arial, sans-serif;
+}
+
+/* --- Top Section --- */
+.label {
+    -fx-text-fill: #2c3e50;
+}
+
+#header-label { /* Add this ID to your top label in FXML if you want */
+    -fx-font-size: 22px;
+    -fx-font-weight: 700;
+    -fx-padding: 20 0 10 0;
+    -fx-text-fill: #1a1a1a;
+}
+
+#taskTitleLabel {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+    -fx-font-weight: normal;
+}
+
+/* --- Table Styling --- */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 2);
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+    -fx-padding: 5px;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #95a5a6;
+    -fx-font-weight: 700;
+    -fx-font-size: 11px;
+    -fx-text-transform: uppercase;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #f0f0f0 transparent;
+    -fx-padding: 8px 0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: white;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #f8f9fa;
+    -fx-cursor: hand;
+}
+
+.table-view .table-cell {
+    -fx-border-color: transparent;
+    -fx-padding: 0 15px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* --- AVATAR & USERNAME --- */
+
+/* The Circle container for the initial */
+/* ... Previous styling remains the same ... */
+
+/* --- AVATAR & USERNAME --- */
+
+.avatar-circle {
+    /* REMOVED: -fx-background-color: #4285f4; (Handled by Controller now) */
+
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+
+    /* Make it a circle */
+    -fx-background-radius: 50%;
+    -fx-min-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+
+    /* Center the letter */
+    -fx-alignment: center;
+
+    /* Optional: Slight shadow for depth */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 2, 0, 0, 1);
+}
+
+.username-text {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #34495e;
+}
+
+/* ... Rest of CSS remains the same ... */
+
+/* Distinct color for hover if desired */
+.table-row-cell:hover .avatar-circle {
+    -fx-background-color: #3367d6;
+    -fx-effect: dropshadow(gaussian, rgba(66, 133, 244, 0.4), 8, 0, 0, 2);
+}
+
+.username-text {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #34495e;
+}
+
+/* --- Buttons --- */
+.action-button {
+    -fx-background-color: #eaf3ff;
+    -fx-text-fill: #4285f4;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 6 18;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+
+.action-button:hover {
+    -fx-background-color: #4285f4;
+    -fx-text-fill: white;
+}
+
+.action-button:pressed {
+    -fx-background-color: #3367d6;
+}
+
+/* Close/Bottom Button */
+.button-close {
+    -fx-background-color: white;
+    -fx-border-color: #dfe6e9;
+    -fx-border-radius: 4px;
+    -fx-text-fill: #636e72;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+
+.button-close:hover {
+    -fx-background-color: #f1f2f6;
+    -fx-text-fill: #2d3436;
+}

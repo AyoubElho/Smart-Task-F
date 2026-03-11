@@ -1,0 +1,41 @@
+/* ai-dialog.css - Dark Theme */
+.ai-dialog {
+    -fx-background-color: #2b2b2b;
+    -fx-font-family: 'Consolas', 'Monospaced', sans-serif;
+}
+
+.header-label {
+    -fx-text-fill: #e0e0e0;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.text-area {
+    -fx-control-inner-background: #3c3f41;
+    -fx-text-fill: #a9b7c6;
+    -fx-background-radius: 2;
+    -fx-border-color: #555;
+}
+
+.text-area:focused {
+    -fx-border-color: #629755; /* IntelliJ Green */
+    -fx-effect: dropshadow(three-pass-box, rgba(98, 151, 85, 0.5), 5, 0, 0, 0);
+}
+
+.dialog-pane .button {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: #bbb;
+    -fx-border-color: #555;
+    -fx-border-radius: 3;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #4c5052;
+}
+
+/* The Generate Button */
+.dialog-pane .button[text="Generate"] {
+    -fx-background-color: #365880; /* Muted Blue */
+    -fx-text-fill: white;
+    -fx-border-color: #365880;
+}

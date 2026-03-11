@@ -1,0 +1,132 @@
+/* === LOGIN SCREEN (REFINED MODERN DARK UI) === */
+
+/* ---------- Color Variables (Recommended) ---------- */
+.root {
+    -primary: #6366f1;
+    -primary-dark: #4f46e5;
+    -primary-light: #818cf8;
+
+    -bg-main: #0b0e14;
+    -bg-card: #111827;
+
+    -text-primary: #f8fafc;
+    -text-secondary: #94a3b8;
+}
+
+/* ---------- Left Side - Branding Area ---------- */
+.login-sidebar {
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            #0f172a,
+            #020617
+    );
+    -fx-border-color: transparent #1e293b transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+
+.login-brand-text {
+    -fx-font-size: 38px;
+    -fx-font-weight: 900;
+    -fx-text-fill: white;
+    -fx-letter-spacing: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.6), 25, 0.3, 0, 0);
+}
+
+.login-tagline {
+    -fx-font-size: 14px;
+    -fx-text-fill: #9ca3af;
+    -fx-padding: 12 0 0 0;
+}
+
+/* ---------- Right Side - Form Area ---------- */
+.login-container {
+    -fx-background-color: -bg-main;
+    -fx-padding: 50;
+}
+
+.login-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-primary;
+}
+
+/* ---------- Modern Input Fields ---------- */
+.input-field {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-border-color: #1e293b;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 14;
+    -fx-prompt-text-fill: #64748b;
+}
+
+.input-field:hover {
+    -fx-border-color: #334155;
+}
+
+.input-field:focused {
+    -fx-border-color: -primary;
+    -fx-background-color: rgba(99, 102, 241, 0.12);
+    -fx-effect: dropshadow(
+            three-pass-box,
+            rgba(99,102,241,0.35),
+            8, 0, 0, 0
+    );
+}
+
+/* ---------- Primary Action Button ---------- */
+.button-primary {
+    -fx-background-color: linear-gradient(
+            to right,
+            -primary,
+            -primary-dark
+    );
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-background-radius: 10;
+    -fx-padding: 12 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.4),
+            10, 0, 0, 3
+    );
+}
+
+.button-primary:hover {
+    -fx-background-color: linear-gradient(
+            to right,
+            -primary-light,
+            -primary
+    );
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(99,102,241,0.5),
+            14, 0, 0, 4
+    );
+}
+
+.button-primary:pressed {
+    -fx-translate-y: 1;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.3),
+            6, 0, 0, 2
+    );
+}
+
+/* ---------- Links ---------- */
+.link-text {
+    -fx-text-fill: -text-secondary;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+
+.link-text:hover {
+    -fx-text-fill: -primary-light;
+    -fx-underline: true;
+}
