@@ -1,6 +1,6 @@
-# SmartTask-F
+# SmartTask
 
-SmartTask-F is a desktop task management app with a Java Servlet backend and a JavaFX frontend.
+SmartTask is a desktop task management app with a Java Servlet backend and a JavaFX frontend.
 It focuses on planning, collaboration, and scheduling with optional AI and Google Calendar integrations.
 
 ## Tech Stack
